@@ -4,14 +4,15 @@ import styled from "styled-components";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import MainPage from "../src/pages/MainPage";
 import { Header } from "./components/Header";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background: #f5f5f5; // 밝은 배경색
   color: #333;
+  
 `;
 
 const Prompt = styled.h1`
@@ -41,7 +42,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <Header />
+      <Header/>
       <Container>
         <Routes>
           <Route path="main" element={<MainPage />} />

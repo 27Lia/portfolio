@@ -9,6 +9,7 @@ const Navbar = styled.nav`
   padding: 20px 50px;
   background-color: royalblue;
   color: white;
+  width:100%;
 `;
 
 const Logo = styled.div`
@@ -29,7 +30,7 @@ export const Header: React.FC = () => {
         <a href="#intro">Introdution</a>
         <a href="#skills">Career</a>
         <a href="#projects">Projects</a>
-        {/* 추가로 다른 링크 */}
+        {/* 추가로 다른 링크들 */}
       </NavLinks>
     </Navbar>
   );
