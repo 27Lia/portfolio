@@ -12,7 +12,6 @@ const Container = styled.div`
   justify-content: center;
   background: #f5f5f5; // 밝은 배경색
   color: #333;
-  
 `;
 
 const Prompt = styled.h1`
