@@ -3,6 +3,7 @@ import {ModalHeader, Section, SubSection, SubTitle, Description, ButtonBox, Clos
 import ModalButton from "../components/ModalButton";
 import Modal from "../components/Modal";
 import ImageSlider from "../components/ImageSlider";
+import styled from 'styled-components';
 
 import {
   ProjectTitle,
@@ -12,6 +13,33 @@ import {
   ProjectRow,
   TableCell,
 } from "./SharedStyles";
+
+const DescriptionList = styled.ul`
+    margin-left: 25px;
+`;
+
+const DescriptionItem = styled.li`
+    margin-top: 5px;
+    font-size:18px;
+`;
+
+
+type ItemProps = {
+  descriptions: string[];
+};
+
+const Item: React.FC<ItemProps> = ({ descriptions }) => {
+return (
+    <div>
+        <DescriptionList>
+            {descriptions.map((desc, index) => (
+                <DescriptionItem key={index}>{desc}</DescriptionItem>
+            ))}
+        </DescriptionList>
+    </div>
+);
+};
+
 
 const ShoppingMall: React.FC = () => {
   const [showModal, setShowModal] = useState(false); // 모달의 상태를 관리
@@ -101,27 +129,15 @@ const ShoppingMall: React.FC = () => {
     <>
       <ProjectTitle>쇼핑몰</ProjectTitle>
       <ProjectRole>[기능 구현 및 역할]</ProjectRole>
-      <ul>
-        <li>카드작성페이지, 카드조회페이지, 카드참여, 찜기능 등 구현</li>
-        <li>
-          <strong>S3 버킷으로 웹사이트 배포</strong>
-        </li>
-        <li>
-          <strong>Firebase Authentication</strong>을 활용한{" "}
-          <strong>로그인, 로그아웃, 회원가입 구현</strong>
-        </li>
-        <li>
-          상품 <strong>필터링</strong>, <strong>무한 스크롤</strong> 기능,{" "}
-          <strong>북마크toast message</strong> 알림 기능 구현
-        </li>
-        <li>
-          <strong>스타일드 컴포넌트</strong>를 활용하여 CSS 스타일링 및 레이아웃
-          디자인 진행
-        </li>
-        <li>
-          Firebase를 활용한 <strong>문의 게시판 CRUD 기능 구현</strong>
-        </li>
-      </ul>
+<Item
+                descriptions={[
+                  "S3 버킷으로 웹사이트 배포",
+                  "Firebase Authentication을 활용한 로그인,로그아웃, 회원가입 구현",
+                  "상품 필터링, 무한 스크롤 기능, 북마크toast message 알림 기능 구현",
+                  "스타일드 컴포넌트를 활용하여 CSS 스타일링 및 레이아웃 디자인 진행",
+                  "Firebase를 활용한 문의 게시판 CRUD 기능 구현",
+                ]}
+            />  
       <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
       {showModal && <Modal content={modalContent} toggleModal={toggleModal} />}
       <ProjectTable>

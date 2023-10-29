@@ -23,7 +23,7 @@ const Header = styled.h1`
 
 const DataContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-evenly ;
   align-items: center;
   margin-bottom: 30px;
   padding: 20px;

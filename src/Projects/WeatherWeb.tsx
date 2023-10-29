@@ -1,4 +1,4 @@
-// BusinessWebsiteProject.tsx
+import styled from "styled-components";
 
 import React from "react";
 
@@ -11,21 +11,43 @@ import {
   TableCell,
 } from "./SharedStyles";
 
+const DescriptionList = styled.ul`
+  margin-left: 25px;
+`;
+
+const DescriptionItem = styled.li`
+  margin-top: 5px;
+  font-size:18px;
+`;
+
+type ItemProps = {
+  descriptions: string[];
+};
+
+const Item: React.FC<ItemProps> = ({ descriptions }) => {
+  return (
+    <div>
+      <DescriptionList>
+        {descriptions.map((desc, index) => (
+          <DescriptionItem key={index}>{desc}</DescriptionItem>
+        ))}
+      </DescriptionList>
+    </div>
+  );
+};
+
 const WeatherWeb: React.FC = () => {
   return (
     <>
       <ProjectTitle>날씨 인터렉티브 웹</ProjectTitle>
       <ProjectRole>[기능 구현 및 역할]</ProjectRole>
-      <ul>
-        <li>
-          동적 배경 이미지 변화:사용자의 현재 위치의 날씨를 동적으로 배경
-          이미지를 변화하는 기능 개발
-        </li>
-        <li>openAPI 활용:사용자의 현재 위치를 기반으로 한 날씨 정보 제공</li>
-        <li>라이브러리없이 슬라이드 구현</li>
-        <li>할 일 목록 관리 기능:CRUD기능 구현</li>
-      </ul>
-
+      <Item
+        descriptions={[
+          "동적 배경 이미지 변화:사용자의 현재 위치의 날씨를 동적으로 배경 이미지를 변화하는 기능 개발",
+          "openAPI 활용:사용자의 현재 위치를 기반으로 한 날씨 정보 제공",
+          "할 일 목록 관리 기능:CRUD기능 구현",
+        ]}
+      />
       <ProjectTable>
         <ProjectRow>
           <TableCell>소개</TableCell>

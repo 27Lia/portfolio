@@ -16,13 +16,12 @@ const Title = styled.h1`
 const Projects: React.FC = () => {
   return (
     <Container>
-<Title>Projects</Title>
-<BusinessWebsiteProject />   
-<Celebee/>
-<ShoppingMall/>
-<WeatherWeb/>
-</Container>
-  
+      <Title>Projects</Title>
+      <BusinessWebsiteProject />
+      <Celebee />
+      <ShoppingMall />
+      <WeatherWeb />
+    </Container>
   );
 };
 

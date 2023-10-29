@@ -3,8 +3,11 @@ import Introduction from "../components/Introduction";
 import Career from "../components/Career";
 import Projects from "../components/Projects";
 import styled from "styled-components";
+import Education from "../components/Education";
+import Awards from "../components/ Awards";
+import Skills from "../components/Skills";
 
-const Ff = styled.div`
+const Default = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -12,11 +15,14 @@ align-items:center;
 
 const Main: React.FC = () => {
   return (
-    <Ff>
+    <Default>
         <Introduction />
         <Career />
         <Projects />
-    </Ff>
+        <Education/>
+        < Awards />
+        <Skills/>
+    </Default>
   );
 };
 
