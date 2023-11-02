@@ -1,28 +1,29 @@
 import React from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Box, Plane, PerspectiveCamera } from '@react-three/drei';
+import { Plane } from '@react-three/drei';
 import './App.css';
-import { Vector3 } from 'three';  // 추가된 부분
 
-const Avatar: React.FC = () => {
+
+const Floor: React.FC = () => {
   return (
-    <Box position={[0, 0.5, 0]} args={[1, 1, 1]}>
-      <meshStandardMaterial color={'blue'} />
-    </Box>
+    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]}>
+      <Plane args={[5, 5]} />
+      <meshBasicMaterial color={'#888888'} />
+    </mesh>
   );
 };
 
 function App() {
   return (
-    <div className="App">
-      <Canvas>
-        <ambientLight />
-        <PerspectiveCamera position={[0, 5, 5]} makeDefault />
-        <gridHelper args={[10, 10]} />
-        <Avatar />
-      </Canvas>
+    <div className='App'>
+    <Canvas>
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[2, 2, 2]} />
+      <Floor />
+    </Canvas>
     </div>
   );
 }
+
 
 export default App;
