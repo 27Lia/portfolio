@@ -1,105 +1,83 @@
-import React, { useState, useRef } from 'react';
-import styled from 'styled-components';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial } from '@react-three/drei';
-import * as random from 'maath/random/dist/maath-random.esm';
-import { useNavigate } from 'react-router-dom';
-import { Text } from '@react-three/drei';
+import React, { useRef, useState, useEffect } from 'react';
+import { Canvas, useThree } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import * as THREE from 'three';
 
 
-
-const Default = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-  position: relative;
-`;
-
-const Title = styled.h1`
-  background: linear-gradient(30deg, #c850c0, #ffcc70);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 15em;
-  font-weight: 500;
-`;
-
-function RouteButton() {
-  const navigate = useNavigate();
-  const [hovered, setHovered] = useState(false);
-
-  const handleClick = () => {
-    navigate('/sub');
-  };
-
-  const handlePointerOver = () => {
-    setHovered(true);
-  };
-
-  const handlePointerOut = () => {
-    setHovered(false);
-  };
-
+const Avatar: React.FC<{ position: [number, number, number] }> = ({ position }) => {
   return (
-    <group position={[0, -0.5, 0]} onPointerDown={handleClick} onPointerOver={handlePointerOver} onPointerOut={handlePointerOut}>
-      <mesh scale={hovered ? [1.2, 0.6, 0.1] : [1, 0.5, 0.1]}>
-        <boxGeometry args={[1, 0.5, 0.1]} />
-        <meshBasicMaterial color={hovered ? '#ffcc70' : '#f2cc86'} />
-      </mesh>
-      <Text
-        position={[0, 0, 0.05]}
-        fontSize={0.2}
-        color="#120720"
-        anchorX="center"
-        anchorY="middle"
-      >
-        Click Me!
-      </Text>
-    </group>
+    <mesh position={position}>
+      <sphereGeometry args={[50, 32, 32]} />
+      <meshStandardMaterial color="blue" />
+    </mesh>
   );
 }
 
-function Overlay() {
-  return (
-    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate3d(-50%,-50%,0)' }}>
-      <Title>HELLO</Title>
-    </div>
-  );
-}
-
-function Stars(props: any) {
-  const ref = useRef<THREE.Points>(null);
-  const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.5 }));
-  useFrame((state, delta) => {
-    if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
-    }
-  });
+const Grid: React.FC = () => {
+    const { scene } = useThree();
   
+    // 그리드를 생성
+    const size = 1000;
+    const divisions = 100;
+    const gridHelper = new THREE.GridHelper(size, divisions);
+  
+    // 그리드를 scene에 추가
+    scene.add(gridHelper);
+  
+    return null;
+  }
+  
+
+const MainPage: React.FC = () => {
+    const [avatarPosition, setAvatarPosition] = useState<[number, number, number]>([0, 0, 0]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      let x = avatarPosition[0];
+      let y = avatarPosition[1];
+      let z = avatarPosition[2];
+
+
+      switch (event.key) {
+        case 'ArrowUp':
+          z = Math.max(z - 30, -450);
+          break;
+        case 'ArrowDown':
+          z = Math.min(z + 30, 450);
+          break;
+        case 'ArrowLeft':
+          x = Math.max(x - 30, -450);
+          break;
+        case 'ArrowRight':
+          x = Math.min(x + 30, 450);
+          break;
+      }
+
+      setAvatarPosition([x, y, z]);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [avatarPosition]);
+
   return (
-    <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
-        <PointMaterial transparent color="#ffa0e0" size={0.005} sizeAttenuation={true} depthWrite={false} />
-      </Points>
-    </group>
+    <>
+      <Canvas style={{ height: "100vh", width: "100vw" }} camera={{ position: [2, 10, 6] }}>
+        <ambientLight />
+
+        <Grid />
+
+        <Avatar position={avatarPosition} />
+
+        <OrbitControls
+  minPolarAngle={Math.PI / 4}
+  maxPolarAngle={Math.PI / 3}
+/>      </Canvas>
+    </>
   );
-}
+};
 
-const MainPgae: React.FC = () => {
-  return (
-    <Default>
-      <Canvas camera={{ position: [0, 1, 2] }}>  
-      <color attach="background" args={['#120720']} />
-        <Stars />
-        <RouteButton />
-      </Canvas>
-      <Overlay />
-    </Default>
-  );
-}
-
-export default MainPgae;
-
+export default MainPage;

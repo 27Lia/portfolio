@@ -2,7 +2,6 @@
 
 import React from "react";
 import styled from "styled-components";
-import { Container } from "../components/Introduction";
 
 const Title = styled.h1`
   color: #333;
@@ -40,7 +39,7 @@ const EducationItem: React.FC<EducationItemProps> = ({ date, description }) => {
 
 const Education: React.FC = () => {
   return (
-    <Container>
+    <>
       <Title>Education</Title>
       <EducationItem
         date="2023.04.11 - 2023.10.05"
@@ -54,7 +53,7 @@ const Education: React.FC = () => {
         date="2018.03 - 2020.02"
         description="백석예술대학교 (졸업) / 음악학부"
       />
-    </Container>
+    </>
   );
 };
 

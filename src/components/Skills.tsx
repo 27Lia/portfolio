@@ -2,7 +2,6 @@
 
 import React from "react";
 import styled from "styled-components";
-import { Container } from "../components/Introduction";
 
 const Title = styled.h1`
   color: #333;
@@ -46,7 +45,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ skillName, descriptions }) => {
 
 const Skills: React.FC = () => {
   return (
-    <Container>
+    <>
       <Title>Skills</Title>
       <SkillItem
         skillName="HTML, CSS, JS"
@@ -88,7 +87,7 @@ const Skills: React.FC = () => {
         ]}
       />
       <SkillItem skillName="DESIGN" descriptions={["FIGMA"]} />
-    </Container>
+    </>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Container } from "../components/Introduction";
 
 const Title = styled.h1`
   color: #333;
@@ -32,7 +31,7 @@ const JobDescription = styled.p`
 
 const Career: React.FC = () => {
   return (
-    <Container>
+    <>
       <Title>Career</Title>
       <JobTitle>콘샐러드</JobTitle>
       <JobDetails>컨텐츠 운영팀 / 사원 / 2022.01 - 2023.02</JobDetails>
@@ -54,7 +53,7 @@ const Career: React.FC = () => {
       <JobDescription>
         - 인공지능 학습용 데이터 구축사업 참여 (음악 데이터 검수 및 편집)
       </JobDescription>
-    </Container>
+      </>
   );
 };
 

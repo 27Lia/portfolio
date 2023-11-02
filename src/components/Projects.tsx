@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Container } from "../components/Introduction";
 import BusinessWebsiteProject from "../Projects/BusinessWebsiteProject";
 import Celebee from "../Projects/Celebee";
 import ShoppingMall from "../Projects/ShoppingMall";
@@ -15,13 +14,13 @@ const Title = styled.h1`
 
 const Projects: React.FC = () => {
   return (
-    <Container>
+    <>
       <Title>Projects</Title>
       <BusinessWebsiteProject />
       <Celebee />
       <ShoppingMall />
       <WeatherWeb />
-    </Container>
+    </>
   );
 };
 

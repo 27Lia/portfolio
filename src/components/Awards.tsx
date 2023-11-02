@@ -1,8 +1,6 @@
-// Education.tsx
 
 import React from "react";
 import styled from "styled-components";
-import { Container } from "../components/Introduction";
 
 const Title = styled.h1`
   color: #333;
@@ -18,7 +16,7 @@ const Description = styled.div`
 
 const Awards: React.FC = () => {
   return (
-    <Container>
+  <>
       <Title>Awards</Title>
       <SubTitle>다음색 보컬데이터를 활용한 Ai 아이디어 해커톤 2위</SubTitle>
       <br></br>
@@ -27,7 +25,7 @@ const Awards: React.FC = () => {
         메이커 '로고봇' 통해 음악장르, 보컬톤, 상점종류 등을 선택하는 기획으로
         해커톤에 참가하였습니다.
       </Description>
-    </Container>
+      </>
   );
 };
 
