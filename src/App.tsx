@@ -4,6 +4,7 @@ import './App.css';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
 import { Plane } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 
 
 const Avatar: React.FC = () => {
@@ -34,6 +35,7 @@ function App() {
       <directionalLight position={[2, 2, 2]} />
       <Floor />
       <Avatar />
+      <OrbitControls />
     </Canvas>
     </div>
   );
