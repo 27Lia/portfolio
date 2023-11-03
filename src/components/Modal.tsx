@@ -1,3 +1,4 @@
+import React from 'react'; 
 import styled from "styled-components";
 
 const ModalBackground = styled.div`
@@ -29,11 +30,11 @@ interface Props {
   }
   
   const Modal: React.FC<Props> = ({ toggleModal, content }) => {
-    return  (
+    return (
       <ModalBackground onClick={toggleModal}>
         <ModalContent onClick={(e) => e.stopPropagation()}>{content}</ModalContent>
       </ModalBackground>
-    ) 
+    );
   };
   
   export default Modal;
