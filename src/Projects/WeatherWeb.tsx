@@ -10,6 +10,7 @@ import {
   ProjectRow,
   TableCell,
   Default,
+  ProjectBox,
 } from "../Styles/SharedStyles";
 
 const DescriptionList = styled.ul`
@@ -40,6 +41,8 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
 const WeatherWeb: React.FC = () => {
   return (
     <Default>
+            <ProjectBox>
+
       <ProjectTitle>날씨 인터렉티브 웹</ProjectTitle>
       <ProjectRole>[기능 구현 및 역할]</ProjectRole>
       <Item
@@ -49,6 +52,8 @@ const WeatherWeb: React.FC = () => {
           "할 일 목록 관리 기능:CRUD기능 구현",
         ]}
       />
+            </ProjectBox>
+
       <ProjectTable>
         <ProjectRow>
           <TableCell>소개</TableCell>

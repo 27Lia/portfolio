@@ -1,17 +1,35 @@
 import React, { forwardRef } from 'react';
 import styled from "styled-components";
+import ScrollButton from '../Styles/ScrollButton';
 
-const Default = styled.div `
-  height:100vh;
+
+const IntroductionBox = styled.div` 
+box-shadow:2px 4px 6px rgba(0,0,0,0.3);
+width:80%;
+border-radius:20px;
+padding:40px;
 `
+
+const Default = styled.div`
+  height:100vh;
+`;
+
+const Box = styled.div`
+  height:95vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+`;
+
+
 
 const Title = styled.h1`
   color: #333;
   font-size: 32px;
   text-align: center;
   margin-bottom: 20px;
-  background-color:yellow;
-
+  font-size:3rem;
 `;
 
 const JobTitle = styled.h2`
@@ -37,13 +55,17 @@ const JobDescription = styled.p`
 
 interface CareerProps {
   scrollToRef: (ref: React.RefObject<HTMLDivElement>) => void;
+  projectsRef: React.RefObject<HTMLDivElement>;
+
 }
 const Career = forwardRef<HTMLDivElement, CareerProps>((props, ref) => {
 
   return (
     <div ref={ref}>      
     <Default>
+      <Box>
       <Title>Career</Title>
+      <IntroductionBox>
       <JobTitle>콘샐러드</JobTitle>
       <JobDetails>컨텐츠 운영팀 / 사원 / 2022.01 - 2023.02</JobDetails>
       <JobRole>담당 업무</JobRole>
@@ -55,6 +77,8 @@ const Career = forwardRef<HTMLDivElement, CareerProps>((props, ref) => {
         - 데이터 관리 및 모니터링<br/>
         자사 CMS내 이슈 발생 또는 새로운 기능 추가 시 데이터를 검토하고 실서비스를 모니터링하며 QA와 흡사한 업무를 진행하였습니다.
       </JobDescription>
+      </IntroductionBox>
+      <IntroductionBox>
       <JobTitle>한국음악실연자연합회</JobTitle>
       <JobDetails>회원관리팀 / 인턴 / 2021.03 - 2021.12</JobDetails>
       <JobRole>담당 업무</JobRole>
@@ -64,6 +88,9 @@ const Career = forwardRef<HTMLDivElement, CareerProps>((props, ref) => {
       <JobDescription>
         - 인공지능 학습용 데이터 구축사업 참여 (음악 데이터 검수 및 편집)
       </JobDescription>
+      </IntroductionBox>
+      </Box>
+      <ScrollButton onClick={() => props.scrollToRef(props.projectsRef)}>Go to Projects</ScrollButton>
       </Default>
       </div>
   );

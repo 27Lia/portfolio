@@ -1,6 +1,6 @@
 // Skills.tsx
 
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 
 const Title = styled.h1`
@@ -43,9 +43,14 @@ const SkillItem: React.FC<SkillItemProps> = ({ skillName, descriptions }) => {
   );
 };
 
-const Skills: React.FC = () => {
+interface SkillsProps {
+  scrollToRef: (ref: React.RefObject<HTMLDivElement>) => void;
+  skillsRef: React.RefObject<HTMLDivElement>;
+}
+
+const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
   return (
-    <>
+    <div ref={ref}>
       <Title>Skills</Title>
       <SkillItem
         skillName="HTML, CSS, JS"
@@ -87,8 +92,8 @@ const Skills: React.FC = () => {
         ]}
       />
       <SkillItem skillName="DESIGN" descriptions={["FIGMA"]} />
-    </>
+    </div>
   );
-};
+});
 
 export default Skills;

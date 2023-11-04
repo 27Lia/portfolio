@@ -21,6 +21,8 @@ import {
   ProjectRow,
   TableCell,
   Default,
+  ProjectBox,
+
 } from "../Styles/SharedStyles";
 
 const DescriptionList = styled.ul`
@@ -65,6 +67,10 @@ const Celebee: React.FC = () => {
   // 콘텐트 안에 들어갈 내용 정의
   const modalContent = (
     <>
+
+<ButtonBox>
+        <CloseButton onClick={toggleModal}>닫기</CloseButton>
+      </ButtonBox>
       <ImageSlider images={images} />
       <ModalHeader>2. 하루모임</ModalHeader>
       <Section>
@@ -118,14 +124,13 @@ const Celebee: React.FC = () => {
         </SubSection>
       </Section>
 
-      <ButtonBox>
-        <CloseButton onClick={toggleModal}>닫기</CloseButton>
-      </ButtonBox>
     </>
   );
 
   return (
     <Default>
+            <  ProjectBox>
+
       <ProjectTitle>하루모임</ProjectTitle>
       <ProjectRole>[기능 구현 및 역할]</ProjectRole>
       <Item
@@ -137,6 +142,8 @@ const Celebee: React.FC = () => {
       />
       <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
       {showModal && <Modal content={modalContent} toggleModal={toggleModal} />}
+      </  ProjectBox>
+
       <ProjectTable>
         <ProjectRow>
           <TableCell>소개</TableCell>

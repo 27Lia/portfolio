@@ -9,6 +9,7 @@ import {
   ProjectRow,
   TableCell,
   Default,
+  ProjectBox,
 } from "../Styles/SharedStyles";
 
 
@@ -40,6 +41,7 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
 const BusinessWebsiteProject: React.FC = () => {
   return (
     <Default>
+      <ProjectBox>
       <ProjectTitle>업체 홈페이지</ProjectTitle>
       <ProjectRole>기능 구현 및 역할</ProjectRole>
       <Item
@@ -50,6 +52,7 @@ const BusinessWebsiteProject: React.FC = () => {
           "반응형웹 구현",
         ]}
       />
+      </ProjectBox>
       <ProjectTable>
         <ProjectRow>
           <TableCell>소개</TableCell>

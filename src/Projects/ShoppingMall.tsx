@@ -13,6 +13,7 @@ import {
   ProjectRow,
   TableCell,
   Default,
+  ProjectBox,
 } from "../Styles/SharedStyles";
 
 const DescriptionList = styled.ul`
@@ -59,6 +60,9 @@ const ShoppingMall: React.FC = () => {
 
   const modalContent = (
     <>
+          <ButtonBox>
+        <CloseButton onClick={toggleModal}>닫기</CloseButton>
+      </ButtonBox>
               <ImageSlider images={images} />
       <ModalHeader>쇼핑몰 콘텐츠 최적화</ModalHeader>
       <Section>
@@ -119,15 +123,15 @@ const ShoppingMall: React.FC = () => {
         </SubSection>
       </Section>
   
-      <ButtonBox>
-        <CloseButton onClick={toggleModal}>닫기</CloseButton>
-      </ButtonBox>
+
     </>
   );
   
 
   return (
     <Default>
+            <ProjectBox>
+
       <ProjectTitle>쇼핑몰</ProjectTitle>
       <ProjectRole>[기능 구현 및 역할]</ProjectRole>
 <Item
@@ -141,6 +145,8 @@ const ShoppingMall: React.FC = () => {
             />  
       <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
       {showModal && <Modal content={modalContent} toggleModal={toggleModal} />}
+      </ProjectBox>
+
       <ProjectTable>
         <ProjectRow>
           <TableCell>소개</TableCell>

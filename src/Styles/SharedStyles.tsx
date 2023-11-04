@@ -2,16 +2,26 @@
 import styled from "styled-components";
 
 export const Default = styled.div`
-  width: 100%;
+  width: 80%;
+  overflow:auto;
   margin: 0 auto;
-  padding: 20px;
-  min-height: 60vh; // Minimum height to ensure space for the table
+  padding: 40px;
+  max-height: 800px;
+  box-shadow:2px 4px 6px rgba(0,0,0,0.3);
+  margin-bottom:20px;
+  border-radius:30px;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
 `;
 
+export const ProjectBox = styled.div`
+  width: 40%;
+  
+`
 export const ProjectTitle = styled.h2`
   font-size: 28px;
   color: #333;
-  margin: 50px 0 25px;
   border-bottom: 2px solid #007BFF;
   display: inline-block;
 `;
@@ -33,7 +43,7 @@ export const ProjectRole = styled.div`
 `;
 
 export const ProjectTable = styled.table`
-  width: 100%;
+  width: 50%;
   border-collapse: collapse;
   margin: 30px 0;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);

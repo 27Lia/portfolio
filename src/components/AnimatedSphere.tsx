@@ -29,7 +29,7 @@ const AnimatedSphere = () => {
       >
         <sphereGeometry args={[1, 64, 64]} />
         <MeshDistortMaterial
-          color={clicked ? "#ff0000" : "#6988ee"}
+          color={clicked ? "#ed5454" : "#fffb00"}
           distort={0.9}
           speed={2}
         />

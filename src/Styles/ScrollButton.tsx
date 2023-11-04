@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 const ScrollButton = styled.button`
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  bottom: 0px;
   left: 50%; 
   transform: translateX(-50%);
   padding: 0.8rem 1.6rem;
-  margin-top: 1rem;
   background-color: #007bff;
   color: white;
   border: none;
@@ -14,7 +13,7 @@ const ScrollButton = styled.button`
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.2s;
-  z-index:999;
+  z-index:0;
   width:250px;
   margin-bottom:20px;
   &:hover {
