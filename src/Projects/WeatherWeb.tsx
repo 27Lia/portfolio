@@ -9,7 +9,8 @@ import {
   ProjectTable,
   ProjectRow,
   TableCell,
-} from "./SharedStyles";
+  Default,
+} from "../Styles/SharedStyles";
 
 const DescriptionList = styled.ul`
   margin-left: 25px;
@@ -38,7 +39,7 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
 
 const WeatherWeb: React.FC = () => {
   return (
-    <>
+    <Default>
       <ProjectTitle>날씨 인터렉티브 웹</ProjectTitle>
       <ProjectRole>[기능 구현 및 역할]</ProjectRole>
       <Item
@@ -78,7 +79,7 @@ const WeatherWeb: React.FC = () => {
           <TableCell>HTML, CSS, JS, openAPI</TableCell>
         </ProjectRow>
       </ProjectTable>
-    </>
+    </Default>
   );
 };
 

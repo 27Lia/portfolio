@@ -1,6 +1,13 @@
 
 import styled from "styled-components";
 
+export const Default = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 60vh; // Minimum height to ensure space for the table
+`;
+
 export const ProjectTitle = styled.h2`
   font-size: 28px;
   color: #333;
@@ -30,6 +37,7 @@ export const ProjectTable = styled.table`
   border-collapse: collapse;
   margin: 30px 0;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+
 `;
 
 export const ProjectRow = styled.tr`
@@ -49,3 +57,4 @@ export const TableCell = styled.td`
     color: #555;
   }
   `;
+

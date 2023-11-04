@@ -38,7 +38,7 @@ const AnimatedSphere = () => {
         <Text
           position={[0, 0, 3]}
           fontSize={1}
-          color="black" // You can specify the color directly in the Text component
+          color="black" 
           anchorX="center"
           anchorY="middle"
         >

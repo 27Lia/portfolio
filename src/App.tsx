@@ -8,7 +8,7 @@ import styled from "styled-components";
 import ScrollButton from "./Styles/ScrollButton";
 
 const Default = styled.div`
-position:relative;
+  position: relative;
   margin: 0 auto;
 `;
 
@@ -27,32 +27,33 @@ const App = () => {
 
   return (
     <>
-          <Default>
-      <CanvasContainer>
-      <ScrollButton onClick={() => scrollToRef(introRef)}>
-      Go to Introduction
-      </ScrollButton>
-        
-        <Canvas>
-          <ambientLight intensity={4} />
-          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-          <pointLight position={[-10, -10, -10]} />
-          <AnimatedSphere />
-        </Canvas>
-      </CanvasContainer>
+      <Default>
+        <CanvasContainer>
+          <ScrollButton onClick={() => scrollToRef(introRef)}>
+            Go to Introduction
+          </ScrollButton>
+          <Canvas>
+            <ambientLight intensity={4} />
+            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+            <pointLight position={[-10, -10, -10]} />
+            <AnimatedSphere />
+          </Canvas>
+        </CanvasContainer>
       </Default>
       <Default>
-
         <div>
           <Introduction
             scrollToRef={scrollToRef}
             projectsRef={projectsRef}
             ref={introRef}
           />
-          <Projects scrollToRef={scrollToRef} ref={projectsRef} />
+          <Projects
+            scrollToRef={scrollToRef}
+            projectsRef={projectsRef}
+            ref={projectsRef}
+          />
         </div>
-        </Default>
-
+      </Default>
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from 'react';
 import styled from "styled-components";
 
 const Default = styled.div `
@@ -35,8 +35,13 @@ const JobDescription = styled.p`
   margin-left: 20px;
 `;
 
-const Career: React.FC = () => {
+interface CareerProps {
+  scrollToRef: (ref: React.RefObject<HTMLDivElement>) => void;
+}
+const Career = forwardRef<HTMLDivElement, CareerProps>((props, ref) => {
+
   return (
+    <div ref={ref}>      
     <Default>
       <Title>Career</Title>
       <JobTitle>콘샐러드</JobTitle>
@@ -60,7 +65,8 @@ const Career: React.FC = () => {
         - 인공지능 학습용 데이터 구축사업 참여 (음악 데이터 검수 및 편집)
       </JobDescription>
       </Default>
+      </div>
   );
-};
+});
 
 export default Career;

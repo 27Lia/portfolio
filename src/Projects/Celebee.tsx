@@ -20,7 +20,8 @@ import {
   ProjectTable,
   ProjectRow,
   TableCell,
-} from "./SharedStyles";
+  Default,
+} from "../Styles/SharedStyles";
 
 const DescriptionList = styled.ul`
   margin-left: 25px;
@@ -124,7 +125,7 @@ const Celebee: React.FC = () => {
   );
 
   return (
-    <>
+    <Default>
       <ProjectTitle>하루모임</ProjectTitle>
       <ProjectRole>[기능 구현 및 역할]</ProjectRole>
       <Item
@@ -169,7 +170,7 @@ const Celebee: React.FC = () => {
           <TableCell>ID: test123@gmail.com | PW: 123123123</TableCell>
         </ProjectRow>
       </ProjectTable>
-    </>
+    </Default>
   );
 };
 

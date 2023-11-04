@@ -16,6 +16,7 @@ const ScrollButton = styled.button`
   transition: background-color 0.2s;
   z-index:999;
   width:250px;
+  margin-bottom:20px;
   &:hover {
     background-color: #0056b3;
   }

@@ -12,7 +12,8 @@ import {
   ProjectTable,
   ProjectRow,
   TableCell,
-} from "./SharedStyles";
+  Default,
+} from "../Styles/SharedStyles";
 
 const DescriptionList = styled.ul`
     margin-left: 25px;
@@ -126,7 +127,7 @@ const ShoppingMall: React.FC = () => {
   
 
   return (
-    <>
+    <Default>
       <ProjectTitle>쇼핑몰</ProjectTitle>
       <ProjectRole>[기능 구현 및 역할]</ProjectRole>
 <Item
@@ -172,7 +173,7 @@ const ShoppingMall: React.FC = () => {
           <TableCell>ID: test@gmail.com | PW: test1234!</TableCell>
         </ProjectRow>
       </ProjectTable>
-    </>
+    </Default>
   );
 };
 export default ShoppingMall;
