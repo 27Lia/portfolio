@@ -21,12 +21,15 @@ const EdicationBox = styled.div`
   width: 80%;
   border-radius: 20px;
   padding: 40px;
+  
 `;
+
 const Title = styled.h1`
   color: #333;
-  font-size: 32px;
   text-align: center;
   margin-bottom: 20px;
+  font-size: 3rem;
+
 `;
 
 const ItemWrapper = styled.div`
