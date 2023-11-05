@@ -11,6 +11,8 @@ const ModalBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+
 `;
 
 const ModalContent = styled.div`
@@ -22,7 +24,6 @@ const ModalContent = styled.div`
   overflow-y: auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
-  z-index:1;
 `;
 
 interface Props {

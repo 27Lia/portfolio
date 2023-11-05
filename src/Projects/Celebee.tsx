@@ -22,7 +22,6 @@ import {
   TableCell,
   Default,
   ProjectBox,
-
 } from "../Styles/SharedStyles";
 
 const DescriptionList = styled.ul`
@@ -31,7 +30,7 @@ const DescriptionList = styled.ul`
 
 const DescriptionItem = styled.li`
   margin-top: 5px;
-  font-size:18px;
+  font-size: 18px;
 `;
 
 type ItemProps = {
@@ -51,7 +50,7 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
 };
 
 const Celebee: React.FC = () => {
-  const [showModal, setShowModal] = useState(false); // 모달의 상태를 관리
+  const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -64,11 +63,9 @@ const Celebee: React.FC = () => {
     "images/celebee4.png",
   ];
 
-  // 콘텐트 안에 들어갈 내용 정의
   const modalContent = (
     <>
-
-<ButtonBox>
+      <ButtonBox>
         <CloseButton onClick={toggleModal}>닫기</CloseButton>
       </ButtonBox>
       <ImageSlider images={images} />
@@ -123,26 +120,26 @@ const Celebee: React.FC = () => {
           </Description>
         </SubSection>
       </Section>
-
     </>
   );
 
   return (
     <Default>
-            <  ProjectBox>
-
-      <ProjectTitle>하루모임</ProjectTitle>
-      <ProjectRole>[기능 구현 및 역할]</ProjectRole>
-      <Item
-        descriptions={[
-          "카드작성페이지, 카드조회페이지, 카드참여, 찜기능 등",
-          "컴포넌트 기반 아키텍처를 통해 UI를 모듈화하고 재사용 가능한 컴포넌트를 개발하며, 코드의 가독성과 유지 보수성을 향상시킬 수 있습니다.",
-          "다양한 라이브러리를 통합하여 다양한 기능을 추가하고 웹 애플리케이션의 확장성을 높일수있습니다.",
-        ]}
-      />
-      <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
-      {showModal && <Modal content={modalContent} toggleModal={toggleModal} />}
-      </  ProjectBox>
+      <ProjectBox>
+        <ProjectTitle>하루모임</ProjectTitle>
+        <ProjectRole>[기능 구현 및 역할]</ProjectRole>
+        <Item
+          descriptions={[
+            "카드작성페이지, 카드조회페이지, 카드참여, 찜기능 등",
+            "컴포넌트 기반 아키텍처를 통해 UI를 모듈화하고 재사용 가능한 컴포넌트를 개발하며, 코드의 가독성과 유지 보수성을 향상시킬 수 있습니다.",
+            "다양한 라이브러리를 통합하여 다양한 기능을 추가하고 웹 애플리케이션의 확장성을 높일수있습니다.",
+          ]}
+        />
+        <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
+        {showModal && (
+          <Modal content={modalContent} toggleModal={toggleModal} />
+        )}
+      </ProjectBox>
 
       <ProjectTable>
         <ProjectRow>

@@ -13,7 +13,6 @@ const ScrollButton = styled.button`
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.2s;
-  z-index:0;
   width:250px;
   margin-bottom:20px;
   &:hover {

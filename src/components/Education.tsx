@@ -5,7 +5,6 @@ import Awards from "./Awards";
 
 const Default = styled.div`
   height: 100vh;
-  overflow: auto;
 `;
 
 const Box = styled.div`
