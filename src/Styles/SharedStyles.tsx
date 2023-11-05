@@ -4,9 +4,9 @@ import styled from "styled-components";
 export const Default = styled.div`
   overflow:auto;
   margin: 0 auto;
-  padding: 40px;
+  padding: 20px;
   max-height: 800px;
-  box-shadow:2px 4px 6px rgba(0,0,0,0.3);
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
   margin-bottom:20px;
   border-radius:30px;
   display:flex;

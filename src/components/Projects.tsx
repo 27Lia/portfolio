@@ -9,12 +9,12 @@ import ScrollButton from "../Styles/ScrollButton";
 import { Title } from "../Styles/SharedStyles";
 
 const Default = styled.div`
-  height: 100vh;
-  overflow: auto;
-  width:80%;
+  min-height: 100vh; 
+  width: 80%;
   margin: 0 auto;
+  position: relative;
+  padding-bottom: 80px; 
 `;
-
 
 
 interface ProjectsProps {

@@ -12,7 +12,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  width: 20%;
+  width: 40%;
 
   &:hover {
     transform: scale(1.02);

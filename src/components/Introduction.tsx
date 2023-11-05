@@ -4,12 +4,11 @@ import ScrollButton from "../Styles/ScrollButton";
 import { Title } from "../Styles/SharedStyles";
 
 const Default = styled.div`
-  height:100vh;
-  margin: 0 auto;
+  position: relative;
 `;
 
 const Box = styled.div`
-  height:95vh;
+  height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -87,7 +86,6 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>((props, ref) 
     <div ref={ref}>
       <Default>
       <Box>
-
         <Title>Introduction</Title>
         <DataContainer>
           <div>
@@ -105,12 +103,11 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>((props, ref) 
             <Text>이전 직장에서 업무를 수행하면서 <strong>반복적인 작업에 직면</strong>하게 되었고, <strong>더 효율적인 방법이 없을까?</strong> 하는 호기심으로 인해 개발을 시작하게 되었습니다.</Text>
             </TextBox>
         </DataContainer>
-  
+        <ScrollButton onClick={() => props.scrollToRef(props.careerRef)}>Go to Career</ScrollButton>
 
         </Box>
-        <ScrollButton onClick={() => props.scrollToRef(props.careerRef)}>Go to Career</ScrollButton>
-      </Default>
 
+      </Default>
     </div>
   );
 });

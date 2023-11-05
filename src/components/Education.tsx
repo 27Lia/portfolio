@@ -5,18 +5,13 @@ import Awards from "./Awards";
 import { Title } from "../Styles/SharedStyles";
 
 const Default = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   width:80%;
   margin: 0 auto;
+  position: relative; 
+
 `;
 
-const Box = styled.div`
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
 
 const EdicationBox = styled.div`
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
@@ -62,7 +57,6 @@ const Education = forwardRef<HTMLDivElement, EdicationProps>((props, ref) => {
   return (
     <div ref={ref}>
       <Default>
-        <Box>
           <EdicationBox>
             <Title>Education</Title>
             <EducationItem
@@ -81,7 +75,6 @@ const Education = forwardRef<HTMLDivElement, EdicationProps>((props, ref) => {
           <EdicationBox>
           <Awards/>
           </EdicationBox>
-        </Box>
         <ScrollButton onClick={() => props.scrollToRef(props.skillsRef)}>
           Go to Skills
         </ScrollButton>

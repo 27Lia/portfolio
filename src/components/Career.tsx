@@ -7,23 +7,17 @@ import { Title } from '../Styles/SharedStyles';
 const IntroductionBox = styled.div` 
 box-shadow:2px 4px 6px rgba(0,0,0,0.3);
 border-radius:20px;
-padding:40px;
+padding:20px;
 width:100%;
 `
 
 const Default = styled.div`
-  height:100vh;
   width:80%;
   margin: 0 auto;
+  position: relative; 
+  min-height: 100vh;
 `;
 
-const Box = styled.div`
-  height:95vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-`;
 
 
 const JobTitle = styled.h2`
@@ -60,7 +54,6 @@ const Career = forwardRef<HTMLDivElement, CareerProps>((props, ref) => {
   return (
     <div ref={ref}>      
     <Default>
-      <Box>
       <Title>Career</Title>
       <IntroductionBox>
       <JobTitle>콘샐러드</JobTitle>
@@ -86,7 +79,6 @@ const Career = forwardRef<HTMLDivElement, CareerProps>((props, ref) => {
         - 인공지능 학습용 데이터 구축사업 참여 (음악 데이터 검수 및 편집)
       </JobDescription>
       </IntroductionBox>
-      </Box>
       <ScrollButton onClick={() => props.scrollToRef(props.projectsRef)}>Go to Projects</ScrollButton>
       </Default>
       </div>

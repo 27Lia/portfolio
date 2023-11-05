@@ -12,7 +12,12 @@ import Skills from "./components/Skills";
 
 
 const CanvasContainer = styled.div`
-  height: 95vh;
+  height: 100vh;
+`;
+const Container = styled.div`
+  height: 100vh;
+  position: relative; 
+
 `;
 
 const App = () => {
@@ -27,7 +32,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <Container>
         <CanvasContainer>
           <Canvas>
             <ambientLight intensity={5} />
@@ -64,7 +69,7 @@ const App = () => {
           skillsRef={skillsRef}
           ref={skillsRef}
         />
-    </>
+    </Container>
   );
 };
 
