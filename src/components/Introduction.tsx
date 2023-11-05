@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, { forwardRef } from 'react';
 import ScrollButton from "../Styles/ScrollButton";
+import { Title } from "../Styles/SharedStyles";
 
 const Default = styled.div`
   height:100vh;
@@ -19,15 +20,6 @@ display:flex;
 flex-direction:column;
 margin-top:20px;
 `
-
-const Header = styled.h1`
-  color: #333;
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-`;
 
 const DataContainer = styled.div`
   display: flex;
@@ -95,7 +87,7 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>((props, ref) 
       <Default>
       <Box>
 
-        <Header>Introduction</Header>
+        <Title>Introduction</Title>
         <DataContainer>
           <div>
           <Img src="../img.jpeg" alt="Profile Image" />

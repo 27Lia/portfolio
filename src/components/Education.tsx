@@ -2,6 +2,7 @@ import React, { forwardRef } from "react";
 import styled from "styled-components";
 import ScrollButton from "../Styles/ScrollButton";
 import Awards from "./Awards";
+import { Title } from "../Styles/SharedStyles";
 
 const Default = styled.div`
   height: 100vh;
@@ -21,14 +22,6 @@ const EdicationBox = styled.div`
   border-radius: 20px;
   padding: 40px;
   
-`;
-
-const Title = styled.h1`
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 3rem;
-
 `;
 
 const ItemWrapper = styled.div`

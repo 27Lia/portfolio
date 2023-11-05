@@ -1,13 +1,7 @@
 
 import React from "react";
 import styled from "styled-components";
-
-const Title = styled.h1`
-  color: #333;
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 20px;
-`;
+import { Title } from "../Styles/SharedStyles";
 
 const SubTitle = styled.h3``;
 const Description = styled.div`

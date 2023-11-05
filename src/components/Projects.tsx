@@ -6,6 +6,7 @@ import Celebee from "../Projects/Celebee";
 import ShoppingMall from "../Projects/ShoppingMall";
 import WeatherWeb from "../Projects/WeatherWeb";
 import ScrollButton from "../Styles/ScrollButton";
+import { Title } from "../Styles/SharedStyles";
 
 const Default = styled.div`
   height: 100vh;
@@ -13,14 +14,7 @@ const Default = styled.div`
   
 `;
 
-const Header = styled.h1`
-  color: #333;
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-`;
+
 
 interface ProjectsProps {
   scrollToRef: (ref: React.RefObject<HTMLDivElement>) => void;
@@ -32,7 +26,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
   return (
     <div ref={ref}>
       <Default>
-        <Header>Projects</Header>
+        <Title>Projects</Title>
         <BusinessWebsiteProject />
         <Celebee />
         <ShoppingMall />

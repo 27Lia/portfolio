@@ -15,6 +15,15 @@ export const Default = styled.div`
   align-items:center;
 `;
 
+export const Title = styled.h1`
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px; 
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1.2; 
+`;
+
 export const ProjectBox = styled.div`
   width: 40%;
   
