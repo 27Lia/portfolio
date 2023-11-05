@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react"; // Import FC
+import React, { useRef, useState } from "react"; 
 import { Mesh } from "three";
 import { useSpring, animated as a } from "@react-spring/three";
 import { MeshDistortMaterial } from "@react-three/drei";
-import { Text } from "@react-three/drei"; // Make sure to import Text from drei
+import { Text } from "@react-three/drei"; 
 
 const AnimatedSphere = () => {
   const meshRef = useRef<Mesh>(null);
@@ -20,12 +20,15 @@ const AnimatedSphere = () => {
     setClicked(true);
   };
 
+
+  
   return (
     <>
       <a.mesh
         ref={meshRef}
         scale={scale.to((s) => [s, s, s])}
         onClick={handlePointerDown} // 클릭 이벤트 처리
+
       >
         <sphereGeometry args={[1, 64, 64]} />
         <MeshDistortMaterial
@@ -34,6 +37,20 @@ const AnimatedSphere = () => {
           speed={2}
         />
       </a.mesh>
+      
+      {/* 클릭되지 않았을 때만 "Click Me!" 텍스트를 보여줌 */}
+    {!clicked && (
+      <Text
+        position={[0, 0, 2]}
+        fontSize={0.5}
+        color="black" 
+        anchorX="center"
+        anchorY="middle"
+      >
+        Click Me!
+      </Text>
+    )}
+    
       {explode && (
         <Text
           position={[0, 0, 3]}

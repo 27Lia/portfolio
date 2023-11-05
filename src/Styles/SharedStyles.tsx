@@ -2,7 +2,6 @@
 import styled from "styled-components";
 
 export const Default = styled.div`
-  width: 80%;
   overflow:auto;
   margin: 0 auto;
   padding: 40px;

@@ -11,7 +11,8 @@ import { Title } from "../Styles/SharedStyles";
 const Default = styled.div`
   height: 100vh;
   overflow: auto;
-  
+  width:80%;
+  margin: 0 auto;
 `;
 
 

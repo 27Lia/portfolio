@@ -5,6 +5,7 @@ import { Title } from "../Styles/SharedStyles";
 
 const Default = styled.div`
   height:100vh;
+  margin: 0 auto;
 `;
 
 const Box = styled.div`
@@ -30,8 +31,8 @@ const DataContainer = styled.div`
   padding: 1.5rem;
   background: white;
   border-radius: 15px;
-  width:80%;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+  width:80%;
 
   div {
     display:flex;

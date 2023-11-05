@@ -6,6 +6,8 @@ import { Title } from "../Styles/SharedStyles";
 
 const Default = styled.div`
   height: 100vh;
+  width:80%;
+  margin: 0 auto;
 `;
 
 const Box = styled.div`
@@ -18,9 +20,9 @@ const Box = styled.div`
 
 const EdicationBox = styled.div`
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
-  width: 80%;
   border-radius: 20px;
   padding: 40px;
+  width:100%;
   
 `;
 
