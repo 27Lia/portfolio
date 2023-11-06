@@ -9,7 +9,7 @@ const EdicationBox = styled.div`
   border-radius: 20px;
   padding: 40px;
   width:80%;
-  
+  margin-bottom:25px;
 `;
 
 const ItemWrapper = styled.div`
@@ -63,9 +63,7 @@ const Education = forwardRef<HTMLDivElement, EdicationProps>((props, ref) => {
               description="백석예술대학교 (졸업) / 음악학부"
             />
           </EdicationBox>
-          <EdicationBox>
           <Awards/>
-          </EdicationBox>
         <ScrollButton onClick={() => props.scrollToRef(props.skillsRef)}>
           Go to Skills
         </ScrollButton>

@@ -1,17 +1,26 @@
 
 import React from "react";
 import styled from "styled-components";
-import { Title } from "../Styles/SharedStyles";
+import {  Title } from "../Styles/SharedStyles";
 
 const SubTitle = styled.h3``;
 const Description = styled.div`
   font-size: 18px;
 `;
 
+const Box = styled.div`
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  width:80%;
+  margin-top:10px;
+`;
+
 const Awards: React.FC = () => {
   return (
   <>
       <Title>Awards</Title>
+      <Box>
       <SubTitle>다음색 보컬데이터를 활용한 Ai 아이디어 해커톤 2위</SubTitle>
       <br></br>
       <Description>
@@ -19,6 +28,7 @@ const Awards: React.FC = () => {
         메이커 '로고봇' 통해 음악장르, 보컬톤, 상점종류 등을 선택하는 기획으로
         해커톤에 참가하였습니다.
       </Description>
+      </Box>
       </>
   );
 };

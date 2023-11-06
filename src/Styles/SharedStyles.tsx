@@ -2,13 +2,13 @@
 import styled from "styled-components";
 
 export const ProjectDefault = styled.div`
-width:60%;
+  width:60%;
   overflow:auto;
   margin: 0 auto;
   padding: 10px;
-  max-height: 600px;
+  height: 500px;
+  max-height: 500px;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
-  margin-bottom:20px;
   border-radius:30px;
   display:flex;
   justify-content:space-around;
@@ -26,8 +26,7 @@ export const Default = styled.div`
 export const Title = styled.h1`
   color: #333;
   text-align: center;
-  margin-bottom: 40px; 
-  font-size: 3.5rem;
+  font-size: 2.7rem;
   font-weight: 600;
   
 `;
@@ -47,10 +46,8 @@ export const ProjectTitle = styled.h2`
 `;
 
 export const Link = styled.a`
-  color: #007BFF;
   text-decoration: underline;
-  transition: color 0.2s;
-
+  color:#333;
 `;
 
 export const ProjectRole = styled.div`

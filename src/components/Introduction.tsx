@@ -17,9 +17,10 @@ const DataContainer = styled.div`
   justify-content: center;
   margin-bottom: 2rem;
   padding: 1.5rem;
-  border-radius: 25px; /* More pronounced rounded corners */
-  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.2); /* Smoother box-shadow */
+  border-radius: 25px; 
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.2); 
   width: 80%;
+  margin-top:10px;
 
   div {
     display: flex;
@@ -34,30 +35,37 @@ const Img = styled.img`
   height: 200px;
   margin-right: 2rem;
   object-fit: cover;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border: 5px solid white; /* White border around the image */
-
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+  border: 5px solid white;
 `;
 
 const List = styled.ul`
   list-style: none;
   padding: 0;
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 const ListItem = styled.li`
-  margin-bottom: 1rem;
-  
+  line-height: 2;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; 
+`;
+
+const IconContainer = styled.div`
+  display: flex;
+  gap: 10px; 
+  margin-top: 10px; 
 `;
 
 const Link = styled.a`
-  color: #FF758C; /* A color that matches the gradient */
   text-decoration: none;
   transition: color 0.2s;
-
-  &:hover {
-    color: #6DD5FA; /* Another color from the gradient */
-  }
+  color: #333;
 `;
 
 const Text = styled.p`
@@ -67,6 +75,20 @@ const Text = styled.p`
   text-align: center;
 `;
 
+const IconLink = styled.a`
+  display: inline-block;
+  margin-right: 10px;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
+const IconImg = styled.img`
+  width: 24px;
+  height: 24px;
+`;
 interface IntroductionProps {
   scrollToRef: (ref: React.RefObject<HTMLDivElement>) => void;
   careerRef: React.RefObject<HTMLDivElement>;
@@ -77,38 +99,42 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
     return (
       <div ref={ref}>
         <Default>
-        <Title>Introduction</Title>
+          <Title>Introduction</Title>
           <DataContainer>
             <div>
-              <Img src="../img.jeg" alt="Profile Image" />
+              <Img src="../imges/.jpeg" alt="Profile Image" />
               <List>
-                <ListItem>Address: 서울시 송파구 문정동</ListItem>
+                <ListItem>이름: 김선미</ListItem>
+                <ListItem>주소: 서울시 송파구 문정동</ListItem>
                 <ListItem>
                   Email:{" "}
                   <Link href="mailto:tjs4114@gmail.com">tjs4114@gmail.com</Link>
                 </ListItem>
                 <ListItem>Phone: 010-3331-3743</ListItem>
-                <ListItem>
-                  GitHub:{" "}
-                  <Link
+                <IconContainer>
+                  <IconLink
                     href="https://github.com/27Lia"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    27Lia
-                  </Link>
-                </ListItem>
-                <ListItem>
-                  Blog:{" "}
-                  <Link
+                    <IconImg
+                      src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                      alt="GitHub"
+                    />
+                  </IconLink>
+                  <IconLink
                     href="https://velog.io/@rlatjsal010"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    rlatjsal010
-                  </Link>
-                </ListItem>
+                    <IconImg
+                      src="../images/velog.jpeg"
+                      alt="Velog"
+                    />
+                  </IconLink>
+                </IconContainer>
               </List>
+              {/* ... 나머지 컴포넌트 ... */}
             </div>
             <TextBox>
               <Text>

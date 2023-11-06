@@ -162,7 +162,7 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
           <TableCell>링크</TableCell>
           <TableCell>
             <Link href="https://celebee-three.vercel.app/">배포링크</Link> |
-            <Link href="https://github.com/codestates-seb/seb45_main_004">
+            <Link href="https://github.com/27Lia/celebee">
               Github Repo
             </Link>
           </TableCell>

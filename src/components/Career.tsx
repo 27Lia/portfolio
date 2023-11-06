@@ -9,6 +9,7 @@ box-shadow:2px 4px 6px rgba(0,0,0,0.3);
 border-radius:20px;
 padding:20px;
 width:80%;
+margin-top:10px;
 `
 const JobTitle = styled.h2`
   font-size: 24px;
