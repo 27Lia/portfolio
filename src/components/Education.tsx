@@ -2,22 +2,13 @@ import React, { forwardRef } from "react";
 import styled from "styled-components";
 import ScrollButton from "../Styles/ScrollButton";
 import Awards from "./Awards";
-import { Title } from "../Styles/SharedStyles";
-
-const Default = styled.div`
-  min-height: 100vh;
-  width:80%;
-  margin: 0 auto;
-  position: relative; 
-
-`;
-
+import { Default, Title } from "../Styles/SharedStyles";
 
 const EdicationBox = styled.div`
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   padding: 40px;
-  width:100%;
+  width:80%;
   
 `;
 
@@ -57,8 +48,8 @@ const Education = forwardRef<HTMLDivElement, EdicationProps>((props, ref) => {
   return (
     <div ref={ref}>
       <Default>
+      <Title>Education</Title>
           <EdicationBox>
-            <Title>Education</Title>
             <EducationItem
               date="2023.04.11 - 2023.10.05"
               description="Front-end Software Education"

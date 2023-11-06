@@ -20,7 +20,7 @@ import {
   ProjectTable,
   ProjectRow,
   TableCell,
-  Default,
+  ProjectDefault,
   ProjectBox,
 } from "../Styles/SharedStyles";
 
@@ -48,6 +48,7 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
     </div>
   );
 };
+
 
 const Celebee: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -124,7 +125,7 @@ const Celebee: React.FC = () => {
   );
 
   return (
-    <Default>
+    <ProjectDefault>
       <ProjectBox>
         <ProjectTitle>하루모임</ProjectTitle>
         <ProjectRole>[기능 구현 및 역할]</ProjectRole>
@@ -174,7 +175,7 @@ const Celebee: React.FC = () => {
           <TableCell>ID: test123@gmail.com | PW: 123123123</TableCell>
         </ProjectRow>
       </ProjectTable>
-    </Default>
+    </ProjectDefault>
   );
 };
 

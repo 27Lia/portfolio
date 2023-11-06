@@ -12,7 +12,7 @@ import {
   ProjectTable,
   ProjectRow,
   TableCell,
-  Default,
+  ProjectDefault,
   ProjectBox,
 } from "../Styles/SharedStyles";
 
@@ -129,7 +129,7 @@ const ShoppingMall: React.FC = () => {
   
 
   return (
-    <Default>
+    <ProjectDefault>
             <ProjectBox>
 
       <ProjectTitle>쇼핑몰</ProjectTitle>
@@ -179,7 +179,7 @@ const ShoppingMall: React.FC = () => {
           <TableCell>ID: test@gmail.com | PW: test1234!</TableCell>
         </ProjectRow>
       </ProjectTable>
-    </Default>
+    </ProjectDefault>
   );
 };
 export default ShoppingMall;

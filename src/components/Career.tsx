@@ -1,25 +1,15 @@
 import React, { forwardRef } from 'react';
 import styled from "styled-components";
 import ScrollButton from '../Styles/ScrollButton';
-import { Title } from '../Styles/SharedStyles';
+import { Default, Title } from '../Styles/SharedStyles';
 
 
 const IntroductionBox = styled.div` 
 box-shadow:2px 4px 6px rgba(0,0,0,0.3);
 border-radius:20px;
 padding:20px;
-width:100%;
+width:80%;
 `
-
-const Default = styled.div`
-  width:80%;
-  margin: 0 auto;
-  position: relative; 
-  min-height: 100vh;
-`;
-
-
-
 const JobTitle = styled.h2`
   font-size: 24px;
   color: #444;
@@ -38,10 +28,10 @@ const JobRole = styled.div`
 `;
 
 const JobDescription = styled.p`
-  margin: 10px 20px 10px 20px; // 위아래 마진 추가
-  line-height: 1.5; // 줄 간격
-  text-align: justify; // 정당화 정렬로 가독성 향상
-  white-space: pre-line; // 공백과 줄바꿈을 유지
+  margin: 10px 20px 10px 20px; 
+  line-height: 1.5; 
+  text-align: justify;
+  white-space: pre-line; 
 `;
 
 interface CareerProps {

@@ -8,7 +8,7 @@ import {
   ProjectTable,
   ProjectRow,
   TableCell,
-  Default,
+  ProjectDefault,
   ProjectBox,
 } from "../Styles/SharedStyles";
 
@@ -24,6 +24,7 @@ const DescriptionItem = styled.li`
 
 type ItemProps = {
   descriptions: string[];
+  
 };
 
 const Item: React.FC<ItemProps> = ({ descriptions }) => {
@@ -40,7 +41,7 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
 
 const BusinessWebsiteProject: React.FC = () => {
   return (
-    <Default>
+    <ProjectDefault>
       <ProjectBox>
       <ProjectTitle>업체 홈페이지</ProjectTitle>
       <ProjectRole>기능 구현 및 역할</ProjectRole>
@@ -79,7 +80,7 @@ const BusinessWebsiteProject: React.FC = () => {
           <TableCell>React, Styled-components, Naver Map API, SEO</TableCell>
         </ProjectRow>
       </ProjectTable>
-      </Default>
+      </ProjectDefault>
   );
 };
 

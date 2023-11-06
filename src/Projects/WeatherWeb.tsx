@@ -9,7 +9,7 @@ import {
   ProjectTable,
   ProjectRow,
   TableCell,
-  Default,
+  ProjectDefault,
   ProjectBox,
 } from "../Styles/SharedStyles";
 
@@ -40,7 +40,7 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
 
 const WeatherWeb: React.FC = () => {
   return (
-    <Default>
+    <ProjectDefault>
             <ProjectBox>
 
       <ProjectTitle>날씨 인터렉티브 웹</ProjectTitle>
@@ -84,7 +84,7 @@ const WeatherWeb: React.FC = () => {
           <TableCell>HTML, CSS, JS, openAPI</TableCell>
         </ProjectRow>
       </ProjectTable>
-    </Default>
+    </ProjectDefault>
   );
 };
 

@@ -2,18 +2,8 @@
 
 import React, { forwardRef, useState } from "react";
 import styled, { css } from "styled-components";
-import { Title } from "../Styles/SharedStyles";
+import { Default, Title } from "../Styles/SharedStyles";
 import { skills } from "../components/SkillsArray";
-
-const Default = styled.div`
-  height: 100vh;
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-`;
 
 const SkillHeader = styled.h2`
   font-weight: 500;
@@ -39,7 +29,7 @@ const SkillIcon = styled.img`
 `;
 
 const Wallet = styled.div`
-  height: 30vh;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,7 +69,6 @@ const SkillCardExpandedStyle = css<SkillCardProps>`
 
 const ExpandButton = styled.button`
   padding: 10px 20px;
-  margin-left: 140px;
   font-size: 16px;
   font-weight: bold;
   color: #fff;
@@ -115,7 +104,7 @@ const SkillCard = styled.div<
   ${({ expandAll }) =>
     expandAll &&
     css`
-      width: calc(33.333% - 130px);
+      width: calc(33.333% - 20px);
       margin: 10px;
     `}
 
@@ -163,8 +152,10 @@ const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
   return (
     <div ref={ref}>
       <Default>
-        <Title>Skills</Title>
-
+      <Title>Skills</Title>
+      <ExpandButton onClick={toggleExpandAll}>
+          {expandAll ? "닫기" : "펼쳐보기"}
+        </ExpandButton>
         <Wallet>
           {skills.map((skill, index) => (
             <SkillCard
@@ -196,9 +187,7 @@ const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
               )}
             </SkillCard>
           ))}
-                  <ExpandButton onClick={toggleExpandAll}>
-          {expandAll ? "닫기" : "펼쳐보기"}
-        </ExpandButton>
+
         </Wallet>
       </Default>
     </div>
