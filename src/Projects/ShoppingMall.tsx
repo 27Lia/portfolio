@@ -42,12 +42,18 @@ return (
 );
 };
 
+type ShoppingMallProps = {
+  onModalStateChange: (isOpen: boolean) => void;
+};
 
-const ShoppingMall: React.FC = () => {
+
+const ShoppingMall: React.FC<ShoppingMallProps> = ({onModalStateChange}) => {
   const [showModal, setShowModal] = useState(false); // 모달의 상태를 관리
 
   const toggleModal = () => {
-    setShowModal(!showModal);
+    const newShowModal = !showModal;
+    setShowModal(newShowModal);
+    onModalStateChange(newShowModal); // 모달 상태 변경을 상위 컴포넌트에 전달
   };
 
 

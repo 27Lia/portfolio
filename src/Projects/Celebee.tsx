@@ -49,13 +49,20 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
   );
 };
 
+type CelebeeProps = {
+  onModalStateChange: (isOpen: boolean) => void;
+};
 
-const Celebee: React.FC = () => {
+
+const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
-    setShowModal(!showModal);
+    const newShowModal = !showModal;
+    setShowModal(newShowModal);
+    onModalStateChange(newShowModal); // 모달 상태 변경을 상위 컴포넌트에 전달
   };
+
 
   const images = [
     "images/celebee.png",
@@ -132,8 +139,10 @@ const Celebee: React.FC = () => {
         <Item
           descriptions={[
             "카드작성페이지, 카드조회페이지, 카드참여, 찜기능 등",
-            "컴포넌트 기반 아키텍처를 통해 UI를 모듈화하고 재사용 가능한 컴포넌트를 개발하며, 코드의 가독성과 유지 보수성을 향상시킬 수 있습니다.",
-            "다양한 라이브러리를 통합하여 다양한 기능을 추가하고 웹 애플리케이션의 확장성을 높일수있습니다.",
+            "서비스 기획 및 아이디어 구체화, 전반적인 UI/UX 디자인 제안 및 구현",
+            "카카오맵을 활용하여 다양한 지도 서비스 기능 구현",
+            "React-hook-form을 이용한 폼 유효성 검사",
+            "Keyframes를 이용한 디자인 요소 구현, 모바일 화면 반응형웹 구현",
           ]}
         />
         <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
