@@ -64,11 +64,7 @@ const App = () => {
           skillsRef={skillsRef}
           ref={educationRef}
         />
-        <Skills
-          scrollToRef={scrollToRef}
-          skillsRef={skillsRef}
-          ref={skillsRef}
-        />
+
     </Container>
   );
 };

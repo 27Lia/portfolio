@@ -79,6 +79,15 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
       <ImageSlider images={images} />
       <ModalHeader>2. 하루모임</ModalHeader>
       <Section>
+      <SubSection>
+          <SubTitle> ✅ 성능최적화 </SubTitle>
+          <Description>
+           useCallback 훅을 적용하여 React 컴포넌트의 커밋 단계 처리 시간을 기존 2.6ms에서 1.3ms로 절반 가까이 줄여 리팩토링 하였습니다.
+           <br></br>
+           불필요한 함수 생성과 연관된 작업을 줄임으로써 전체 렌더링 과정을 더 빠르게 완료하였습니다.
+          </Description>
+        </SubSection>
+
         <SubSection>
           <SubTitle> ✅ 컴포넌트 재사용 능력 강화</SubTitle>
           <Description>
@@ -138,11 +147,12 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
         <ProjectRole>[기능 구현 및 역할]</ProjectRole>
         <Item
           descriptions={[
-            "카드작성페이지, 카드조회페이지, 카드참여, 찜기능 등",
-            "서비스 기획 및 아이디어 구체화, 전반적인 UI/UX 디자인 제안 및 구현",
-            "카카오맵을 활용하여 다양한 지도 서비스 기능 구현",
+            "모임 작성 페이지, 모임 상세 페이지 개발",
+            "카드참여, 찜기능 등 구현",
+            "카카오맵 키워드검색,마크표시 등 다양한 지도 서비스 기능 구현",
+            "서비스 기획 및 전반적인 UI/UX 디자인 구현",
             "React-hook-form을 이용한 폼 유효성 검사",
-            "Keyframes를 이용한 디자인 요소 구현, 모바일 화면 반응형웹 구현",
+            "Keyframes를 이용한 반응형웹 구현",
           ]}
         />
         <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />

@@ -5,11 +5,11 @@ import { Default, Title } from '../Styles/SharedStyles';
 
 
 const IntroductionBox = styled.div` 
-box-shadow:2px 4px 6px rgba(0,0,0,0.3);
-border-radius:20px;
-padding:20px;
-width:80%;
-margin-top:10px;
+/* box-shadow:2px 4px 6px rgba(0,0,0,0.3);
+border-radius:20px; */
+padding:100px;
+/* width:80%; */
+/* margin-top:10px; */
 `
 const JobTitle = styled.h2`
   font-size: 24px;
@@ -58,8 +58,8 @@ const Career = forwardRef<HTMLDivElement, CareerProps>((props, ref) => {
         - 데이터 관리 및 모니터링<br/>
         자사 CMS내 이슈 발생 또는 새로운 기능 추가 시 데이터를 검토하고 실서비스를 모니터링하며 QA와 흡사한 업무를 진행하였습니다.
       </JobDescription>
-      </IntroductionBox>
-      <IntroductionBox>
+      {/* </IntroductionBox>
+      <IntroductionBox> */}
       <JobTitle>한국음악실연자연합회</JobTitle>
       <JobDetails>회원관리팀 / 인턴 / 2021.03 - 2021.12</JobDetails>
       <JobRole>담당 업무</JobRole>

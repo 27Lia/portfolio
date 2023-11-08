@@ -1,11 +1,18 @@
-html , body{
-  height: 100vh;
-  /* background: linear-gradient(to right, #6DD5FA, #FF758C); */
-
-}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+
+body {
+  animation: backgroundColorChange 20s ease infinite;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

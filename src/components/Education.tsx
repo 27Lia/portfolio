@@ -1,15 +1,10 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import ScrollButton from "../Styles/ScrollButton";
 import Awards from "./Awards";
 import { Default, Title } from "../Styles/SharedStyles";
 
 const EdicationBox = styled.div`
-  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-  padding: 40px;
-  width:80%;
-  margin-bottom:25px;
+padding:100px;
 `;
 
 const ItemWrapper = styled.div`
@@ -64,9 +59,6 @@ const Education = forwardRef<HTMLDivElement, EdicationProps>((props, ref) => {
             />
           </EdicationBox>
           <Awards/>
-        <ScrollButton onClick={() => props.scrollToRef(props.skillsRef)}>
-          Go to Skills
-        </ScrollButton>
       </Default>
     </div>
   );

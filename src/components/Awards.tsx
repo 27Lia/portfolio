@@ -9,11 +9,7 @@ const Description = styled.div`
 `;
 
 const Box = styled.div`
-  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-  padding: 40px;
-  width:80%;
-  margin-top:10px;
+  padding:100px;
 `;
 
 const Awards: React.FC = () => {

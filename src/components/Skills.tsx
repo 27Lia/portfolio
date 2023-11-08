@@ -6,8 +6,10 @@ import { Default, Title } from "../Styles/SharedStyles";
 import { skills } from "../components/SkillsArray";
 
 const SkillHeader = styled.h2`
-  font-weight: 500;
-  font-size: 1.8rem;
+  font-weight: 400;
+  font-size: 18px;
+  text-align:center;
+  padding:10px;
 `;
 
 const DescriptionList = styled.ul`
@@ -17,33 +19,43 @@ const DescriptionList = styled.ul`
 
 const DescriptionItem = styled.li`
   margin-top: 15px;
-  font-size: 19px;
   color: #fff;
 `;
 
 const SkillIcon = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   margin-bottom: 10px;
   display: flex;
 `;
 
 const Wallet = styled.div`
-  height: 400px;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction:column;
 `;
 
+const CardBox = styled.div `
+display:flex;
+justify-content:center;
+align-items:center;
+flex-wrap: wrap; 
+overflow: auto;
+height:100%; 
+
+&::-webkit-scrollbar {
+    height: 12px; 
+  }
+  
+`
+
+
 const SkillCardBaseStyle = css`
-  margin: -125px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 350px;
-  height: 170px;
+display:flex;
+flex-direction:column;
+  margin: -85px;
+  width: 220px;
+  height: 110px;
   border-radius: 12px;
   color: #fff;
   transition: all 0.2s ease;
@@ -61,32 +73,49 @@ const SkillIconWrapper = styled.div`
 `;
 
 const SkillCardExpandedStyle = css<SkillCardProps>`
-  height: 500px;
+  overflow:auto;
   padding: 20px;
   color: #222;
-  background-color: #ffffff;
+  display:flex;
+  justify-content:flex-start;
+  height:100%;
+  width: 250px;
+
 `;
+const Btn = styled.div`
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-bottom: 20px;
+`
+
 
 const ExpandButton = styled.button`
   padding: 10px 20px;
-  font-size: 16px;
   font-weight: bold;
   color: #fff;
   background-color: #007bff;
+  width:150px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
-
   &:hover {
     background-color: #0056b3;
-    transform: translateY(-2px);
+    transform: translateY(2px);
   }
 
   &:active {
     transform: translateY(1px);
   }
 `;
+
+const DivBox = styled.div `
+  height:100%;
+  
+`
+
+
 
 // -------------------------------------------------------------------------------------------
 
@@ -150,13 +179,17 @@ const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
     }
   };
   return (
-    <div ref={ref}>
-      <Default>
-      <Title>Skills</Title>
-      <ExpandButton onClick={toggleExpandAll}>
-          {expandAll ? "닫기" : "펼쳐보기"}
-        </ExpandButton>
+    <DivBox ref={ref}>
+      {/* <Default> */}
+
         <Wallet>
+        <Btn>
+        <ExpandButton onClick={toggleExpandAll}>
+          {expandAll ? "닫기" : "스킬 펼쳐보기"}
+        </ExpandButton>
+        </Btn>
+        <CardBox>
+
           {skills.map((skill, index) => (
             <SkillCard
               key={skill.id}
@@ -187,10 +220,11 @@ const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
               )}
             </SkillCard>
           ))}
+          </CardBox>
 
         </Wallet>
-      </Default>
-    </div>
+      {/* </Default> */}
+    </DivBox>
   );
 });
 

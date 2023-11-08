@@ -9,13 +9,14 @@ import ScrollButton from "../Styles/ScrollButton";
 import { Default, Title } from "../Styles/SharedStyles";
 
 const Box = styled.div`
+padding:100px;
   display: flex;
   align-items:center;
   /* flex-wrap: nowrap;  */
   overflow-x: auto; 
   /* -webkit-overflow-scrolling: touch;  */
   /* scroll-behavior: smooth;  */
-  width:80%;
+  /* width:80%; */
   height:80vh;
 
   scrollbar-width: thin; 

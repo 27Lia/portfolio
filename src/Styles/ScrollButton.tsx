@@ -9,7 +9,7 @@ const ScrollButton = styled.button`
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 30px;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.2s;

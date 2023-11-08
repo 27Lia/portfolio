@@ -2,30 +2,27 @@ import styled from "styled-components";
 import React, { forwardRef } from "react";
 import ScrollButton from "../Styles/ScrollButton";
 import { Default, Title } from "../Styles/SharedStyles";
+import Skills from "./Skills";
 
 const TextBox = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+  height:100%;
+  display:flex;
 `;
 
 const DataContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  border-radius: 25px; 
-  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.2); 
-  width: 80%;
-  margin-top:10px;
+  flex-direction:column;
+  justify-content:space-between;
+  width:100%;
+  overflow: auto; 
+  height:100vh;
+  scrollbar-width: thin; 
+  padding:100px;
 
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &::-webkit-scrollbar {
+    height: 12px; 
   }
 `;
 
@@ -39,27 +36,19 @@ const Img = styled.img`
   border: 5px solid white;
 `;
 
-const List = styled.ul`
-  list-style: none;
-  padding: 0;
-  font-size: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`;
+
 
 const ListItem = styled.li`
-  line-height: 2;
   font-size: 18px;
   display: flex;
   align-items: center;
   margin-bottom: 10px; 
+  
 `;
 
 const IconContainer = styled.div`
+margin-left:4px;
   display: flex;
-  gap: 10px; 
-  margin-top: 10px; 
 `;
 
 const Link = styled.a`
@@ -70,9 +59,8 @@ const Link = styled.a`
 
 const Text = styled.p`
   font-size: 1.125rem;
-  line-height: 1.6;
-  margin-top: 1rem;
-  text-align: center;
+  line-height: 2;
+
 `;
 
 const IconLink = styled.a`
@@ -89,6 +77,60 @@ const IconImg = styled.img`
   width: 24px;
   height: 24px;
 `;
+const Imgbox = styled.div`
+  display:flex;
+  justify-content:space-around;
+  width:100%;
+height:500px;
+`;
+
+const LeftBox = styled.div`
+  display:flex;
+  flex-direction:column;
+    width: 50%;
+    height:100%;
+    align-items:center;
+    padding:20px;
+
+`;
+
+const RightBox = styled.ul`
+display:flex;
+  list-style: none;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+overflow:auto;
+padding:20px;
+
+width:50%;
+height:100%;
+
+`;
+
+const BoxContainer = styled.div`
+display:flex;
+height:100vh;
+width: 100%;
+overflow:auto;
+`;
+
+const SkillsBox = styled.div `
+  height:100%;
+  overflow:auto;
+`
+
+const ListBox = styled.div `
+display:flex;
+justify-content:center; 
+flex-direction:column;
+  overflow:auto;
+
+
+`
+
+
+
 interface IntroductionProps {
   scrollToRef: (ref: React.RefObject<HTMLDivElement>) => void;
   careerRef: React.RefObject<HTMLDivElement>;
@@ -99,18 +141,24 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
     return (
       <div ref={ref}>
         <Default>
-          <Title>Introduction</Title>
-          <DataContainer>
-            <div>
-              <Img src="../imges/.jpeg" alt="Profile Image" />
-              <List>
-                <ListItem>이름: 김선미</ListItem>
-                <ListItem>주소: 서울시 송파구 문정동</ListItem>
-                <ListItem>
-                  Email:{" "}
-                  <Link href="mailto:tjs4114@gmail.com">tjs4114@gmail.com</Link>
-                </ListItem>
-                <ListItem>Phone: 010-3331-3743</ListItem>
+
+        <DataContainer>
+
+        {/* <Title>Introduction</Title> */}
+
+        <BoxContainer>
+
+      <LeftBox>
+          <Imgbox>
+          <Img src="../images/profile.jpgw" alt="Profile Image" />
+
+          <Title>
+          <ListBox>
+                <h4>김선미 / Lia </h4>
+                <ListItem>1996.09.19</ListItem>
+
+                <ListItem>Tel: 010-3331-3743</ListItem>
+                <ListItem>Email:<Link href="mailto:tjs4114@gmail.com">tjs4114@gmail.com</Link></ListItem>
                 <IconContainer>
                   <IconLink
                     href="https://github.com/27Lia"
@@ -133,10 +181,13 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
                     />
                   </IconLink>
                 </IconContainer>
-              </List>
-              {/* ... 나머지 컴포넌트 ... */}
-            </div>
-            <TextBox>
+                </ListBox>
+          </Title>
+          </Imgbox>
+
+
+         
+          <TextBox>
               <Text>
                 <strong>아이디어</strong>를 내고{" "}
                 <strong>적극적으로 소통</strong>하는 것을 좋아합니다. 반복적인
@@ -149,10 +200,30 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
                 개발을 시작하게 되었습니다.
               </Text>
             </TextBox>
-          </DataContainer>
-          <ScrollButton onClick={() => props.scrollToRef(props.careerRef)}>
+
+            
+            </LeftBox>
+
+
+            <RightBox>
+
+
+                <SkillsBox>
+<Skills {...(null as any)} />
+</SkillsBox>
+
+                </RightBox>
+              
+
+                </BoxContainer>
+
+
+                <ScrollButton onClick={() => props.scrollToRef(props.careerRef)}>
             Go to Career
           </ScrollButton>
+
+          </DataContainer>
+
         </Default>
       </div>
     );

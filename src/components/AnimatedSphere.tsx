@@ -20,7 +20,6 @@ const AnimatedSphere = () => {
     setClicked(true);
   };
 
-
   
   return (
     <>
@@ -50,18 +49,20 @@ const AnimatedSphere = () => {
         Click Me!
       </Text>
     )}
-    
-      {explode && (
-        <Text
-          position={[0, 0, 3]}
-          fontSize={1}
-          color="black" 
-          anchorX="center"
-          anchorY="middle"
-        >
-          Hello!
-        </Text>
-      )}
+{explode && (
+  <Text
+    position={[0, 0, 3]}
+    fontSize={0.15}
+    color="black"
+    anchorX="center"
+    anchorY="middle" 
+    font="./HakgyoansimSantteutdotumM.ttf"
+    maxWidth={2}
+    textAlign="center" 
+  >
+안녕하세요, 프론트엔드 개발자 김선미입니다.
+</Text>
+)}
     </>
   );
 };
