@@ -82,7 +82,6 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
       </ButtonBox>
 
       <ModalHeader>2. 하루모임</ModalHeader>
-      {/* <ImageSlider images={images} /> */}
 
       <ProjectRole>[기능 구현 및 역할]</ProjectRole>
         <Item
@@ -161,9 +160,8 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
   return (
     <ProjectDefault>
       <ProjectBox>
-        <ProjectTitle>하루모임</ProjectTitle>
+      <ProjectTitle>하루모임</ProjectTitle>
         <ImageSlider images={images} />
-
        <ModalBtnBox>
         <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
         </ModalBtnBox>

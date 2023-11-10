@@ -16,10 +16,13 @@ const Img = styled.div`
     display: flex;
     justify-content: center;
     height: 300px; 
+
     img {
         
         height: auto;
         max-height: 100%;
+        overflow: hidden;
+
     }
 `;
 

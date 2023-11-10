@@ -1,8 +1,9 @@
 
 import styled from "styled-components";
 
+
 export const ProjectDefault = styled.div`
-  width: 100%; 
+  width: 60%; 
   margin: 20px auto;
   padding: 20px;
   height: 500px; 
@@ -10,7 +11,7 @@ export const ProjectDefault = styled.div`
   border-radius: 30px;
   display: flex;
   flex-direction: row; 
-  justify-content: space-around; 
+  justify-content: space-evenly; 
 `;
 
 export const Default = styled.div`
@@ -36,7 +37,8 @@ export const ProjectBox = styled.div`
   /* flex: 1;  */
   display: flex;
   flex-direction: column; 
-  justify-content:space-around;
+  justify-content:space-evenly;
+  align-items: center;
 `;
 
 export const ProjectTitle = styled.h2`
