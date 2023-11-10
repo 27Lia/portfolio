@@ -7,12 +7,12 @@
 
 
 body {
-  animation: backgroundColorChange 20s ease infinite;
   margin: 0;
   height: 100vh;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+
 }
 
 

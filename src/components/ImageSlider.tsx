@@ -7,15 +7,15 @@ import styled from 'styled-components';
 
 const StyledSlider = styled(Slider)`
     max-height: 500px; 
+    width:500px;
+
 `;
 
 
 const Img = styled.div`
     display: flex;
     justify-content: center;
-    height: 500px; 
-    overflow: hidden;
-
+    height: 300px; 
     img {
         
         height: auto;
@@ -48,3 +48,6 @@ const ImageSlider: React.FC<{ images: string[] }> = ({ images }) => {
 };
 
 export default ImageSlider;
+
+
+

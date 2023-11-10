@@ -10,7 +10,6 @@ import {
   CloseButton,
 } from "../Styles/ModalStyles";
 import ModalButton from "../components/ModalButton";
-import ImageSlider from "../components/ImageSlider";
 import styled from "styled-components";
 
 import {
@@ -23,6 +22,7 @@ import {
   ProjectDefault,
   ProjectBox,
 } from "../Styles/SharedStyles";
+import ImageSlider from "../components/ImageSlider";
 
 const DescriptionList = styled.ul`
   margin-left: 25px;
@@ -33,6 +33,10 @@ const DescriptionItem = styled.li`
   font-size: 18px;
 `;
 
+const ModalBtnBox = styled.div `
+   display:flex;
+  justify-content:center;
+`
 type ItemProps = {
   descriptions: string[];
 };
@@ -76,8 +80,22 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
       <ButtonBox>
         <CloseButton onClick={toggleModal}>닫기</CloseButton>
       </ButtonBox>
-      <ImageSlider images={images} />
+
       <ModalHeader>2. 하루모임</ModalHeader>
+      {/* <ImageSlider images={images} /> */}
+
+      <ProjectRole>[기능 구현 및 역할]</ProjectRole>
+        <Item
+          descriptions={[
+            "모임 작성 페이지, 모임 상세 페이지 개발",
+            "카드참여, 찜기능 등 구현",
+            "카카오맵 키워드검색,마크표시 등 다양한 지도 서비스 기능 구현",
+            "서비스 기획 및 전반적인 UI/UX 디자인 구현",
+            "React-hook-form을 이용한 폼 유효성 검사",
+            "Keyframes를 이용한 반응형웹 구현",
+          ]}
+        />
+
       <Section>
       <SubSection>
           <SubTitle> ✅ 성능최적화 </SubTitle>
@@ -144,18 +162,11 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
     <ProjectDefault>
       <ProjectBox>
         <ProjectTitle>하루모임</ProjectTitle>
-        <ProjectRole>[기능 구현 및 역할]</ProjectRole>
-        <Item
-          descriptions={[
-            "모임 작성 페이지, 모임 상세 페이지 개발",
-            "카드참여, 찜기능 등 구현",
-            "카카오맵 키워드검색,마크표시 등 다양한 지도 서비스 기능 구현",
-            "서비스 기획 및 전반적인 UI/UX 디자인 구현",
-            "React-hook-form을 이용한 폼 유효성 검사",
-            "Keyframes를 이용한 반응형웹 구현",
-          ]}
-        />
+        <ImageSlider images={images} />
+
+       <ModalBtnBox>
         <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
+        </ModalBtnBox>
         {showModal && (
           <Modal content={modalContent} toggleModal={toggleModal} />
         )}
