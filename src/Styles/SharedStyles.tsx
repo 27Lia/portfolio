@@ -1,6 +1,88 @@
 
 import styled from "styled-components";
 
+export const LinkBox = styled.div`
+  display:flex;
+  justify-content: start;
+  gap: 20px;
+  margin-top: 20px;
+
+`
+export const TabContentSection = styled.div`
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+`;
+
+
+export const SectionText = styled.ul`
+  line-height: 1.6;
+  display:flex;
+  flex-direction:column;
+  height:300px;
+  margin-top: 30px;
+`;
+
+export const Text = styled.li`
+  margin-bottom: 5px;
+  line-height: 1.6;
+  display:flex;
+  justify-content:space-between;
+`;
+
+export const SectionLinks = styled.div`
+  margin-top: 10px;
+`;
+
+export const SectionTitle = styled.h3`
+  font-size: 1.2em;
+  margin-bottom: 10px;
+`;
+
+export const ListItem = styled.li`
+  margin-bottom: 5px;
+`;
+
+export const Icon = styled.span`
+  margin-right: 5px;
+  // 아이콘 스타일 여기에 추가
+`;
+
+export const  TabsContainer = styled.div`
+  margin-top: 20px;
+  width:100%;
+`;
+
+export const TabButton = styled.button`
+  padding: 10px 15px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-right: 10px;
+  font-size: 18px;
+
+  &:hover {
+    border-bottom: 2px solid blue;
+  }
+
+  &.active {
+    font-weight: bold;
+    border-bottom: 2px solid blue;
+  }
+`;
+
+export const TabContent = styled.div`
+  padding: 20px 0;
+  display: none;
+  &.active {
+    display: block;
+  }
+`;
+
+
 
 export const ProjectDefault = styled.div`
   width: 60%; 

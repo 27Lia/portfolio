@@ -8,7 +8,7 @@ import {
   ButtonBox,
   CloseButton,
 } from "../Styles/ModalStyles";
-import ModalButton from "../components/ModalButton";
+import ModalButton, { StyledButton } from "../components/ModalButton";
 import Modal from "../components/Modal";
 import ImageSlider from "../components/ImageSlider";
 import styled from "styled-components";
@@ -22,7 +22,12 @@ import {
   TableCell,
   ProjectDefault,
   ProjectBox,
+  SectionText,
+  LinkBox,
+  Text,
+  TabsContainer,
 } from "../Styles/SharedStyles";
+import TabsComponent from "../components/TabsComponent";
 
 const DescriptionList = styled.ul`
   margin-left: 25px;
@@ -78,18 +83,7 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
       <ButtonBox>
         <CloseButton onClick={toggleModal}>닫기</CloseButton>
       </ButtonBox>
-      <ModalHeader>쇼핑몰 콘텐츠 최적화</ModalHeader>
-
-      <ProjectRole>[기능 구현 및 역할]</ProjectRole>
-      <Item
-        descriptions={[
-          "S3 버킷으로 웹사이트 배포",
-          "Firebase Authentication을 활용한 로그인,로그아웃, 회원가입 구현",
-          "상품 필터링, 무한 스크롤 기능, 북마크toast message 알림 기능 구현",
-          "스타일드 컴포넌트를 활용하여 CSS 스타일링 및 레이아웃 디자인 진행",
-          "Firebase를 활용한 문의 게시판 CRUD 기능 구현",
-        ]}
-      />
+      <ModalHeader>쇼핑몰 </ModalHeader>
 
       <Section>
         <SubSection>
@@ -164,58 +158,52 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
     </>
   );
 
-  return (
-    <ProjectDefault>
-      <ProjectBox>
-        <ProjectTitle>쇼핑몰</ProjectTitle>
-        <ImageSlider images={images} />
+  const tabs = ["소개", "기여한 점"];
+  const contents = [
+    <SectionText>
+      <h3>FireBase를 사용한 쇼핑몰 프로젝트입니다.</h3>
+      <br />
 
+      <Text>기간: 2023.07 ~리팩토링 진행중</Text>
+      <Text>인원: 솔로 프로젝트</Text>
+      <Text>기술스택: React, Styled-components, Firebase, Redux, AWS S3</Text>
+      <Text>테스트 정보: ID: test@gmail.com / PW: test1234!</Text>
+      <LinkBox>
+        <Link href="https://fe-sprint-coz-shopping-eta.vercel.app/">
+          <StyledButton>배포링크</StyledButton>
+        </Link>
+        <Link href="https://github.com/27Lia/fe-sprint-coz-shopping">
+          <StyledButton>Github Repo</StyledButton>
+        </Link>
         <ModalBtnBox>
           <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
         </ModalBtnBox>
         {showModal && (
           <Modal content={modalContent} toggleModal={toggleModal} />
         )}
-      </ProjectBox>
+      </LinkBox>
+    </SectionText>,
 
-      <ProjectTable>
-        <ProjectRow>
-          <TableCell>소개</TableCell>
-          <TableCell>
-            Firebase를 사용한 간단한 쇼핑몰 웹 사이트입니다.
-          </TableCell>
-        </ProjectRow>
-        <ProjectRow>
-          <TableCell>링크</TableCell>
-          <TableCell>
-            <Link href="https://fe-sprint-coz-shopping-eta.vercel.app/">
-              배포링크
-            </Link>{" "}
-            |{" "}
-            <Link href="https://github.com/27Lia/fe-sprint-coz-shopping">
-              Github Repo
-            </Link>
-          </TableCell>
-        </ProjectRow>
-        <ProjectRow>
-          <TableCell>프로젝트 기간</TableCell>
-          <TableCell>2023.07 ~리팩토링 진행중</TableCell>
-        </ProjectRow>
-        <ProjectRow>
-          <TableCell>프로젝트 유형</TableCell>
-          <TableCell>솔로 프로젝트</TableCell>
-        </ProjectRow>
-        <ProjectRow>
-          <TableCell>기술 스택</TableCell>
-          <TableCell>
-            React, Styled-components, Firebase, Redux, AWS S3
-          </TableCell>
-        </ProjectRow>
-        <ProjectRow>
-          <TableCell>테스트 ID</TableCell>
-          <TableCell>ID: test@gmail.com | PW: test1234!</TableCell>
-        </ProjectRow>
-      </ProjectTable>
+    <Item
+      descriptions={[
+        "S3 버킷으로 웹사이트 배포",
+        "Firebase Authentication을 활용한 로그인,로그아웃, 회원가입 구현",
+        "상품 필터링, 무한 스크롤 기능, 북마크toast message 알림 기능 구현",
+        "스타일드 컴포넌트를 활용하여 CSS 스타일링 및 레이아웃 디자인 진행",
+        "Firebase를 활용한 문의 게시판 CRUD 기능 구현",
+      ]}
+    />,
+  ];
+
+  return (
+    <ProjectDefault>
+      <ProjectBox>
+        <ProjectTitle>쇼핑몰</ProjectTitle>
+        <ImageSlider images={images} />
+      </ProjectBox>
+      <TabsContainer>
+        <TabsComponent tabs={tabs} contents={contents} />
+      </TabsContainer>
     </ProjectDefault>
   );
 };

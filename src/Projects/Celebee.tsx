@@ -9,7 +9,7 @@ import {
   ButtonBox,
   CloseButton,
 } from "../Styles/ModalStyles";
-import ModalButton from "../components/ModalButton";
+import ModalButton, { StyledButton } from "../components/ModalButton";
 import styled from "styled-components";
 
 import {
@@ -21,8 +21,18 @@ import {
   TableCell,
   ProjectDefault,
   ProjectBox,
+  TabsContainer,
+  TabButton,
+  TabContent,
+  TabContentSection,
+  SectionTitle,
+  SectionLinks,
+  SectionText,
+  Text,
+  LinkBox,
 } from "../Styles/SharedStyles";
 import ImageSlider from "../components/ImageSlider";
+import TabsComponent from "../components/TabsComponent";
 
 const DescriptionList = styled.ul`
   margin-left: 25px;
@@ -31,12 +41,14 @@ const DescriptionList = styled.ul`
 const DescriptionItem = styled.li`
   margin-top: 5px;
   font-size: 18px;
+  line-height: 1.8;
 `;
 
-const ModalBtnBox = styled.div `
-   display:flex;
-  justify-content:center;
-`
+const ModalBtnBox = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 type ItemProps = {
   descriptions: string[];
 };
@@ -57,7 +69,6 @@ type CelebeeProps = {
   onModalStateChange: (isOpen: boolean) => void;
 };
 
-
 const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
   const [showModal, setShowModal] = useState(false);
 
@@ -66,7 +77,6 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
     setShowModal(newShowModal);
     onModalStateChange(newShowModal); // 모달 상태 변경을 상위 컴포넌트에 전달
   };
-
 
   const images = [
     "images/celebee.png",
@@ -83,25 +93,15 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
 
       <ModalHeader>2. 하루모임</ModalHeader>
 
-      <ProjectRole>[기능 구현 및 역할]</ProjectRole>
-        <Item
-          descriptions={[
-            "모임 작성 페이지, 모임 상세 페이지 개발",
-            "카드참여, 찜기능 등 구현",
-            "카카오맵 키워드검색,마크표시 등 다양한 지도 서비스 기능 구현",
-            "서비스 기획 및 전반적인 UI/UX 디자인 구현",
-            "React-hook-form을 이용한 폼 유효성 검사",
-            "Keyframes를 이용한 반응형웹 구현",
-          ]}
-        />
-
       <Section>
-      <SubSection>
+        <SubSection>
           <SubTitle> ✅ 성능최적화 </SubTitle>
           <Description>
-           useCallback 훅을 적용하여 React 컴포넌트의 커밋 단계 처리 시간을 기존 2.6ms에서 1.3ms로 절반 가까이 줄여 리팩토링 하였습니다.
-           <br></br>
-           불필요한 함수 생성과 연관된 작업을 줄임으로써 전체 렌더링 과정을 더 빠르게 완료하였습니다.
+            useCallback 훅을 적용하여 React 컴포넌트의 커밋 단계 처리 시간을
+            기존 2.6ms에서 1.3ms로 절반 가까이 줄여 리팩토링 하였습니다.
+            <br></br>
+            불필요한 함수 생성과 연관된 작업을 줄임으로써 전체 렌더링 과정을 더
+            빠르게 완료하였습니다.
           </Description>
         </SubSection>
 
@@ -157,52 +157,55 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
     </>
   );
 
-  return (
-    <ProjectDefault>
-      <ProjectBox>
-      <ProjectTitle>하루모임</ProjectTitle>
-        <ImageSlider images={images} />
-       <ModalBtnBox>
-        <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
+  const tabs = ["소개", "기여한 점"];
+  const contents = [
+    // 첫 번째 탭의 내용
+    <SectionText>
+      <h3>카드 형태로 모임을 만들고 참여하는 인터렉티브한 플랫폼입니다.</h3>
+      <br />
+
+      <Text>기간: 2023.08.24 ~ 2023.09.22</Text>
+      <Text>인원: Front 3명, Back 3명</Text>
+      <Text>기술스택: React, Router, Styled-components, RESTful API</Text>
+      <Text>테스트 정보: ID: test123@gmail.com / PW: 123123123</Text>
+      <LinkBox>
+        <Link href="https://celebee-three.vercel.app/">
+          <StyledButton>배포링크</StyledButton>
+        </Link>
+        <Link href="https://github.com/27Lia/celebee">
+          <StyledButton>Github Repo</StyledButton>
+        </Link>
+        <ModalBtnBox>
+          <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
         </ModalBtnBox>
         {showModal && (
           <Modal content={modalContent} toggleModal={toggleModal} />
         )}
-      </ProjectBox>
+      </LinkBox>
+    </SectionText>,
 
-      <ProjectTable>
-        <ProjectRow>
-          <TableCell>소개</TableCell>
-          <TableCell>
-            카드 형태로 모임을 만들고 참여하는 인터렉티브한 플랫폼입니다.
-          </TableCell>
-        </ProjectRow>
-        <ProjectRow>
-          <TableCell>링크</TableCell>
-          <TableCell>
-            <Link href="https://celebee-three.vercel.app/">배포링크</Link> |
-            <Link href="https://github.com/27Lia/celebee">
-              Github Repo
-            </Link>
-          </TableCell>
-        </ProjectRow>
-        <ProjectRow>
-          <TableCell>프로젝트 기간</TableCell>
-          <TableCell>2023.08.24 ~ 2023.09.22</TableCell>
-        </ProjectRow>
-        <ProjectRow>
-          <TableCell>프로젝트 유형</TableCell>
-          <TableCell>Front 3명, Back 3명</TableCell>
-        </ProjectRow>
-        <ProjectRow>
-          <TableCell>기술 스택</TableCell>
-          <TableCell>React,Router,Styled-components, RESTful API</TableCell>
-        </ProjectRow>
-        <ProjectRow>
-          <TableCell>테스트 ID</TableCell>
-          <TableCell>ID: test123@gmail.com | PW: 123123123</TableCell>
-        </ProjectRow>
-      </ProjectTable>
+    // 두 번째 탭의 내용
+    <Item
+      descriptions={[
+        "모임 작성 페이지, 모임 상세 페이지 개발",
+        "카드참여, 찜기능 등 구현",
+        "카카오맵 키워드검색,마크표시 등 다양한 지도 서비스 기능 구현",
+        "서비스 기획 및 전반적인 UI/UX 디자인 구현",
+        "React-hook-form을 이용한 폼 유효성 검사",
+        "Keyframes를 이용한 반응형웹 구현",
+      ]}
+    />,
+  ];
+
+  return (
+    <ProjectDefault>
+      <ProjectBox>
+        <ProjectTitle>하루모임</ProjectTitle>
+        <ImageSlider images={images} />
+      </ProjectBox>
+      <TabsContainer>
+        <TabsComponent tabs={tabs} contents={contents} />
+      </TabsContainer>
     </ProjectDefault>
   );
 };
