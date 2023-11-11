@@ -16,8 +16,6 @@ const Box = styled.div`
   padding:   0px 100px ;
   /* -webkit-overflow-scrolling: touch;  */
   /* scroll-behavior: smooth;  */
-
-width:100%;
 height: 80vh;
 
 

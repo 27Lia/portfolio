@@ -85,7 +85,7 @@ export const TabContent = styled.div`
 
 
 export const ProjectDefault = styled.div`
-  width: 60%; 
+  /* width: 60%;  */
   margin: 20px auto;
   padding: 20px;
   height: 500px; 
