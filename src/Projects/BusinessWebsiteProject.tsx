@@ -49,9 +49,9 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
 const BusinessWebsiteProject: React.FC = () => {
 
   const images = [
-    "images/BusinessWebsite.jpg",
-    "images/BusinessWebsite2.jpg",
-
+    "./BusinessWebsite.jpg",
+    "./BusinessWebsite2.jpg",
+    
   ];
 
 
