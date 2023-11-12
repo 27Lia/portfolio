@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import styled from "styled-components";
 import ScrollButton from '../Styles/ScrollButton';
 import { Default, Title } from '../Styles/SharedStyles';
-
+///
 
 const IntroductionBox = styled.div` 
 /* box-shadow:2px 4px 6px rgba(0,0,0,0.3);
