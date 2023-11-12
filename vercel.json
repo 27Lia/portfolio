@@ -1,0 +1,6 @@
+{
+    "redirects": [
+      { "source": "/(.*)", "destination": "https://your-new-url.com", "permanent": true }
+    ]
+  }
+  
