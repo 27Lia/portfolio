@@ -73,9 +73,9 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
   };
 
   const images = [
-    "images/shopping.jpg",
-    "images/shopping2.jpg",
-    "images/shopping3.jpg",
+    "./shopping.jpg",
+    "./shopping2.jpg",
+    "./shopping3.jpg",
   ];
 
   const modalContent = (

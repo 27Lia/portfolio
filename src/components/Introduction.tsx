@@ -150,7 +150,7 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
 
       <LeftBox>
           <Imgbox>
-          <Img src="../images/profile.jpgw" alt="Profile Image" />
+          <Img src="./profile.jpg" alt="Profile Image" />
 
           <Title>
           <ListBox>
@@ -176,7 +176,7 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
                     rel="noopener noreferrer"
                   >
                     <IconImg
-                      src="../images/velog.jpeg"
+                      src="./velog.jpeg"
                       alt="Velog"
                     />
                   </IconLink>

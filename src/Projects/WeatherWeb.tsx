@@ -48,10 +48,10 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
 const WeatherWeb: React.FC = () => {
 
   const images = [
-    "images/weather.jpg",
-    "images/weather2.jpg",
-    "images/weather3.jpg",
-    "images/weather4.jpg",
+    "./weather.jpg",
+    "./weather2.jpg",
+    "./weather3.jpg",
+    "./weather4.jpg",
 
   ];
 

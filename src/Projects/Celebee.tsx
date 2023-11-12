@@ -79,9 +79,9 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
   };
 
   const images = [
-    "images/celebee.jpg",
-    "images/celebee2.jpg",
-    "images/celebee3.jpg",
+    "./celebee.jpg",
+    "./celebee2.jpg",
+    "./celebee3.jpg",
   ];
 
   const modalContent = (
