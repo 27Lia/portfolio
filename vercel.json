@@ -1,6 +1,0 @@
-{
-    "redirects": [
-      { "source": "/(.*)", "destination": "portfolio-lia.vercel.app", "permanent": true }
-    ]
-  }
-  
