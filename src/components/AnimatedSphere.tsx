@@ -6,13 +6,13 @@ import { Text } from "@react-three/drei";
 
 const AnimatedSphere = () => {
   const meshRef = useRef<Mesh>(null);
-  const [clicked, setClicked] = useState(false); // 클릭 상태를 저장하는 state
-  const [explode, setExplode] = useState(false); // '터지는' 효과 상태를 저장하는 state
+  const [clicked, setClicked] = useState(false);
+  const [explode, setExplode] = useState(false); 
 
   const { scale } = useSpring({
-    scale: clicked ? 2 : 1, // 클릭 시 스케일이 커지게 함
+    scale: clicked ? 2 : 1, 
     onRest: () => {
-      if (clicked) setExplode(true); // 애니메이션이 끝나면 '터짐' 상태로 설정
+      if (clicked) setExplode(true); 
     },
   });
 
@@ -26,7 +26,7 @@ const AnimatedSphere = () => {
       <a.mesh
         ref={meshRef}
         scale={scale.to((s) => [s, s, s])}
-        onClick={handlePointerDown} // 클릭 이벤트 처리
+        onClick={handlePointerDown} 
 
       >
         <sphereGeometry args={[1, 64, 64]} />
@@ -37,7 +37,6 @@ const AnimatedSphere = () => {
         />
       </a.mesh>
       
-      {/* 클릭되지 않았을 때만 "Click Me!" 텍스트를 보여줌 */}
     {!clicked && (
       <Text
         position={[0, 0, 2]}

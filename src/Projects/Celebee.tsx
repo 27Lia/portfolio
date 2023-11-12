@@ -75,7 +75,7 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
   const toggleModal = () => {
     const newShowModal = !showModal;
     setShowModal(newShowModal);
-    onModalStateChange(newShowModal); // 모달 상태 변경을 상위 컴포넌트에 전달
+    onModalStateChange(newShowModal); 
   };
 
   const images = [
@@ -158,7 +158,6 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
 
   const tabs = ["소개", "기여한 점"];
   const contents = [
-    // 첫 번째 탭의 내용
     <SectionText>
       <h3>카드 형태로 모임을 만들고 참여하는 인터렉티브한 플랫폼입니다.</h3>
       <br />
@@ -183,7 +182,6 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
       </LinkBox>
     </SectionText>,
 
-    // 두 번째 탭의 내용
     <Item
       descriptions={[
         "모임 작성 페이지, 모임 상세 페이지 개발",

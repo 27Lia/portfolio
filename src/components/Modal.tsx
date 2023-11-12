@@ -35,10 +35,8 @@ interface Props {
   const Modal: React.FC<Props> = ({ toggleModal, content }) => {
     
     useEffect(() => {
-      // 모달이 마운트될 때 body의 스크롤을 비활성화
       document.body.style.overflow = 'hidden';
   
-      // 컴포넌트가 언마운트될 때 body의 스크롤을 다시 활성화
       return () => {
         document.body.style.overflow = 'auto';
       };

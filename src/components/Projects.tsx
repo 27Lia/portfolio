@@ -10,36 +10,32 @@ import { Default, Title } from "../Styles/SharedStyles";
 
 const Box = styled.div`
   display: flex;
-  align-items:center;
+  align-items: center;
   /* flex-wrap: nowrap;  */
-  overflow: auto; 
-  padding:   0px 100px ;
+  overflow: auto;
+  padding: 0px 100px;
   /* -webkit-overflow-scrolling: touch;  */
   /* scroll-behavior: smooth;  */
-height: 80vh;
+  height: 80vh;
 
-
-  scrollbar-width: thin; 
+  scrollbar-width: thin;
   &::-webkit-scrollbar {
-    height: 12px; 
+    height: 12px;
   }
 
   & > div {
-    flex: 0 0 auto; 
+    flex: 0 0 auto;
     margin-right: 10px;
   }
 `;
 const DivBox = styled.div`
-min-height: 100vh;
+  min-height: 100vh;
   position: relative;
-  max-width:100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
-`
-
-
+`;
 
 interface ProjectsProps {
   scrollToRef: (ref: React.RefObject<HTMLDivElement>) => void;
@@ -47,43 +43,30 @@ interface ProjectsProps {
 }
 
 const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
-  const boxRef = useRef<HTMLDivElement>(null); // Box 컴포넌트를 위한 ref
+  const boxRef = useRef<HTMLDivElement>(null); 
 
-  const handleWheel = (e: WheelEvent) => {
+const handleWheel = (e: WheelEvent) => {
   const boxElement = boxRef.current;
   if (!boxElement) return;
 
   const maxScrollLeft = boxElement.scrollWidth - boxElement.clientWidth;
+  const isAtEnd = boxElement.scrollLeft >= maxScrollLeft - 1; 
 
-  const scrollingUp = e.deltaY < 0;
-  const scrollingDown = e.deltaY > 0;
-
-  const scrollingLeft = e.deltaX < 0;
-  const scrollingRight = e.deltaX > 0;
-
-  const isAtStart = boxElement.scrollLeft <= 0;
-  const isAtEnd = boxElement.scrollLeft >= maxScrollLeft;
-
-  if (isAtEnd && scrollingDown) {
-  }
-  else if (isAtStart && scrollingUp) {
-  }
-  else {
+  if (!isAtEnd) {
     e.preventDefault();
     boxElement.scrollLeft += e.deltaY + e.deltaX;
   }
 };
 
 
-
   useEffect(() => {
     const boxElement = boxRef.current;
     if (!boxElement) return;
 
-    boxElement.addEventListener('wheel', handleWheel);
+    boxElement.addEventListener("wheel", handleWheel);
 
     return () => {
-      boxElement.removeEventListener('wheel', handleWheel);
+      boxElement.removeEventListener("wheel", handleWheel);
     };
   }, []);
 
@@ -92,27 +75,25 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
     if (!boxElement) return;
 
     if (isOpen) {
-      boxElement.removeEventListener('wheel', handleWheel);
+      boxElement.removeEventListener("wheel", handleWheel);
     } else {
-      boxElement.addEventListener('wheel', handleWheel);
+      boxElement.addEventListener("wheel", handleWheel);
     }
   };
   return (
-    <DivBox  ref={ref}>
-      {/* <Default > */}
+    <DivBox ref={ref}>
       <Title>Projects</Title>
-        <Box ref={boxRef}>
+
+      <Box ref={boxRef}>
         <BusinessWebsiteProject />
-      <Celebee onModalStateChange={handleModalStateChange} />
+        <Celebee onModalStateChange={handleModalStateChange} />
         <ShoppingMall onModalStateChange={handleModalStateChange} />
         <WeatherWeb />
-        </Box>
+      </Box>
 
-        <ScrollButton onClick={() => props.scrollToRef(props.educationRef)}>
-          Go to Education / Awards
-        </ScrollButton>
-
-      {/* </Default> */}
+      <ScrollButton onClick={() => props.scrollToRef(props.educationRef)}>
+        Go to Education / Awards
+      </ScrollButton>
     </DivBox>
   );
 });

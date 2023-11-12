@@ -47,7 +47,6 @@ export const ListItem = styled.li`
 
 export const Icon = styled.span`
   margin-right: 5px;
-  // 아이콘 스타일 여기에 추가
 `;
 
 export const  TabsContainer = styled.div`
@@ -85,7 +84,7 @@ export const TabContent = styled.div`
 
 
 export const ProjectDefault = styled.div`
-  /* width: 60%;  */
+  width: 80%; 
   margin: 20px auto;
   padding: 20px;
   height: 500px; 

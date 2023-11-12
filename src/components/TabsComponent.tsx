@@ -1,5 +1,3 @@
-// TabsComponent.js 또는 TabsComponent.tsx
-
 import React, { useState } from 'react';
 
 import {

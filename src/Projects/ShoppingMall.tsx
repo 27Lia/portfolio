@@ -64,12 +64,12 @@ type ShoppingMallProps = {
 };
 
 const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
-  const [showModal, setShowModal] = useState(false); // 모달의 상태를 관리
+  const [showModal, setShowModal] = useState(false); 
 
   const toggleModal = () => {
     const newShowModal = !showModal;
     setShowModal(newShowModal);
-    onModalStateChange(newShowModal); // 모달 상태 변경을 상위 컴포넌트에 전달
+    onModalStateChange(newShowModal); 
   };
 
   const images = [
