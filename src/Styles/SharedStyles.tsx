@@ -104,12 +104,6 @@ export const TabButton = styled.button`
     border-bottom: 2px solid blue;
   }
 
-  ${media.mobile`
-
-  font-size: 1.2em;
-
-  `}
-  
 `;
 
 export const TabContent = styled.div`
