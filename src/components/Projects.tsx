@@ -1,12 +1,21 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import BusinessWebsiteProject from "../Projects/BusinessWebsiteProject";
 import Celebee from "../Projects/Celebee";
 import ShoppingMall from "../Projects/ShoppingMall";
 import WeatherWeb from "../Projects/WeatherWeb";
 import ScrollButton from "../Styles/ScrollButton";
 import { Default, Title } from "../Styles/SharedStyles";
+
+const media = {
+  mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
+    @media (max-width: 1300px) {
+      ${css(strings, ...args)}
+    }
+  `,
+};
+
 
 const Box = styled.div`
   display: flex;
@@ -17,6 +26,13 @@ const Box = styled.div`
   /* -webkit-overflow-scrolling: touch;  */
   /* scroll-behavior: smooth;  */
   height: 80vh;
+
+  ${media.mobile`
+  flex-wrap:wrap;
+  padding: 0px ;
+
+  `}
+
 
   scrollbar-width: thin;
   &::-webkit-scrollbar {
@@ -45,19 +61,22 @@ interface ProjectsProps {
 const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
   const boxRef = useRef<HTMLDivElement>(null); 
 
-const handleWheel = (e: WheelEvent) => {
-  const boxElement = boxRef.current;
-  if (!boxElement) return;
-
-  const maxScrollLeft = boxElement.scrollWidth - boxElement.clientWidth;
-  const isAtEnd = boxElement.scrollLeft >= maxScrollLeft - 1; 
-
-  if (!isAtEnd) {
+  const handleWheel = (e: WheelEvent) => {
+    const boxElement = boxRef.current;
+    if (!boxElement) return;
+  
+    const maxScrollLeft = boxElement.scrollWidth - boxElement.clientWidth;
+    const minScrollLeft = 0;
+    const newScrollLeft = boxElement.scrollLeft + e.deltaY + e.deltaX;
+  
+    if (newScrollLeft < minScrollLeft || newScrollLeft > maxScrollLeft) {
+      return;
+    }
+  
     e.preventDefault();
-    boxElement.scrollLeft += e.deltaY + e.deltaX;
-  }
-};
-
+    boxElement.scrollLeft = newScrollLeft;
+  };
+  
 
   useEffect(() => {
     const boxElement = boxRef.current;

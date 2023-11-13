@@ -1,5 +1,12 @@
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+const media = {
+  mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
+    @media (max-width: 1300px) {
+      ${css(strings, ...args)}
+    }
+  `,
+};
 
 export const LinkBox = styled.div`
   display:flex;
@@ -93,6 +100,14 @@ export const ProjectDefault = styled.div`
   display: flex;
   flex-direction: row; 
   justify-content: space-evenly; 
+
+  ${media.mobile`
+  width: 100%; 
+  margin: 0px;
+
+  `}
+
+
 `;
 
 export const Default = styled.div`

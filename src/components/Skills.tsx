@@ -2,8 +2,15 @@
 
 import React, { forwardRef, useState } from "react";
 import styled, { css } from "styled-components";
-import { Default, Title } from "../Styles/SharedStyles";
 import { skills } from "../components/SkillsArray";
+
+const media = {
+  mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
+    @media (max-width: 1000px) {
+      ${css(strings, ...args)}
+    }
+  `,
+};
 
 const SkillHeader = styled.h2`
   font-weight: 400;
@@ -33,6 +40,8 @@ const Wallet = styled.div`
   height: 100%;
   display: flex;
   flex-direction:column;
+
+
 `;
 
 const CardBox = styled.div `
@@ -40,14 +49,17 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-wrap: wrap; 
-overflow: auto;
 height:100%; 
 
 &::-webkit-scrollbar {
     height: 12px; 
   }
-  
-`
+  ${media.mobile`
+  height: 150px;
+  gap:10px;
+  `}
+
+`;
 
 
 const SkillCardBaseStyle = css`
@@ -63,6 +75,9 @@ flex-direction:column;
   overflow: hidden;
   background-color: #e0e0e0;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+
+
 `;
 
 const SkillIconWrapper = styled.div`
@@ -80,6 +95,11 @@ const SkillCardExpandedStyle = css<SkillCardProps>`
   justify-content:flex-start;
   height:100%;
   width: 250px;
+
+  ${media.mobile`
+  height: auto;
+  `}
+
 
 `;
 const Btn = styled.div`
@@ -123,9 +143,7 @@ interface SkillCardProps {
   expanded: boolean;
   clicked: boolean;
 }
-const SkillCard = styled.div<
-  SkillCardProps & { index: number; gradient: string; expandAll: boolean }
->`
+const SkillCard = styled.div<SkillCardProps & { index: number; gradient: string; expandAll: boolean }>`
   ${SkillCardBaseStyle}
   z-index: ${({ expanded, index }) => (expanded ? 9999 : 1000 - index)};
   background: ${({ gradient }) => gradient};
@@ -150,7 +168,20 @@ const SkillCard = styled.div<
         ? "none"
         : "rotateX(30deg) rotateY(-15deg) rotate(30deg) translateY(-40px)"};
   }
+
+  
+  @media (max-width: 1000px) {
+    
+    width: 100%; 
+    margin: 10px 0; 
+    transform: none; 
+    &:hover {
+      transform: none; 
+    }
+    ${SkillCardExpandedStyle} 
+  }
 `;
+
 
 // -------------------------------------------------------------------------------------------
 

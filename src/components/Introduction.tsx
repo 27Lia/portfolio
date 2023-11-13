@@ -1,9 +1,18 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import React, { forwardRef } from "react";
 import ScrollButton from "../Styles/ScrollButton";
 import { Default, Title } from "../Styles/SharedStyles";
 import Skills from "./Skills";
 
+
+// 미디어 쿼리를 위한 헬퍼 함수
+const media = {
+  mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
+    @media (max-width: 1000px) {
+      ${css(strings, ...args)}
+    }
+  `,
+};
 const TextBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,6 +33,12 @@ const DataContainer = styled.div`
   &::-webkit-scrollbar {
     height: 12px; 
   }
+
+  
+  ${media.mobile`
+    padding: 0; // 768px 이하에서 패딩을 0으로 설정
+  `}
+
 `;
 
 const Img = styled.img`
@@ -34,6 +49,7 @@ const Img = styled.img`
   object-fit: cover;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
   border: 5px solid white;
+
 `;
 
 
@@ -61,7 +77,9 @@ const Text = styled.p`
   font-size: 1.125rem;
   line-height: 2;
 
+
 `;
+
 
 const IconLink = styled.a`
   display: inline-block;
@@ -82,6 +100,8 @@ const Imgbox = styled.div`
   justify-content:space-around;
   width:100%;
 height:500px;
+
+
 `;
 
 const LeftBox = styled.div`
@@ -91,6 +111,14 @@ const LeftBox = styled.div`
     height:100%;
     align-items:center;
     padding:20px;
+
+
+    ${media.mobile`
+width:100%;
+padding:0px;
+height:50%;
+
+`}
 
 `;
 
@@ -102,9 +130,12 @@ display:flex;
   flex-direction: column;
 overflow:auto;
 padding:20px;
-
 width:50%;
 height:100%;
+
+${media.mobile`
+width:100%;
+`}
 
 `;
 
@@ -113,13 +144,19 @@ display:flex;
 height:100vh;
 width: 100%;
 overflow:auto;
-`;
 
+${media.mobile`
+display: block;
+`}
+
+`;
 const SkillsBox = styled.div `
   height:100%;
   overflow:auto;
-`
 
+
+ 
+`;
 const ListBox = styled.div `
 display:flex;
 justify-content:center; 
@@ -127,7 +164,7 @@ flex-direction:column;
   overflow:auto;
 
 
-`
+`;
 
 
 
