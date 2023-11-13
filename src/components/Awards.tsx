@@ -1,7 +1,17 @@
 
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {  Title } from "../Styles/SharedStyles";
+
+const media = {
+  mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
+    @media (max-width: 1300px) {
+      ${css(strings, ...args)}
+    }
+  `,
+};
+
+
 
 const SubTitle = styled.h3``;
 const Description = styled.div`
@@ -10,6 +20,12 @@ const Description = styled.div`
 
 const Box = styled.div`
   padding:100px;
+
+  
+${media.mobile`
+  padding:40px;
+  `}
+
 `;
 
 const Awards: React.FC = () => {

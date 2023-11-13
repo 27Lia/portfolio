@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import React from "react";
+
 
 import {
   ProjectTitle,
@@ -20,6 +21,14 @@ import TabsComponent from "../components/TabsComponent";
 import { StyledButton } from "../components/ModalButton";
 import ImageSlider from "../components/ImageSlider";
 
+const media = {
+  mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
+    @media (max-width: 1300px) {
+      ${css(strings, ...args)}
+    }
+  `,
+};
+
 const DescriptionList = styled.ul`
   margin-left: 25px;
 `;
@@ -27,6 +36,11 @@ const DescriptionList = styled.ul`
 const DescriptionItem = styled.li`
   margin-top: 5px;
   font-size:18px;
+
+  ${media.mobile`
+font-size: 12px;
+`}
+
 `;
 
 type ItemProps = {

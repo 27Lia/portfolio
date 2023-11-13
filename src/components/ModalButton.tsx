@@ -1,5 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from "styled-components";
+
+
+const media = {
+  mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
+    @media (max-width: 1300px) {
+      ${css(strings, ...args)}
+    }
+  `,
+};
+
+
 
 export const StyledButton = styled.button`
   background-color: #007BFF;
@@ -14,6 +25,12 @@ export const StyledButton = styled.button`
   max-width: 100%;
   margin-top:20px;
   height:40px;
+
+  ${media.mobile`
+  margin-top:0px;
+  padding: 0px;
+  font-size: 12px;
+  `}
 
   &:hover {
     transform: scale(1.02);

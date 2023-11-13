@@ -14,6 +14,12 @@ export const LinkBox = styled.div`
   gap: 20px;
   margin-top: 20px;
 
+  ${media.mobile`
+margin-top: 0px;
+
+  `}
+
+
 `
 export const TabContentSection = styled.div`
   background: white;
@@ -30,6 +36,13 @@ export const SectionText = styled.ul`
   flex-direction:column;
   height:300px;
   margin-top: 30px;
+font-size:0.8em;
+  
+${media.mobile`
+margin-top: 0px;
+
+  `}
+
 `;
 
 export const Text = styled.li`
@@ -37,6 +50,9 @@ export const Text = styled.li`
   line-height: 1.6;
   display:flex;
   justify-content:space-between;
+
+
+
 `;
 
 export const SectionLinks = styled.div`
@@ -44,12 +60,21 @@ export const SectionLinks = styled.div`
 `;
 
 export const SectionTitle = styled.h3`
-  font-size: 1.2em;
   margin-bottom: 10px;
+
+  ${media.mobile`
+
+  font-size: 1.2em;
+
+  `}
+
 `;
 
 export const ListItem = styled.li`
   margin-bottom: 5px;
+
+
+
 `;
 
 export const Icon = styled.span`
@@ -78,6 +103,13 @@ export const TabButton = styled.button`
     font-weight: bold;
     border-bottom: 2px solid blue;
   }
+
+  ${media.mobile`
+
+  font-size: 1.2em;
+
+  `}
+  
 `;
 
 export const TabContent = styled.div`

@@ -116,7 +116,7 @@ const LeftBox = styled.div`
     ${media.mobile`
 width:100%;
 padding:0px;
-height:50%;
+height:60%;
 
 `}
 
@@ -135,7 +135,9 @@ height:100%;
 
 ${media.mobile`
 width:100%;
-height:40%;
+height:30%;
+padding:0px;
+
 `}
 
 `;

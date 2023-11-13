@@ -1,8 +1,18 @@
 import React, { forwardRef } from 'react';
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import ScrollButton from '../Styles/ScrollButton';
 import { Default, Title } from '../Styles/SharedStyles';
 ///
+
+const media = {
+  mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
+    @media (max-width: 1300px) {
+      ${css(strings, ...args)}
+    }
+  `,
+};
+
+
 
 const IntroductionBox = styled.div` 
 /* box-shadow:2px 4px 6px rgba(0,0,0,0.3);
@@ -10,6 +20,13 @@ border-radius:20px; */
 padding:100px;
 /* width:80%; */
 /* margin-top:10px; */
+
+${media.mobile`
+  padding:40px;
+
+  `}
+
+
 `
 const JobTitle = styled.h2`
   font-size: 24px;
