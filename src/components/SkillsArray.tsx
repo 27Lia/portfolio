@@ -35,11 +35,11 @@ export const skills = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     ],
     descriptions: [
-      "인터페이스를 사용하여 객체의 구조를 정의하고, 코드의 예측 가능성을 높입니다.",
-      "Props와 State에 타입을 적용하여 React 컴포넌트의 타입 안정성을 강화합니다.",
+      "인터페이스를 사용하여 객체의 구조를 정의하고, 코드의 예측 가능성을 높일수있습니다.",
+      "Props와 State에 타입을 적용하여 React 컴포넌트의 타입 안정성을 강화할수있습니다.",
       "간단한 타입스크립트 프로젝트에서의 경험을 바탕으로 지속적으로 학습하고 있으며, 타입 시스템의 이점을 활용하여 버그 발생 가능성을 줄이고자 합니다.",
     ],
-    gradient: "linear-gradient(145deg, #2685f1, #9bc0e3)      ",
+    gradient: "linear-gradient(145deg, #2685f1, #9bc0e3)",
   },
   {
     id: 4,

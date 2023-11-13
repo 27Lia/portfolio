@@ -72,7 +72,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
     if (newScrollLeft < minScrollLeft || newScrollLeft > maxScrollLeft) {
       return;
     }
-  
+  //
     e.preventDefault();
     boxElement.scrollLeft = newScrollLeft;
   };
