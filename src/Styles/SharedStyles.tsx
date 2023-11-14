@@ -79,7 +79,7 @@ export const TabButton = styled.button`
 
   ${media.mobile`
   padding: 0px;
-  font-size:12px;
+  font-size:1em;
   `}
 `;
 
@@ -120,7 +120,6 @@ export const Default = styled.div`
 
 export const Title = styled.h1`
   color: #333;
-  text-align: center;
   font-size: 2.7rem;
   font-weight: 600;
 `;
@@ -136,6 +135,10 @@ export const ProjectTitle = styled.h2`
   font-size: 28px;
   color: #333;
   display: inline-block;
+
+  ${media.mobile`
+font-size: 1.3rem;
+`}
 `;
 
 export const Link = styled.a`
