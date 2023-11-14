@@ -19,19 +19,17 @@ import { StyledButton } from "../components/ModalButton";
 import TabsComponent from "../components/TabsComponent";
 import ImageSlider from "../components/ImageSlider";
 
-
 const DescriptionList = styled.ul`
   margin-left: 25px;
 `;
 
 const DescriptionItem = styled.li`
   margin-top: 5px;
-  font-size:18px;
+  font-size: 18px;
 `;
 
 type ItemProps = {
   descriptions: string[];
-  
 };
 
 const Item: React.FC<ItemProps> = ({ descriptions }) => {
@@ -47,19 +45,12 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
 };
 
 const BusinessWebsiteProject: React.FC = () => {
-
-  const images = [
-    "./BusinessWebsite.jpg",
-    "./BusinessWebsite2.jpg",
-    
-  ];
-
+  const images = ["./BusinessWebsite.jpg", "./BusinessWebsite2.jpg"];
 
   const tabs = ["소개", "기여한 점"];
   const contents = [
     <SectionText>
-      <h3> SEO최적화를 적용한 지역 내 소규모 업체 홈페이지입니다.
-</h3>
+      <h3> SEO최적화를 적용한 지역 내 소규모 업체 홈페이지입니다.</h3>
       <br />
 
       <Text>기간: 2023.09.30 ~ 2023.10.18</Text>
@@ -77,11 +68,10 @@ const BusinessWebsiteProject: React.FC = () => {
 
     <Item
       descriptions={[
-        "S3 버킷으로 웹사이트 배포",
-        "Firebase Authentication을 활용한 로그인,로그아웃, 회원가입 구현",
-        "상품 필터링, 무한 스크롤 기능, 북마크toast message 알림 기능 구현",
-        "스타일드 컴포넌트를 활용하여 CSS 스타일링 및 레이아웃 디자인 진행",
-        "Firebase를 활용한 문의 게시판 CRUD 기능 구현",
+        "SEO 최적화",
+        "디자인 기획",
+        "라이브러리없이 슬라이드 구현",
+        "반응형웹 구현",
       ]}
     />,
   ];
@@ -89,17 +79,14 @@ const BusinessWebsiteProject: React.FC = () => {
   return (
     <ProjectDefault>
       <ProjectBox>
-      <ProjectTitle>업체 홈페이지</ProjectTitle>
-              <ImageSlider images={images} />
-
+        <ProjectTitle>업체 홈페이지</ProjectTitle>
+        <ImageSlider images={images} />
       </ProjectBox>
 
       <TabsContainer>
         <TabsComponent tabs={tabs} contents={contents} />
       </TabsContainer>
-
-     
-      </ProjectDefault>
+    </ProjectDefault>
   );
 };
 
