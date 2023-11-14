@@ -11,6 +11,7 @@ import Education from "./components/Education";
 import Dice from "./components/Dice";
 
 
+
 const CanvasContainer = styled.div`
   height: 100vh;
 `;
@@ -33,21 +34,12 @@ const App = () => {
 
 
 
-  const handleDiceResult = (rotation: { x: number; y: number; z: number }) => {
-    // 주사위 결과에 따라 프로젝트 페이지로 이동하거나 정보를 표시하는 로직
-  console.log("주사위 멈춤: ", rotation);
-    //  rotation 값을 기반으로 특정 프로젝트로 이동하거나 정보를 표시
-  };
 
   return (
     <Container>
         <CanvasContainer>
           <Canvas>
-            <ambientLight intensity={5} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-            <pointLight position={[-10, -10, -10]} />
-            <Dice onRollEnd={handleDiceResult} />
-
+            <Dice  />
           </Canvas>
         </CanvasContainer>
         <ScrollButton onClick={() => scrollToRef(introRef)}>

@@ -87,7 +87,7 @@ const IconImg = styled.img`
 `;
 const Imgbox = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items:center;
   width: 100%;
   height: 500px;
@@ -97,7 +97,7 @@ const LeftBox = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 100%;
+  height: 50%;
   align-items: center;
   padding: 20px;
 
@@ -118,7 +118,7 @@ const RightBox = styled.ul`
   overflow: auto;
   padding: 20px;
   width: 50%;
-  height: 100%;
+  height: 50%;
 
   ${media.mobile`
 width:100%;
@@ -133,7 +133,8 @@ const BoxContainer = styled.div`
   height: 100vh;
   width: 100%;
   overflow: auto;
-
+  justify-content:center;
+  align-items:center;
   ${media.mobile`
 display: block;
 

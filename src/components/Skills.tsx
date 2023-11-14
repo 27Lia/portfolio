@@ -47,7 +47,7 @@ const CardBox = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 100%;
+  height: 60%;
 
   &::-webkit-scrollbar {
     height: 12px;

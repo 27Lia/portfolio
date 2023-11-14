@@ -11,10 +11,6 @@ export const LinkBox = styled.div`
   display: flex;
   justify-content: start;
   gap: 20px;
-  margin-top: 20px;
-  ${media.mobile`
-margin-top: 0px;
-  `}
 `;
 
 export const SectionText = styled.ul`
@@ -86,11 +82,17 @@ export const TabButton = styled.button`
 export const TabContent = styled.div`
   padding: 20px 0;
   display: none;
+  height: 300px;
+  overflow: auto;
+  
   &.active {
     display: block;
   }
-  height: 300px;
-  overflow: auto;
+
+  &::-webkit-scrollbar {
+    height: 12px;
+  }
+
 `;
 
 export const ProjectDefault = styled.div`
