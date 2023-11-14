@@ -168,9 +168,8 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
                 <Imgbox>
                   <Img src="./profile.jpg" alt="Profile Image" />
 
-                  <Title>
                     <ListBox>
-                      <h5>김선미 / Lia </h5>
+                      <h2>김선미 / Lia </h2>
                       <ListItem>1996.09.19</ListItem>
 
                       <ListItem>Tel: 010-3331-3743</ListItem>
@@ -200,7 +199,6 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
                         </IconLink>
                       </IconContainer>
                     </ListBox>
-                  </Title>
                 </Imgbox>
 
                 <TextBox>

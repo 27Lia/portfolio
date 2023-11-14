@@ -122,6 +122,7 @@ export const Title = styled.h1`
   color: #333;
   font-size: 2.7rem;
   font-weight: 600;
+  text-align:center;
 `;
 
 export const ProjectBox = styled.div`
