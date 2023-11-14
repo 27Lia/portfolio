@@ -1,12 +1,11 @@
 // Dice.tsx
 import React, { useRef, useState } from "react";
-import { useFrame } from "@react-three/fiber";
-import { Mesh , MeshStandardMaterial, TextureLoader } from "three";
-import { useLoader } from "@react-three/fiber";
+import { useLoader, useFrame } from '@react-three/fiber';
+import { TextureLoader, Mesh, MeshBasicMaterial } from 'three';
+import { Box } from '@react-three/drei';
 
 type DiceProps = {
     onRollEnd?: (rotation: { x: number; y: number; z: number }) => void;
-    textureUrls: string[];
   };
 
 const Dice: React.FC<DiceProps> = ({ onRollEnd }) => {
@@ -16,19 +15,14 @@ const Dice: React.FC<DiceProps> = ({ onRollEnd }) => {
   const [rotationSpeed, setRotationSpeed] = useState({ x: 0.1, y: 0.1, z: 0.1 });
 
    // 프로젝트 이미지 URL 배열
-   const imageUrls = [
+   const textures = useLoader(TextureLoader, [
     './celebee.jpg',
     './shopping.jpg',
     './weather2.jpg',
     './weather4.jpg',
     './weather3.jpg',
     './BusinessWebsite.jpg',
-  ];
-
-  const textures = imageUrls.map((imageUrl) => {
-    const texture = new TextureLoader().load(imageUrl);
-    return new MeshStandardMaterial({ map: texture });
-  });
+]);
 
   useFrame(() => {
     if (isRolling && meshRef.current) {
@@ -56,14 +50,17 @@ const Dice: React.FC<DiceProps> = ({ onRollEnd }) => {
     
   };
 
+  const materials = textures.map(texture => new MeshBasicMaterial({ map: texture }));
+  
   return (
     <mesh ref={meshRef} position={[0, 0, 0]} onClick={rollDice}>
-      <boxGeometry args={[2, 2, 2]} />
-      {textures.map((material, index) => (
-        <primitive key={index} object={material} attachArray="material" />
-      ))}
+     <Box args={[2, 2, 2]} ref={meshRef} material={materials} />
     </mesh>
   );
 };
 
 export default Dice;
+
+
+
+

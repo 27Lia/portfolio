@@ -31,17 +31,7 @@ const App = () => {
     ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  
-  // 프로젝트 이미지 URL 배열
-  const projectImages = [
-    './celebee.jpg',
-    './shopping.jpg',
-    './weather2.jpg',
-    './weather4.jpg',
-    './weather3.jpg',
-    './BusinessWebsite.jpg',
 
-  ];
 
   const handleDiceResult = (rotation: { x: number; y: number; z: number }) => {
     // 주사위 결과에 따라 프로젝트 페이지로 이동하거나 정보를 표시하는 로직
@@ -57,7 +47,7 @@ const App = () => {
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
 
-            <Dice textureUrls={projectImages} onRollEnd={handleDiceResult} />
+            <Dice onRollEnd={handleDiceResult} />
 
           </Canvas>
         </CanvasContainer>
