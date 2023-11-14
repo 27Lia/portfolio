@@ -19,8 +19,8 @@ const Dice: React.FC<DiceProps> = ({ onRollEnd }) => {
     './celebee.jpg',
     './shopping.jpg',
     './weather2.jpg',
-    './weather4.jpg',
-    './weather3.jpg',
+    './shopping2.jpg',
+    './celebee3.jpg',
     './BusinessWebsite.jpg',
 ]);
 
@@ -45,7 +45,7 @@ const Dice: React.FC<DiceProps> = ({ onRollEnd }) => {
 
   const rollDice = () => {
     setIsRolling(true);
-    setVelocity({ x: 0, y: 1, z: 0 }); // 초기 속도 설정
+    setVelocity({ x: 1, y: 1, z: 0 }); // 초기 속도 설정
     setRotationSpeed({ x: 0.1, y: 0.1, z: 0.1 }); // 초기 회전 속도 설정
     
   };
