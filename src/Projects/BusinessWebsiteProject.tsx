@@ -4,29 +4,19 @@ import styled from "styled-components";
 import {
   ProjectTitle,
   Link,
-  ProjectRole,
-  ProjectTable,
-  ProjectRow,
-  TableCell,
   ProjectDefault,
   ProjectBox,
   Text,
   SectionText,
   LinkBox,
   TabsContainer,
+  DescriptionItem,
+  DescriptionList,
 } from "../Styles/SharedStyles";
 import { StyledButton } from "../components/ModalButton";
 import TabsComponent from "../components/TabsComponent";
 import ImageSlider from "../components/ImageSlider";
 
-const DescriptionList = styled.ul`
-  margin-left: 25px;
-`;
-
-const DescriptionItem = styled.li`
-  margin-top: 5px;
-  font-size: 18px;
-`;
 
 type ItemProps = {
   descriptions: string[];

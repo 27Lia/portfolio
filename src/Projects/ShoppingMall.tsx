@@ -16,31 +16,23 @@ import styled from "styled-components";
 import {
   ProjectTitle,
   Link,
-  ProjectRole,
-  ProjectTable,
-  ProjectRow,
-  TableCell,
+
   ProjectDefault,
   ProjectBox,
   SectionText,
   LinkBox,
   Text,
   TabsContainer,
+  DescriptionItem,
+  DescriptionList,
 } from "../Styles/SharedStyles";
 import TabsComponent from "../components/TabsComponent";
 
-const DescriptionList = styled.ul`
-  margin-left: 25px;
-`;
+
 
 const ModalBtnBox = styled.div`
   display: flex;
   justify-content: center;
-`;
-
-const DescriptionItem = styled.li`
-  margin-top: 5px;
-  font-size: 18px;
 `;
 
 type ItemProps = {
@@ -164,7 +156,7 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
       <h3>FireBase를 사용한 쇼핑몰 프로젝트입니다.</h3>
       <br />
 
-      <Text>기간: 2023.07 ~리팩토링 진행중</Text>
+      <Text>기간: 2023.07 ~ 2023.10 (firebase 리팩토링)</Text>
       <Text>인원: 솔로 프로젝트</Text>
       <Text>기술스택: React, Styled-components, Firebase, Redux, AWS S3</Text>
       <Text>테스트 정보: ID: test@gmail.com / PW: test1234!</Text>

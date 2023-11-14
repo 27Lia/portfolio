@@ -38,5 +38,4 @@ export const CloseButton = styled.button`
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
-  font-size: 18px;
 `;

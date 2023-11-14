@@ -30,7 +30,8 @@ const Box = styled.div`
   ${media.mobile`
   flex-wrap:wrap;
   padding: 0px ;
-
+  display:flex;
+justify-content: space-evenly;
   `}
 
 
@@ -42,6 +43,9 @@ const Box = styled.div`
   & > div {
     flex: 0 0 auto;
     margin-right: 10px;
+
+
+
   }
 `;
 const DivBox = styled.div`

@@ -15,8 +15,8 @@ const media = {
 const SkillHeader = styled.h2`
   font-weight: 400;
   font-size: 18px;
-  text-align:center;
-  padding:10px;
+  text-align: center;
+  padding: 10px;
 `;
 
 const DescriptionList = styled.ul`
@@ -39,32 +39,28 @@ const SkillIcon = styled.img`
 const Wallet = styled.div`
   height: 100%;
   display: flex;
-  flex-direction:column;
-
-
+  flex-direction: column;
 `;
 
-const CardBox = styled.div `
-display:flex;
-justify-content:center;
-align-items:center;
-flex-wrap: wrap; 
-height:100%; 
+const CardBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
 
-&::-webkit-scrollbar {
-    height: 12px; 
+  &::-webkit-scrollbar {
+    height: 12px;
   }
   ${media.mobile`
   height: 150px;
   gap:10px;
   `}
-
 `;
 
-
 const SkillCardBaseStyle = css`
-display:flex;
-flex-direction:column;
+  display: flex;
+  flex-direction: column;
   margin: -85px;
   width: 220px;
   height: 110px;
@@ -75,9 +71,6 @@ flex-direction:column;
   overflow: hidden;
   background-color: #e0e0e0;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-
-
-
 `;
 
 const SkillIconWrapper = styled.div`
@@ -88,34 +81,33 @@ const SkillIconWrapper = styled.div`
 `;
 
 const SkillCardExpandedStyle = css<SkillCardProps>`
-  overflow:auto;
+  overflow: auto;
   padding: 20px;
   color: #222;
-  display:flex;
-  justify-content:flex-start;
-  height:100%;
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
   width: 250px;
 
   ${media.mobile`
   height: auto;
+  width: 200px;
+
   `}
-
-
 `;
 const Btn = styled.div`
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-`
-
+`;
 
 const ExpandButton = styled.button`
   padding: 10px 20px;
   font-weight: bold;
   color: #fff;
   background-color: #007bff;
-  width:150px;
+  width: 150px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -130,12 +122,9 @@ const ExpandButton = styled.button`
   }
 `;
 
-const DivBox = styled.div `
-  height:100%;
-  
-`
-
-
+const DivBox = styled.div`
+  height: 100%;
+`;
 
 // -------------------------------------------------------------------------------------------
 
@@ -143,7 +132,9 @@ interface SkillCardProps {
   expanded: boolean;
   clicked: boolean;
 }
-const SkillCard = styled.div<SkillCardProps & { index: number; gradient: string; expandAll: boolean }>`
+const SkillCard = styled.div<
+  SkillCardProps & { index: number; gradient: string; expandAll: boolean }
+>`
   ${SkillCardBaseStyle}
   z-index: ${({ expanded, index }) => (expanded ? 9999 : 1000 - index)};
   background: ${({ gradient }) => gradient};
@@ -169,19 +160,16 @@ const SkillCard = styled.div<SkillCardProps & { index: number; gradient: string;
         : "rotateX(30deg) rotateY(-15deg) rotate(30deg) translateY(-40px)"};
   }
 
-  
   @media (max-width: 1000px) {
-    
-    width: 100%; 
-    margin: 10px 0; 
-    transform: none; 
+    width: 100%;
+    margin: 10px 0;
+    transform: none;
     &:hover {
-      transform: none; 
+      transform: none;
     }
-    ${SkillCardExpandedStyle} 
+    ${SkillCardExpandedStyle}
   }
 `;
-
 
 // -------------------------------------------------------------------------------------------
 
@@ -193,14 +181,14 @@ interface SkillsProps {
 const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
   const [expandedSkill, setExpandedSkill] = useState<number | null>(null);
   const [clickedSkill, setClickedSkill] = useState<number | null>(null);
-  const [expandAll, setExpandAll] = useState<boolean>(false); 
+  const [expandAll, setExpandAll] = useState<boolean>(false);
 
   const toggleSkill = (id: number) => {
-    if (expandAll) return; 
+    if (expandAll) return;
 
     const isExpanding = expandedSkill !== id;
     setExpandedSkill(isExpanding ? id : null);
-    setClickedSkill(isExpanding ? id : null); 
+    setClickedSkill(isExpanding ? id : null);
   };
   const toggleExpandAll = () => {
     setExpandAll(!expandAll);
@@ -213,25 +201,23 @@ const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
     <DivBox ref={ref}>
       {/* <Default> */}
 
-        <Wallet>
+      <Wallet>
         <Btn>
-        <ExpandButton onClick={toggleExpandAll}>
-          {expandAll ? "닫기" : "스킬 펼쳐보기"}
-        </ExpandButton>
+          <ExpandButton onClick={toggleExpandAll}>
+            {expandAll ? "닫기" : "스킬 펼쳐보기"}
+          </ExpandButton>
         </Btn>
         <CardBox>
-
           {skills.map((skill, index) => (
             <SkillCard
               key={skill.id}
-              expanded={expandAll || expandedSkill === skill.id} 
-              clicked={expandAll || clickedSkill === skill.id} 
-              expandAll={expandAll} 
+              expanded={expandAll || expandedSkill === skill.id}
+              clicked={expandAll || clickedSkill === skill.id}
+              expandAll={expandAll}
               onClick={() => toggleSkill(skill.id)}
               index={index}
               gradient={skill.gradient}
             >
-              
               <SkillHeader>{skill.name}</SkillHeader>
               <SkillIconWrapper>
                 {skill.icons.map((icon, index) => (
@@ -242,7 +228,7 @@ const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
                   />
                 ))}
               </SkillIconWrapper>
-              {(expandAll || expandedSkill === skill.id) && ( 
+              {(expandAll || expandedSkill === skill.id) && (
                 <DescriptionList>
                   {skill.descriptions.map((desc, index) => (
                     <DescriptionItem key={index}>{desc}</DescriptionItem>
@@ -251,9 +237,8 @@ const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
               )}
             </SkillCard>
           ))}
-          </CardBox>
-
-        </Wallet>
+        </CardBox>
+      </Wallet>
       {/* </Default> */}
     </DivBox>
   );

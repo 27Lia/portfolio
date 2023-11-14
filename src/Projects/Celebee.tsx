@@ -15,34 +15,17 @@ import styled from "styled-components";
 import {
   ProjectTitle,
   Link,
-  ProjectRole,
-  ProjectTable,
-  ProjectRow,
-  TableCell,
   ProjectDefault,
   ProjectBox,
   TabsContainer,
-  TabButton,
-  TabContent,
-  TabContentSection,
-  SectionTitle,
-  SectionLinks,
   SectionText,
   Text,
   LinkBox,
+  DescriptionItem,
+  DescriptionList,
 } from "../Styles/SharedStyles";
 import ImageSlider from "../components/ImageSlider";
 import TabsComponent from "../components/TabsComponent";
-
-const DescriptionList = styled.ul`
-  margin-left: 25px;
-`;
-
-const DescriptionItem = styled.li`
-  margin-top: 5px;
-  font-size: 18px;
-  line-height: 1.8;
-`;
 
 const ModalBtnBox = styled.div`
   display: flex;

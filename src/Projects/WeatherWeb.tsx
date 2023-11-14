@@ -2,46 +2,21 @@ import styled, { css } from "styled-components";
 
 import React from "react";
 
-
 import {
   ProjectTitle,
   Link,
-  ProjectRole,
-  ProjectTable,
-  ProjectRow,
-  TableCell,
   ProjectDefault,
   ProjectBox,
   TabsContainer,
   Text,
   LinkBox,
   SectionText,
+  DescriptionItem,
+  DescriptionList,
 } from "../Styles/SharedStyles";
 import TabsComponent from "../components/TabsComponent";
 import { StyledButton } from "../components/ModalButton";
 import ImageSlider from "../components/ImageSlider";
-
-const media = {
-  mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
-    @media (max-width: 1300px) {
-      ${css(strings, ...args)}
-    }
-  `,
-};
-
-const DescriptionList = styled.ul`
-  margin-left: 25px;
-`;
-
-const DescriptionItem = styled.li`
-  margin-top: 5px;
-  font-size:18px;
-
-  ${media.mobile`
-font-size: 12px;
-`}
-
-`;
 
 type ItemProps = {
   descriptions: string[];
@@ -60,21 +35,21 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
 };
 
 const WeatherWeb: React.FC = () => {
-
   const images = [
     "./weather.jpg",
     "./weather2.jpg",
     "./weather3.jpg",
     "./weather4.jpg",
-
   ];
 
   const tabs = ["소개", "기여한 점"];
   const contents = [
     <SectionText>
-      <h3>      사용자의 현재위치 날씨에 따라 배경이 동적으로 변경 되며, To-Do List
-            기능이 포함됐습니다.
-</h3>
+      <h3>
+        {" "}
+        사용자의 현재위치 날씨에 따라 배경이 동적으로 변경 되며, To-Do List
+        기능이 포함됐습니다.
+      </h3>
       <br />
 
       <Text>기간: 2023.07</Text>
@@ -90,30 +65,25 @@ const WeatherWeb: React.FC = () => {
       </LinkBox>
     </SectionText>,
 
-<Item
-descriptions={[
-  "동적 배경 이미지 변화:사용자의 현재 위치의 날씨를 동적으로 배경 이미지를 변화하는 기능 개발",
-  "openAPI 활용:사용자의 현재 위치를 기반으로 한 날씨 정보 제공",
-  "할 일 목록 관리 기능:CRUD기능 구현",
-]}
-/>,
+    <Item
+      descriptions={[
+        "동적 배경 이미지 변화:사용자의 현재 위치의 날씨를 동적으로 배경 이미지를 변화하는 기능 개발",
+        "openAPI 활용:사용자의 현재 위치를 기반으로 한 날씨 정보 제공",
+        "할 일 목록 관리 기능:CRUD기능 구현",
+      ]}
+    />,
   ];
 
   return (
     <ProjectDefault>
-            <ProjectBox>
-
-      <ProjectTitle>날씨 인터렉티브 웹</ProjectTitle>
-      <ImageSlider images={images} />
-
-            </ProjectBox>
-
- 
+      <ProjectBox>
+        <ProjectTitle>날씨 인터렉티브 웹</ProjectTitle>
+        <ImageSlider images={images} />
+      </ProjectBox>
 
       <TabsContainer>
         <TabsComponent tabs={tabs} contents={contents} />
       </TabsContainer>
-
     </ProjectDefault>
   );
 };
