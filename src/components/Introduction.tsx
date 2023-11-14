@@ -4,7 +4,6 @@ import ScrollButton from "../Styles/ScrollButton";
 import { Default, Title } from "../Styles/SharedStyles";
 import Skills from "./Skills";
 
-
 // 미디어 쿼리를 위한 헬퍼 함수
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
@@ -16,29 +15,27 @@ const media = {
 const TextBox = styled.div`
   display: flex;
   flex-direction: column;
-  height:100%;
-  display:flex;
+  height: 100%;
+  display: flex;
 `;
 
 const DataContainer = styled.div`
   display: flex;
-  flex-direction:column;
-  justify-content:space-between;
-  width:100%;
-  overflow: auto; 
-  height:100vh;
-  scrollbar-width: thin; 
-  padding:100px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  overflow: auto;
+  height: 100vh;
+  scrollbar-width: thin;
+  padding: 100px;
 
   &::-webkit-scrollbar {
-    height: 12px; 
+    height: 12px;
   }
 
-  
   ${media.mobile`
     padding: 0; // 768px 이하에서 패딩을 0으로 설정
   `}
-
 `;
 
 const Img = styled.img`
@@ -47,23 +44,19 @@ const Img = styled.img`
   height: 200px;
   margin-right: 2rem;
   object-fit: cover;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border: 5px solid white;
-
 `;
-
-
 
 const ListItem = styled.li`
   font-size: 18px;
   display: flex;
   align-items: center;
-  margin-bottom: 10px; 
-  
+  margin-bottom: 10px;
 `;
 
 const IconContainer = styled.div`
-margin-left:4px;
+  margin-left: 4px;
   display: flex;
 `;
 
@@ -76,10 +69,7 @@ const Link = styled.a`
 const Text = styled.p`
   font-size: 1.125rem;
   line-height: 2;
-
-
 `;
-
 
 const IconLink = styled.a`
   display: inline-block;
@@ -96,81 +86,68 @@ const IconImg = styled.img`
   height: 24px;
 `;
 const Imgbox = styled.div`
-  display:flex;
-  justify-content:space-around;
-  width:100%;
-height:500px;
-
-
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 500px;
 `;
 
 const LeftBox = styled.div`
-  display:flex;
-  flex-direction:column;
-    width: 50%;
-    height:100%;
-    align-items:center;
-    padding:20px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  padding: 20px;
 
-
-    ${media.mobile`
+  ${media.mobile`
 width:100%;
 padding:0px;
 height:60%;
 
 `}
-
 `;
 
 const RightBox = styled.ul`
-display:flex;
+  display: flex;
   list-style: none;
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-overflow:auto;
-padding:20px;
-width:50%;
-height:100%;
+  overflow: auto;
+  padding: 20px;
+  width: 50%;
+  height: 100%;
 
-${media.mobile`
+  ${media.mobile`
 width:100%;
 height:30%;
 padding:0px;
 
 `}
-
 `;
 
 const BoxContainer = styled.div`
-display:flex;
-height:100vh;
-width: 100%;
-overflow:auto;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
 
-${media.mobile`
+  ${media.mobile`
 display: block;
 
 `}
-
 `;
-const SkillsBox = styled.div `
-  height:100%;
-  overflow:auto;
-
-
- 
+const SkillsBox = styled.div`
+  height: 100%;
+  overflow: auto;
 `;
-const ListBox = styled.div `
-display:flex;
-justify-content:center; 
-flex-direction:column;
-  overflow:auto;
-
-
+const ListBox = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: auto;
 `;
-
-
 
 interface IntroductionProps {
   scrollToRef: (ref: React.RefObject<HTMLDivElement>) => void;
@@ -182,89 +159,76 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
     return (
       <div ref={ref}>
         <Default>
+          <DataContainer>
+            {/* <Title>Introduction</Title> */}
 
-        <DataContainer>
+            <BoxContainer>
+              <LeftBox>
+                <Imgbox>
+                  <Img src="./profile.jpg" alt="Profile Image" />
 
-        {/* <Title>Introduction</Title> */}
+                  <Title>
+                    <ListBox>
+                      <h5>김선미 / Lia </h5>
+                      <ListItem>1996.09.19</ListItem>
 
-        <BoxContainer>
+                      <ListItem>Tel: 010-3331-3743</ListItem>
+                      <ListItem>
+                        Email:
+                        <Link href="mailto:tjs4114@gmail.com">
+                          tjs4114@gmail.com
+                        </Link>
+                      </ListItem>
+                      <IconContainer>
+                        <IconLink
+                          href="https://github.com/27Lia"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <IconImg
+                            src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                            alt="GitHub"
+                          />
+                        </IconLink>
+                        <IconLink
+                          href="https://velog.io/@rlatjsal010"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <IconImg src="./velog.jpeg" alt="Velog" />
+                        </IconLink>
+                      </IconContainer>
+                    </ListBox>
+                  </Title>
+                </Imgbox>
 
-      <LeftBox>
-          <Imgbox>
-          <Img src="./profile.jpg" alt="Profile Image" />
+                <TextBox>
+                  <Text>
+                    <strong>아이디어</strong>를 내고{" "}
+                    <strong>적극적으로 소통</strong>하는 것을 좋아합니다.
+                    반복적인 작업을 지속하는 것을 지양하며 효율적인 작업을
+                    지향합니다.
+                  </Text>
+                  <Text>
+                    이전 직장에서 업무를 수행하면서{" "}
+                    <strong>반복적인 작업에 직면</strong>하게 되었고,{" "}
+                    <strong>더 효율적인 방법이 없을까?</strong> 하는 호기심으로
+                    인해 개발을 시작하게 되었습니다.
+                  </Text>
+                </TextBox>
+              </LeftBox>
 
-          <Title>
-          <ListBox>
-                <h4>김선미 / Lia </h4>
-                <ListItem>1996.09.19</ListItem>
-
-                <ListItem>Tel: 010-3331-3743</ListItem>
-                <ListItem>Email:<Link href="mailto:tjs4114@gmail.com">tjs4114@gmail.com</Link></ListItem>
-                <IconContainer>
-                  <IconLink
-                    href="https://github.com/27Lia"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <IconImg
-                      src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-                      alt="GitHub"
-                    />
-                  </IconLink>
-                  <IconLink
-                    href="https://velog.io/@rlatjsal010"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <IconImg
-                      src="./velog.jpeg"
-                      alt="Velog"
-                    />
-                  </IconLink>
-                </IconContainer>
-                </ListBox>
-          </Title>
-          </Imgbox>
-
-
-         
-          <TextBox>
-              <Text>
-                <strong>아이디어</strong>를 내고{" "}
-                <strong>적극적으로 소통</strong>하는 것을 좋아합니다. 반복적인
-                작업을 지속하는 것을 지양하며 효율적인 작업을 지향합니다.
-              </Text>
-              <Text>
-                이전 직장에서 업무를 수행하면서{" "}
-                <strong>반복적인 작업에 직면</strong>하게 되었고,{" "}
-                <strong>더 효율적인 방법이 없을까?</strong> 하는 호기심으로 인해
-                개발을 시작하게 되었습니다.
-              </Text>
-            </TextBox>
-
-            
-            </LeftBox>
-
-
-            <RightBox>
-
-
+              <RightBox>
                 <SkillsBox>
-<Skills {...(null as any)} />
-</SkillsBox>
+                  <Skills {...(null as any)} />
+                </SkillsBox>
+              </RightBox>
+            </BoxContainer>
 
-                </RightBox>
-              
-
-                </BoxContainer>
-
-
-                <ScrollButton onClick={() => props.scrollToRef(props.careerRef)}>
-            Go to Career
-          </ScrollButton>
-
+            <ScrollButton onClick={() => props.scrollToRef(props.careerRef)}>
+              Go to Career
+            </ScrollButton>
           </DataContainer>
-
         </Default>
       </div>
     );

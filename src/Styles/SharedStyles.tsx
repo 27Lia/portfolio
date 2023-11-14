@@ -26,7 +26,6 @@ export const SectionText = styled.ul`
   overflow: auto;
 
   ${media.mobile`
-  border: 1px solid;
 margin-top: 0px;
 font-size: 0.9em
   `}
@@ -54,7 +53,10 @@ export const Icon = styled.span`
 
 export const TabsContainer = styled.div`
   margin-top: 20px;
+  ${media.mobile`
   width: 100%;
+  `}
+
 `;
 
 export const TabButton = styled.button`
@@ -64,7 +66,7 @@ export const TabButton = styled.button`
   cursor: pointer;
   border-bottom: 2px solid transparent;
   margin-right: 10px;
-  font-size: 18px;
+  font-size:18px;
 
   &:hover {
     border-bottom: 2px solid blue;
@@ -74,6 +76,11 @@ export const TabButton = styled.button`
     font-weight: bold;
     border-bottom: 2px solid blue;
   }
+
+  ${media.mobile`
+  padding: 0px;
+  font-size:12px;
+  `}
 `;
 
 export const TabContent = styled.div`
@@ -82,6 +89,8 @@ export const TabContent = styled.div`
   &.active {
     display: block;
   }
+  height: 300px;
+  overflow: auto;
 `;
 
 export const ProjectDefault = styled.div`
@@ -98,7 +107,6 @@ export const ProjectDefault = styled.div`
   ${media.mobile`
   width: 100%; 
   margin: 0px;
-
   `}
 `;
 
