@@ -8,7 +8,7 @@ import styled from "styled-components";
 import ScrollButton from "./Styles/ScrollButton";
 import Career from "./components/Career";
 import Education from "./components/Education";
-import Skills from "./components/Skills";
+import Dice from "./components/Dice";
 
 
 const CanvasContainer = styled.div`
@@ -31,6 +31,23 @@ const App = () => {
     ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  
+  // 프로젝트 이미지 URL 배열
+  const projectImages = [
+    './celebee.jpg',
+    './BusinessWebsite.jpg',
+    './shopping.jpg',
+    './weather2.jpg',
+    './weather4.jpg',
+    './weather3.jpg',
+  ];
+
+  const handleDiceResult = (rotation: { x: number; y: number; z: number }) => {
+    // 주사위 결과에 따라 프로젝트 페이지로 이동하거나 정보를 표시하는 로직
+  console.log("주사위 멈춤: ", rotation);
+    //  rotation 값을 기반으로 특정 프로젝트로 이동하거나 정보를 표시
+  };
+
   return (
     <Container>
         <CanvasContainer>
@@ -38,7 +55,9 @@ const App = () => {
             <ambientLight intensity={5} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
-            <AnimatedSphere />
+
+            <Dice textureUrls={projectImages} onRollEnd={handleDiceResult} />
+
           </Canvas>
         </CanvasContainer>
         <ScrollButton onClick={() => scrollToRef(introRef)}>
