@@ -47,7 +47,7 @@ const Dice: React.FC = () => {
     (texture) =>
       new MeshBasicMaterial({
         map: texture,
-        color: 0xd6d6d6, // 이 값을 조정하여 밝기를 조절하세요.
+        color: 0xd6d6d6, 
       })
   );
   // 초기 회전 값 설정

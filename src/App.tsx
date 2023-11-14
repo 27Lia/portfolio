@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import AnimatedSphere from "./components/AnimatedSphere";
 import Projects from "./components/Projects";
 import "./App.css";
 import Introduction from "./components/Introduction";
