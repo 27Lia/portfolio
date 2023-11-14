@@ -35,11 +35,12 @@ const App = () => {
   // 프로젝트 이미지 URL 배열
   const projectImages = [
     './celebee.jpg',
-    './BusinessWebsite.jpg',
     './shopping.jpg',
     './weather2.jpg',
     './weather4.jpg',
     './weather3.jpg',
+    './BusinessWebsite.jpg',
+
   ];
 
   const handleDiceResult = (rotation: { x: number; y: number; z: number }) => {
