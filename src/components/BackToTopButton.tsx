@@ -11,7 +11,7 @@ const Button = styled.button`
   font-size: 16px;
   cursor: pointer;
   z-index: 1;
-  background-color: #fab658; // A nice shade of green
+  background-color: #f8c987; // A nice shade of green
   color: white;
   border: none;
   border-radius: 50%;
@@ -19,7 +19,7 @@ const Button = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: #f8ab3e; // Slightly darker shade for hover
+    background-color: #f8c987; // Slightly darker shade for hover
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   }
 `;

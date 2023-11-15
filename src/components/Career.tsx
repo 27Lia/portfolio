@@ -1,7 +1,6 @@
 import React, { forwardRef } from 'react';
 import styled, { css } from "styled-components";
-import ScrollButton from '../Styles/ScrollButton';
-import { Default, Title } from '../Styles/SharedStyles';
+import { Default, ScrollButton, Title } from '../Styles/SharedStyles';
 ///
 
 const media = {

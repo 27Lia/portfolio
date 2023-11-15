@@ -5,8 +5,7 @@ import BusinessWebsiteProject from "../Projects/BusinessWebsiteProject";
 import Celebee from "../Projects/Celebee";
 import ShoppingMall from "../Projects/ShoppingMall";
 import WeatherWeb from "../Projects/WeatherWeb";
-import ScrollButton from "../Styles/ScrollButton";
-import { Default, Title } from "../Styles/SharedStyles";
+import { Default, ScrollButton, Title } from "../Styles/SharedStyles";
 
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`

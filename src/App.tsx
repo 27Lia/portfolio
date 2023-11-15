@@ -4,11 +4,11 @@ import Projects from "./components/Projects";
 import "./App.css";
 import Introduction from "./components/Introduction";
 import styled from "styled-components";
-import ScrollButton from "./Styles/ScrollButton";
 import Career from "./components/Career";
 import Education from "./components/Education";
 import Dice from "./components/Dice";
 import BackToTopButton from "./components/BackToTopButton";
+import { ScrollButton } from "./Styles/SharedStyles";
 
 
 

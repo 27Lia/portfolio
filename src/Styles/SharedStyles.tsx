@@ -165,20 +165,42 @@ font-size: 16px;
 export const Button = styled.button`
   padding: 10px 20px;
   font-weight: bold;
-  color: #fff;
-  background-color: #fab658;
+  color: #333;
+  background-color: transparent;
   width: 150px;
   height:40px;
-  border: none;
+  border: 1px solid #ddd;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
   &:hover {
-    background-color: #f8ab3e;
+    background-color: #faf7f7;
     transform: translateY(2px);
   }
 
   &:active {
     transform: translateY(1px);
   }
+`;
+
+export const ScrollButton = styled.button`
+  position: absolute;
+  bottom: 0px;
+  left: 50%; 
+  transform: translateX(-50%);
+  background-color: transparent;
+  padding: 0.8rem 1.6rem;
+  border: 2px solid #ddd;
+  color: #333;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight:600;
+  transition: background-color 0.2s;
+  z-index:10;
+  width:250px;
+  &:hover {
+    background-color: #faf7f7e6;
+  }
+
 `;

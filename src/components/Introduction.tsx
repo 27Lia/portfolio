@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import React, { forwardRef } from "react";
-import ScrollButton from "../Styles/ScrollButton";
-import { Default, Title } from "../Styles/SharedStyles";
+import { Default, ScrollButton, Title } from "../Styles/SharedStyles";
 import Skills from "./Skills";
 
 // 미디어 쿼리를 위한 헬퍼 함수
