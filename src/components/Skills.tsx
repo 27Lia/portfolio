@@ -41,6 +41,7 @@ const Wallet = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content:space-evenly;
 `;
 
 const CardBox = styled.div`
@@ -48,7 +49,6 @@ const CardBox = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height:100%;
 
   &::-webkit-scrollbar {
     height: 12px;
@@ -88,7 +88,7 @@ const SkillCardExpandedStyle = css<SkillCardProps>`
   display: flex;
   justify-content: flex-start;
   align-items:center;
-  height: 100%;
+  height: 50%;
   width: 250px;
 
   ${media.mobile`

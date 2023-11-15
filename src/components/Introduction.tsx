@@ -14,7 +14,6 @@ const media = {
 const TextBox = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
 `;
 
 const DataContainer = styled.div`
@@ -89,8 +88,6 @@ const Imgbox = styled.div`
   justify-content: space-evenly;
   align-items:center;
   width: 100%;
-  height: 500px;
-  margin-bottom:40px;
 `;
 
 const LeftBox = styled.div`
@@ -100,7 +97,7 @@ const LeftBox = styled.div`
   align-items: center;
   padding: 20px;
   width: 50%;
-
+  justify-content:space-evenly;
   ${media.mobile`
 width:100%;
 padding:40px;
@@ -118,7 +115,7 @@ const RightBox = styled.ul`
   padding: 20px;
   width: 50%;
   height:100%;
-  justify-content:space-around;
+  justify-content:space-evenly;
   ${media.mobile`
 width:100%;
 height:30%;
@@ -149,6 +146,7 @@ const ListBox = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  
 `;
 
 interface IntroductionProps {
