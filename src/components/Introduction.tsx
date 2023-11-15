@@ -15,7 +15,6 @@ const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  display: flex;
 `;
 
 const DataContainer = styled.div`
@@ -97,7 +96,7 @@ const Imgbox = styled.div`
 const LeftBox = styled.div`
   display: flex;
   flex-direction: column;
-  height: 50%;
+  height: 100%;
   align-items: center;
   padding: 20px;
   width: 50%;
@@ -118,8 +117,8 @@ const RightBox = styled.ul`
   flex-direction: column;
   padding: 20px;
   width: 50%;
-  height: 50%;
-
+  height:100%;
+  justify-content:space-around;
   ${media.mobile`
 width:100%;
 height:30%;

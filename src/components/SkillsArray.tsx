@@ -80,8 +80,21 @@ export const skills = [
     ],
     gradient: "linear-gradient(145deg, #f35f51, #eca324, #ef8a24)     ",
   },
+
   {
-    id: 7,
+    id: 7, // Assuming the next id in your sequence is 8
+    name: "Three.js",
+    icons: [
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg"
+    ],
+    descriptions: [
+      "기본적인 Three.js 사용법을 이해하고, 간단한 3D 씬을 구현할 수 있습니다.",
+      "Three.js를 사용하여 웹사이트에 인터랙티브한 3D 요소를 추가하는 기본적인 방법을 알고 있습니다."
+    ],
+    gradient: "linear-gradient(145deg, #8f94fb, #4e54c8)" // Example gradient
+  },
+  {
+    id: 8,
     name: "FIGMA",
     icons: [
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
@@ -89,4 +102,5 @@ export const skills = [
     descriptions: [],
     gradient: "linear-gradient(145deg, #c7aaf6, #ddd7ff)        ",
   },
+
 ];

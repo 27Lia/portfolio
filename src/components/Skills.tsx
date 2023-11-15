@@ -48,7 +48,7 @@ const CardBox = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 60%;
+  height:100%;
 
   &::-webkit-scrollbar {
     height: 12px;
@@ -87,12 +87,13 @@ const SkillCardExpandedStyle = css<SkillCardProps>`
   color: #222;
   display: flex;
   justify-content: flex-start;
+  align-items:center;
   height: 100%;
   width: 250px;
 
   ${media.mobile`
   height: auto;
-  width: 200px;
+  width: 240px;
 
   `}
 `;
