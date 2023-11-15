@@ -88,7 +88,7 @@ const SkillCardExpandedStyle = css<SkillCardProps>`
   display: flex;
   justify-content: flex-start;
   align-items:center;
-  height: 50%;
+  height: auto;
   width: 250px;
 
   ${media.mobile`

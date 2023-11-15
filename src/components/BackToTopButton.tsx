@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
@@ -11,19 +11,18 @@ const Button = styled.button`
   font-size: 16px;
   cursor: pointer;
   z-index: 1;
-  background-color: #f8c987; // A nice shade of green
-  color: white;
+  background-color: #ddd; // A nice shade of green
+
   border: none;
   border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 
   &:hover {
     background-color: #f8c987; // Slightly darker shade for hover
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 `;
-
 
 const BackToTopButton = () => {
   const [visible, setVisible] = useState(false);
@@ -44,11 +43,7 @@ const BackToTopButton = () => {
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
-  return visible ? (
-    <Button onClick={scrollToTop}>
-      ↑
-    </Button>
-  ) : null;
+  return visible ? <Button onClick={scrollToTop}>↑</Button> : null;
 };
 
 export default BackToTopButton;

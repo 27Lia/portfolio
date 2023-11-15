@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
     @media (max-width: 1300px) {
@@ -18,7 +18,6 @@ export const SectionText = styled.ul`
   display: flex;
   flex-direction: column;
   height: 300px;
-  margin-top: 30px;
   overflow: auto;
 
   ${media.mobile`
@@ -41,7 +40,7 @@ export const Text = styled.li`
 export const ListItem = styled.li`
   margin-bottom: 5px;
   font-size: 1em;
-  color:#ddd;
+  color: #ddd;
 `;
 
 export const Icon = styled.span`
@@ -49,23 +48,28 @@ export const Icon = styled.span`
 `;
 
 export const TabsContainer = styled.div`
-  margin-top: 20px;
-  width:100%;
-  ${media.mobile`
   width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  ${media.mobile`
+  width: 100%
   `}
-
 `;
-
+export const TapBox = styled.button`
+  display: flex;
+  background: transparent;
+  border: none;
+`;
 export const TabButton = styled.button`
   padding: 10px 15px;
-  border: none;
-  background: transparent;
   cursor: pointer;
+  border: none;
   border-bottom: 2px solid transparent;
+  background: transparent;
   margin-right: 10px;
-  font-size:18px;
-
+  font-size: 18px;
   &:hover {
     border-bottom: 2px solid blue;
   }
@@ -86,7 +90,7 @@ export const TabContent = styled.div`
   display: none;
   height: 300px;
   overflow: auto;
-  
+
   &.active {
     display: block;
   }
@@ -94,7 +98,6 @@ export const TabContent = styled.div`
   &::-webkit-scrollbar {
     height: 12px;
   }
-
 `;
 
 export const ProjectDefault = styled.div`
@@ -107,7 +110,7 @@ export const ProjectDefault = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color:#ffffff71;
+  background-color: #ffffff71;
   ${media.mobile`
   width: 100%; 
   margin: 0px;
@@ -116,7 +119,7 @@ export const ProjectDefault = styled.div`
 
 export const Default = styled.div`
   min-height: 100vh;
-  width:100%;
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -127,7 +130,7 @@ export const Title = styled.h1`
   color: #6d6c6c;
   font-size: 2.7rem;
   font-weight: 600;
-  text-align:center;
+  text-align: center;
 `;
 
 export const ProjectBox = styled.div`
@@ -135,7 +138,7 @@ export const ProjectBox = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width:100%;
+  width: 100%;
 `;
 
 export const ProjectTitle = styled.h2`
@@ -162,18 +165,19 @@ font-size: 16px;
 `}
 `;
 
-
 export const Button = styled.button`
   padding: 10px 20px;
   font-weight: bold;
   color: #333;
   background-color: transparent;
   width: 150px;
-  height:40px;
+  height: 40px;
   border: 1px solid #ddd;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
   &:hover {
     background-color: #faf7f7;
     transform: translateY(2px);
@@ -187,7 +191,7 @@ export const Button = styled.button`
 export const ScrollButton = styled.button`
   position: absolute;
   bottom: 0px;
-  left: 50%; 
+  left: 50%;
   transform: translateX(-50%);
   background-color: transparent;
   padding: 0.8rem 1.6rem;
@@ -196,12 +200,11 @@ export const ScrollButton = styled.button`
   border-radius: 30px;
   cursor: pointer;
   font-size: 1rem;
-  font-weight:600;
+  font-weight: 600;
   transition: background-color 0.2s;
-  z-index:10;
-  width:250px;
+  z-index: 10;
+  width: 250px;
   &:hover {
     background-color: #faf7f7e6;
   }
-
 `;

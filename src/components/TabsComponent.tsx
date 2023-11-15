@@ -1,30 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 import {
   TabsContainer,
   TabButton,
-  TabContent
+  TabContent,
+  TapBox,
 } from "../Styles/SharedStyles";
 
 interface TabsComponentProps {
-    tabs: string[];
-    contents: JSX.Element[];
-  }
+  tabs: string[];
+  contents: JSX.Element[];
+}
 
 const TabsComponent: React.FC<TabsComponentProps> = ({ tabs, contents }) => {
-    const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(0);
 
   return (
     <TabsContainer>
-      {tabs.map((tab: string, index: number) => (
-        <TabButton
-          key={index}
-          className={activeTab === index ? "active" : ""}
-          onClick={() => setActiveTab(index)}
-        >
-          {tab}
-        </TabButton>
-      ))}
+      <TapBox>
+        {tabs.map((tab: string, index: number) => (
+          <TabButton
+            key={index}
+            className={activeTab === index ? "active" : ""}
+            onClick={() => setActiveTab(index)}
+          >
+            {tab}
+          </TabButton>
+        ))}
+      </TapBox>
 
       {contents.map((content: JSX.Element, index: number) => (
         <TabContent key={index} className={activeTab === index ? "active" : ""}>

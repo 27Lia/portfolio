@@ -1,12 +1,12 @@
-import React, { forwardRef, useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
 
-import styled, { css } from "styled-components";
-import BusinessWebsiteProject from "../Projects/BusinessWebsiteProject";
-import Celebee from "../Projects/Celebee";
-import ShoppingMall from "../Projects/ShoppingMall";
-import WeatherWeb from "../Projects/WeatherWeb";
-import { ScrollButton, Title } from "../Styles/SharedStyles";
-import Portfolio from "../Projects/Portfolio";
+import styled, { css } from 'styled-components';
+import BusinessWebsiteProject from '../Projects/BusinessWebsiteProject';
+import Celebee from '../Projects/Celebee';
+import ShoppingMall from '../Projects/ShoppingMall';
+import WeatherWeb from '../Projects/WeatherWeb';
+import { ScrollButton, Title } from '../Styles/SharedStyles';
+import Portfolio from '../Projects/Portfolio';
 
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
@@ -15,7 +15,6 @@ const media = {
     }
   `,
 };
-
 
 const Box = styled.div`
   display: flex;
@@ -34,7 +33,6 @@ const Box = styled.div`
 justify-content: space-evenly;
   `}
 
-
   scrollbar-width: thin;
   &::-webkit-scrollbar {
     height: 12px;
@@ -43,9 +41,6 @@ justify-content: space-evenly;
   & > div {
     flex: 0 0 auto;
     margin-right: 10px;
-
-
-
   }
 `;
 const DivBox = styled.div`
@@ -63,33 +58,32 @@ interface ProjectsProps {
 }
 
 const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
-  const boxRef = useRef<HTMLDivElement>(null); 
+  const boxRef = useRef<HTMLDivElement>(null);
 
   const handleWheel = (e: WheelEvent) => {
     const boxElement = boxRef.current;
     if (!boxElement) return;
-  
+
     const maxScrollLeft = boxElement.scrollWidth - boxElement.clientWidth;
     const minScrollLeft = 0;
     const newScrollLeft = boxElement.scrollLeft + e.deltaY + e.deltaX;
-  
+
     if (newScrollLeft < minScrollLeft || newScrollLeft > maxScrollLeft) {
       return;
     }
-  //
+    //
     e.preventDefault();
     boxElement.scrollLeft = newScrollLeft;
   };
-  
 
   useEffect(() => {
     const boxElement = boxRef.current;
     if (!boxElement) return;
 
-    boxElement.addEventListener("wheel", handleWheel);
+    boxElement.addEventListener('wheel', handleWheel);
 
     return () => {
-      boxElement.removeEventListener("wheel", handleWheel);
+      boxElement.removeEventListener('wheel', handleWheel);
     };
   }, []);
 
@@ -98,9 +92,9 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
     if (!boxElement) return;
 
     if (isOpen) {
-      boxElement.removeEventListener("wheel", handleWheel);
+      boxElement.removeEventListener('wheel', handleWheel);
     } else {
-      boxElement.addEventListener("wheel", handleWheel);
+      boxElement.addEventListener('wheel', handleWheel);
     }
   };
   return (
@@ -108,7 +102,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
       <Title>Projects</Title>
 
       <Box ref={boxRef}>
-        <Portfolio/>
+        <Portfolio />
         <BusinessWebsiteProject />
         <Celebee onModalStateChange={handleModalStateChange} />
         <ShoppingMall onModalStateChange={handleModalStateChange} />
