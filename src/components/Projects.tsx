@@ -5,7 +5,8 @@ import BusinessWebsiteProject from "../Projects/BusinessWebsiteProject";
 import Celebee from "../Projects/Celebee";
 import ShoppingMall from "../Projects/ShoppingMall";
 import WeatherWeb from "../Projects/WeatherWeb";
-import { Default, ScrollButton, Title } from "../Styles/SharedStyles";
+import { ScrollButton, Title } from "../Styles/SharedStyles";
+import Portfolio from "../Projects/Portfolio";
 
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
@@ -107,6 +108,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
       <Title>Projects</Title>
 
       <Box ref={boxRef}>
+        <Portfolio/>
         <BusinessWebsiteProject />
         <Celebee onModalStateChange={handleModalStateChange} />
         <ShoppingMall onModalStateChange={handleModalStateChange} />

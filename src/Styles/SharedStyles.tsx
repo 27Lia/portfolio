@@ -107,6 +107,7 @@ export const ProjectDefault = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  background-color:white;
 
   ${media.mobile`
   width: 100%; 
