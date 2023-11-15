@@ -7,18 +7,18 @@
 <table>
   <tr>
     <td align="center"><b>메인페이지</b></td>
-    <td align="center"><b>로그인페이지</b></td>
-    <td align="center"><b>문의페이지</b></td>
+    <td align="center"><b>소개 부분</b></td>
+    <td align="center"><b>프로젝트 부분</b></td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/27Lia/27Lia/assets/117743861/da9594b0-25b3-47b3-9ab3-0281fc05860f" alt="shopping3" width="300px"/>
+      <img src="https://github.com/27Lia/portfolio/assets/117743861/0b55fd7c-a297-47b9-9b64-472ccd17b675" alt="shopping3" width="300px"/>
     </td>
     <td align="center">
-      <img src="https://github.com/27Lia/27Lia/assets/117743861/0bced078-b593-48e6-a3c9-a9e454592a37" alt="shopping2" width="300px"/>
+      <img src="https://github.com/27Lia/portfolio/assets/117743861/a43942a4-8dad-4d43-99c8-cb0732383587" alt="shopping2" width="300px"/>
     </td>
     <td align="center">
-      <img src="https://github.com/27Lia/27Lia/assets/117743861/d4fc3719-f961-4b82-902d-5d37073d5f9b" alt="shopping" width="300px"/>
+      <img src="https://github.com/27Lia/portfolio/assets/117743861/82173507-cb97-4a52-baf9-d35c43eacc9e" alt="shopping" width="300px"/>
     </td>
   </tr>
 </table>
