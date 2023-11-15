@@ -72,6 +72,8 @@ const Dice: React.FC = () => {
       // 바닥에 닿았을 때
       if (meshRef.current.position.y <= 0) {
         setIsRolling(false);
+        meshRef.current.position.y = 0; // 위치를 0으로 재설정
+
       }
     }
   });
