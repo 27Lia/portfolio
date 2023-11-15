@@ -53,6 +53,7 @@ const ListItem = styled.li`
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  color:#757474;
 `;
 
 const IconContainer = styled.div`
@@ -63,7 +64,7 @@ const IconContainer = styled.div`
 const Link = styled.a`
   text-decoration: none;
   transition: color 0.2s;
-  color: #333;
+  color:#757474;
 `;
 
 const Text = styled.p`
@@ -91,19 +92,20 @@ const Imgbox = styled.div`
   align-items:center;
   width: 100%;
   height: 500px;
+  margin-bottom:40px;
 `;
 
 const LeftBox = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
   height: 50%;
   align-items: center;
   padding: 20px;
+  width: 50%;
 
   ${media.mobile`
 width:100%;
-padding:0px;
+padding:40px;
 height:60%;
 
 `}
@@ -115,7 +117,6 @@ const RightBox = styled.ul`
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-  overflow: auto;
   padding: 20px;
   width: 50%;
   height: 50%;
@@ -148,7 +149,6 @@ const ListBox = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  overflow: auto;
 `;
 
 interface IntroductionProps {

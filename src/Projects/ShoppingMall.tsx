@@ -8,7 +8,6 @@ import {
   ButtonBox,
   CloseButton,
 } from "../Styles/ModalStyles";
-import ModalButton, { StyledButton } from "../components/ModalButton";
 import Modal from "../components/Modal";
 import ImageSlider from "../components/ImageSlider";
 import styled from "styled-components";
@@ -25,15 +24,13 @@ import {
   TabsContainer,
   DescriptionItem,
   DescriptionList,
+  Button,
 } from "../Styles/SharedStyles";
 import TabsComponent from "../components/TabsComponent";
+import ModalButton from "../components/ModalButton";
 
 
 
-const ModalBtnBox = styled.div`
-  display: flex;
-  justify-content: center;
-`;
 
 type ItemProps = {
   descriptions: string[];
@@ -162,14 +159,12 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
       <Text>테스트 정보: ID: test@gmail.com / PW: test1234!</Text>
       <LinkBox>
         <Link href="https://fe-sprint-coz-shopping-eta.vercel.app/">
-          <StyledButton>배포링크</StyledButton>
+          <Button>배포링크</Button>
         </Link>
         <Link href="https://github.com/27Lia/fe-sprint-coz-shopping">
-          <StyledButton>Github Repo</StyledButton>
+          <Button>Github Repo</Button>
         </Link>
-        <ModalBtnBox>
           <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
-        </ModalBtnBox>
         {showModal && (
           <Modal content={modalContent} toggleModal={toggleModal} />
         )}

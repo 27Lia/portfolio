@@ -9,7 +9,6 @@ import {
   ButtonBox,
   CloseButton,
 } from "../Styles/ModalStyles";
-import ModalButton, { StyledButton } from "../components/ModalButton";
 import styled from "styled-components";
 
 import {
@@ -23,9 +22,11 @@ import {
   LinkBox,
   DescriptionItem,
   DescriptionList,
+  Button,
 } from "../Styles/SharedStyles";
 import ImageSlider from "../components/ImageSlider";
 import TabsComponent from "../components/TabsComponent";
+import ModalButton from "../components/ModalButton";
 
 const ModalBtnBox = styled.div`
   display: flex;
@@ -151,10 +152,10 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
       <Text>테스트 정보: ID: test123@gmail.com / PW: 123123123</Text>
       <LinkBox>
         <Link href="https://celebee-three.vercel.app/">
-          <StyledButton>배포링크</StyledButton>
+          <Button>배포링크</Button>
         </Link>
         <Link href="https://github.com/27Lia/celebee">
-          <StyledButton>Github Repo</StyledButton>
+          <Button>Github Repo</Button>
         </Link>
         <ModalBtnBox>
           <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />

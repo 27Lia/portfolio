@@ -3,6 +3,7 @@
 import React, { forwardRef, useState } from "react";
 import styled, { css } from "styled-components";
 import { skills } from "../components/SkillsArray";
+import { Button } from "../Styles/SharedStyles";
 
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
@@ -61,7 +62,7 @@ const CardBox = styled.div`
 const SkillCardBaseStyle = css`
   display: flex;
   flex-direction: column;
-  margin: -85px;
+  margin: -70px;
   width: 220px;
   height: 110px;
   border-radius: 12px;
@@ -100,26 +101,6 @@ const Btn = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-`;
-
-const ExpandButton = styled.button`
-  padding: 10px 20px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #007bff;
-  width: 150px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
-  &:hover {
-    background-color: #0056b3;
-    transform: translateY(2px);
-  }
-
-  &:active {
-    transform: translateY(1px);
-  }
 `;
 
 const DivBox = styled.div`
@@ -203,9 +184,9 @@ const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
 
       <Wallet>
         <Btn>
-          <ExpandButton onClick={toggleExpandAll}>
+          <Button onClick={toggleExpandAll}>
             {expandAll ? "닫기" : "스킬 펼쳐보기"}
-          </ExpandButton>
+          </Button>
         </Btn>
         <CardBox>
           {skills.map((skill, index) => (

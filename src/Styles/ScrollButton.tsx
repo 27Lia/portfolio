@@ -5,10 +5,10 @@ const ScrollButton = styled.button`
   bottom: 0px;
   left: 50%; 
   transform: translateX(-50%);
+  background-color:#fab658;
   padding: 0.8rem 1.6rem;
-  background-color: #007bff;
-  color: white;
   border: none;
+  color:#fff;
   border-radius: 30px;
   cursor: pointer;
   font-size: 1rem;
@@ -16,7 +16,7 @@ const ScrollButton = styled.button`
   z-index:10;
   width:250px;
   &:hover {
-    background-color: #0056b3;
+    background-color: #f8ab3e;
   }
 `;
 

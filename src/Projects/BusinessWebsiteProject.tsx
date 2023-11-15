@@ -12,8 +12,8 @@ import {
   TabsContainer,
   DescriptionItem,
   DescriptionList,
+  Button,
 } from "../Styles/SharedStyles";
-import { StyledButton } from "../components/ModalButton";
 import TabsComponent from "../components/TabsComponent";
 import ImageSlider from "../components/ImageSlider";
 
@@ -48,10 +48,10 @@ const BusinessWebsiteProject: React.FC = () => {
       <Text>기술스택: React, Styled-components, Naver Map API, SEO</Text>
       <LinkBox>
         <Link href="https://junkshop.vercel.app/">
-          <StyledButton>배포링크</StyledButton>
+          <Button>배포링크</Button>
         </Link>
         <Link href="https://github.com/27Lia/junkshop">
-          <StyledButton>Github Repo</StyledButton>
+          <Button>Github Repo</Button>
         </Link>
       </LinkBox>
     </SectionText>,

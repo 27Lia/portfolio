@@ -8,6 +8,7 @@ import ScrollButton from "./Styles/ScrollButton";
 import Career from "./components/Career";
 import Education from "./components/Education";
 import Dice from "./components/Dice";
+import BackToTopButton from "./components/BackToTopButton";
 
 
 
@@ -64,6 +65,7 @@ const App = () => {
           skillsRef={skillsRef}
           ref={educationRef}
         />
+      <BackToTopButton />
 
     </Container>
   );

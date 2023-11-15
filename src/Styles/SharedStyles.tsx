@@ -41,6 +41,7 @@ export const Text = styled.li`
 export const ListItem = styled.li`
   margin-bottom: 5px;
   font-size: 1em;
+  color:#ddd;
 `;
 
 export const Icon = styled.span`
@@ -49,6 +50,7 @@ export const Icon = styled.span`
 
 export const TabsContainer = styled.div`
   margin-top: 20px;
+  width:100%;
   ${media.mobile`
   width: 100%;
   `}
@@ -121,7 +123,7 @@ export const Default = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #333;
+  color: #6d6c6c;
   font-size: 2.7rem;
   font-weight: 600;
   text-align:center;
@@ -132,6 +134,7 @@ export const ProjectBox = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  width:100%;
 `;
 
 export const ProjectTitle = styled.h2`
@@ -156,4 +159,26 @@ export const DescriptionItem = styled.li`
   ${media.mobile`
 font-size: 16px;
 `}
+`;
+
+
+export const Button = styled.button`
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #fab658;
+  width: 150px;
+  height:40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  &:hover {
+    background-color: #f8ab3e;
+    transform: translateY(2px);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
 `;

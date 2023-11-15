@@ -13,9 +13,9 @@ import {
   SectionText,
   DescriptionItem,
   DescriptionList,
+  Button,
 } from "../Styles/SharedStyles";
 import TabsComponent from "../components/TabsComponent";
-import { StyledButton } from "../components/ModalButton";
 import ImageSlider from "../components/ImageSlider";
 
 type ItemProps = {
@@ -57,10 +57,10 @@ const WeatherWeb: React.FC = () => {
       <Text>기술스택: HTML, CSS, JS, openAPI</Text>
       <LinkBox>
         <Link href="https://momentum-rivpiekhd-27lia.vercel.app/">
-          <StyledButton>배포링크</StyledButton>
+          <Button>배포링크</Button>
         </Link>
         <Link href="https://github.com/27Lia/Momentum">
-          <StyledButton>Github Repo</StyledButton>
+          <Button>Github Repo</Button>
         </Link>
       </LinkBox>
     </SectionText>,
