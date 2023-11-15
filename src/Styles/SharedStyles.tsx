@@ -107,8 +107,6 @@ export const ProjectDefault = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color:white;
-
   ${media.mobile`
   width: 100%; 
   margin: 0px;
@@ -117,6 +115,7 @@ export const ProjectDefault = styled.div`
 
 export const Default = styled.div`
   min-height: 100vh;
+  width:100%;
   position: relative;
   display: flex;
   flex-direction: column;
