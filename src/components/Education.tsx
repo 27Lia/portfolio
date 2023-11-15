@@ -1,9 +1,7 @@
-import React, { forwardRef } from "react";
-import styled, { css } from "styled-components";
-import Awards from "./Awards";
-import { Default, Title } from "../Styles/SharedStyles";
-
-
+import React, { forwardRef } from 'react';
+import styled, { css } from 'styled-components';
+import Awards from './Awards';
+import { Default, Title } from '../Styles/SharedStyles';
 
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
@@ -13,12 +11,10 @@ const media = {
   `,
 };
 
-
-
 const EdicationBox = styled.div`
-padding:100px;
+  padding: 100px;
 
-${media.mobile`
+  ${media.mobile`
   padding:40px;
   `}
 `;
@@ -59,25 +55,26 @@ const Education = forwardRef<HTMLDivElement, EdicationProps>((props, ref) => {
   return (
     <div ref={ref}>
       <Default>
-      <Title>Education</Title>
-          <EdicationBox>
-            <EducationItem
-              date="2023.04.11 - 2023.10.05"
-              description="Front-end Software Education"
-            />
-            <EducationItem
-              date="2022.03 -"
-              description="방송통신대학교 (휴학) / 컴퓨터 과학과"
-            />
-            <EducationItem
-              date="2018.03 - 2020.02"
-              description="백석예술대학교 (졸업) / 음악학부"
-            />
-          </EdicationBox>
-          <Awards/>
+        <Title>Education</Title>
+        <EdicationBox>
+          <EducationItem
+            date="2023.04.11 - 2023.10.05"
+            description="Front-end Software Education"
+          />
+          <EducationItem
+            date="2022.03 -"
+            description="방송통신대학교 (휴학) / 컴퓨터 과학과"
+          />
+          <EducationItem
+            date="2018.03 - 2020.02"
+            description="백석예술대학교 (졸업) / 음악학부"
+          />
+        </EdicationBox>
+        <Awards />
       </Default>
     </div>
   );
 });
+Education.displayName = 'Education';
 
 export default Education;

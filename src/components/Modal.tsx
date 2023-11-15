@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'; 
-import styled from "styled-components";
+import { useEffect } from 'react';
+import styled from 'styled-components';
 
 const ModalBackground = styled.div`
   position: fixed;
@@ -26,27 +26,26 @@ const ModalContent = styled.div`
 `;
 
 interface Props {
-    toggleModal: () => void;
-    content: JSX.Element;
-  }
-  
+  toggleModal: () => void;
+  content: JSX.Element;
+}
 
+const Modal: React.FC<Props> = ({ toggleModal, content }) => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
 
-  const Modal: React.FC<Props> = ({ toggleModal, content }) => {
-    
-    useEffect(() => {
-      document.body.style.overflow = 'hidden';
-  
-      return () => {
-        document.body.style.overflow = 'auto';
-      };
-    }, []);
-    
-    return (
-      <ModalBackground onClick={toggleModal}>
-        <ModalContent onClick={(e) => e.stopPropagation()}>{content}</ModalContent>
-      </ModalBackground>
-    );
-  };
-  
-  export default Modal;
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
+  return (
+    <ModalBackground onClick={toggleModal}>
+      <ModalContent onClick={(e) => e.stopPropagation()}>
+        {content}
+      </ModalContent>
+    </ModalBackground>
+  );
+};
+
+export default Modal;

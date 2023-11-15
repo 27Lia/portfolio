@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import {
   TabsContainer,
   TabButton,
   TabContent,
   TapBox,
-} from "../Styles/SharedStyles";
+} from '../Styles/SharedStyles';
 
 interface TabsComponentProps {
   tabs: string[];
@@ -21,7 +21,7 @@ const TabsComponent: React.FC<TabsComponentProps> = ({ tabs, contents }) => {
         {tabs.map((tab: string, index: number) => (
           <TabButton
             key={index}
-            className={activeTab === index ? "active" : ""}
+            className={activeTab === index ? 'active' : ''}
             onClick={() => setActiveTab(index)}
           >
             {tab}
@@ -30,7 +30,7 @@ const TabsComponent: React.FC<TabsComponentProps> = ({ tabs, contents }) => {
       </TapBox>
 
       {contents.map((content: JSX.Element, index: number) => (
-        <TabContent key={index} className={activeTab === index ? "active" : ""}>
+        <TabContent key={index} className={activeTab === index ? 'active' : ''}>
           {content}
         </TabContent>
       ))}

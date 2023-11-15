@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   ModalHeader,
   Section,
@@ -7,15 +7,14 @@ import {
   Description,
   ButtonBox,
   CloseButton,
-} from "../Styles/ModalStyles";
-import Modal from "../components/Modal";
-import ImageSlider from "../components/ImageSlider";
-import styled from "styled-components";
+} from '../Styles/ModalStyles';
+import Modal from '../components/Modal';
+import ImageSlider from '../components/ImageSlider';
+import styled from 'styled-components';
 
 import {
   ProjectTitle,
   Link,
-
   ProjectDefault,
   ProjectBox,
   SectionText,
@@ -25,12 +24,9 @@ import {
   DescriptionItem,
   DescriptionList,
   Button,
-} from "../Styles/SharedStyles";
-import TabsComponent from "../components/TabsComponent";
-import ModalButton from "../components/ModalButton";
-
-
-
+} from '../Styles/SharedStyles';
+import TabsComponent from '../components/TabsComponent';
+import ModalButton from '../components/ModalButton';
 
 type ItemProps = {
   descriptions: string[];
@@ -53,19 +49,15 @@ type ShoppingMallProps = {
 };
 
 const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
-  const [showModal, setShowModal] = useState(false); 
+  const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
     const newShowModal = !showModal;
     setShowModal(newShowModal);
-    onModalStateChange(newShowModal); 
+    onModalStateChange(newShowModal);
   };
 
-  const images = [
-    "./shopping.jpg",
-    "./shopping2.jpg",
-    "./shopping3.jpg",
-  ];
+  const images = ['./shopping.jpg', './shopping2.jpg', './shopping3.jpg'];
 
   const modalContent = (
     <>
@@ -78,10 +70,10 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
         <SubSection>
           <SubTitle>✅ 최적화 경험</SubTitle>
           <Description>
-            - 초기 로딩 시 상품 로드 양을 줄이기 위해{" "}
+            - 초기 로딩 시 상품 로드 양을 줄이기 위해{' '}
             <b>무한 스크롤 기능을 도입</b>했습니다. 기존에 한 번에 100개의
             상품을 로드했던 것에 비해, 현재는 `perPage` 값을 활용하여 10개씩
-            로드합니다. 이로 인해 초기 로딩 시 필요한 데이터 양이{" "}
+            로드합니다. 이로 인해 초기 로딩 시 필요한 데이터 양이{' '}
             <b>전체의 10%로 감소</b>하게 되었습니다.
           </Description>
         </SubSection>
@@ -91,7 +83,7 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
           <Description>
             - <b>S3 버킷의 권한 정책을 수정</b>하였습니다. - 외부 사용자가
             웹사이트 리소스에 접근할 수 있도록 <b>허용</b>했습니다. - 버킷
-            정책의 세부 설정을 통해 외부 접근 권한을 조절할 수 있다는 것을{" "}
+            정책의 세부 설정을 통해 외부 접근 권한을 조절할 수 있다는 것을{' '}
             <b>학습</b>하였습니다.
           </Description>
         </SubSection>
@@ -111,8 +103,8 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
         <SubSection>
           <SubTitle>✅ 페이지 새로고침 시 상태 초기화 문제</SubTitle>
           <Description>
-            - 페이지 새로고침 시 상태가 초기화되는 문제를 해결하여 사용자 경험을{" "}
-            <b>향상</b>시켰습니다.<br></br>-{" "}
+            - 페이지 새로고침 시 상태가 초기화되는 문제를 해결하여 사용자 경험을{' '}
+            <b>향상</b>시켰습니다.<br></br>-{' '}
             <b>Redux 저장소를 영구적으로 유지</b>할 수 있는 redux-persist 를
             활용했습니다. - 사용자 인증 상태를 안전하게 로컬 스토리지에
             저장하도록 <b>Redux 저장소를 구성</b>하였습니다.
@@ -124,7 +116,7 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
           <Description>
             - 환경 변수를 따로 <b>설정</b>하였습니다.<br></br>- .env 파일이 배포
             시 자동으로 빌드된다고 생각했는데 콘솔 창에서 Firebase 관련해서 API
-            키를 찾을 수 없다는 오류를 확인하여서 Vercel에서 환경변수를{" "}
+            키를 찾을 수 없다는 오류를 확인하여서 Vercel에서 환경변수를{' '}
             <b>설정</b>하였습니다.
           </Description>
         </SubSection>
@@ -147,9 +139,9 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
     </>
   );
 
-  const tabs = ["소개", "기여한 점"];
+  const tabs = ['소개', '기여한 점'];
   const contents = [
-    <SectionText>
+    <SectionText key="section1">
       <h3>FireBase를 사용한 쇼핑몰 프로젝트입니다.</h3>
       <br />
 
@@ -164,7 +156,7 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
         <Link href="https://github.com/27Lia/fe-sprint-coz-shopping">
           <Button>Github Repo</Button>
         </Link>
-          <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
+        <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
         {showModal && (
           <Modal content={modalContent} toggleModal={toggleModal} />
         )}
@@ -172,12 +164,13 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
     </SectionText>,
 
     <Item
+      key="item1"
       descriptions={[
-        "S3 버킷으로 웹사이트 배포",
-        "Firebase Authentication을 활용한 로그인,로그아웃, 회원가입 구현",
-        "상품 필터링, 무한 스크롤 기능, 북마크toast message 알림 기능 구현",
-        "스타일드 컴포넌트를 활용하여 CSS 스타일링 및 레이아웃 디자인 진행",
-        "Firebase를 활용한 문의 게시판 CRUD 기능 구현",
+        'S3 버킷으로 웹사이트 배포',
+        'Firebase Authentication을 활용한 로그인,로그아웃, 회원가입 구현',
+        '상품 필터링, 무한 스크롤 기능, 북마크toast message 알림 기능 구현',
+        '스타일드 컴포넌트를 활용하여 CSS 스타일링 및 레이아웃 디자인 진행',
+        'Firebase를 활용한 문의 게시판 CRUD 기능 구현',
       ]}
     />,
   ];

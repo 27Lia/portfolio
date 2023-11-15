@@ -8,8 +8,10 @@
       "plugin:react/recommended",
       "plugin:import/recommended",
       "plugin:jsx-a11y/recommended",
-      "plugin:prettier/recommended"
+      "plugin:prettier/recommended",
+      "plugin:@typescript-eslint/recommended" // TypeScript 규칙 추가
     ],
+    "parser": "@typescript-eslint/parser", // TypeScript 파서 사용
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
@@ -17,8 +19,21 @@
       "ecmaVersion": "latest",
       "sourceType": "module"
     },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
+    },
     "rules": {
       "react/react-in-jsx-scope": 0,
-      "react/jsx-uses-react": 0
-    }
+      "react/jsx-uses-react": 0,
+      "react/prop-types": "off",
+      "@typescript-eslint/no-unused-vars": "warn", // TypeScript 관련 규칙 추가
+      "@typescript-eslint/explicit-module-boundary-types": "off" // TypeScript 관련 규칙 추가
+    },
+    "plugins": [
+      "@typescript-eslint" // TypeScript 플러그인 추가
+    ]
   }

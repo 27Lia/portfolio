@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Modal from "../components/Modal";
+import React, { useState } from 'react';
+import Modal from '../components/Modal';
 import {
   ModalHeader,
   Section,
@@ -8,8 +8,8 @@ import {
   Description,
   ButtonBox,
   CloseButton,
-} from "../Styles/ModalStyles";
-import styled from "styled-components";
+} from '../Styles/ModalStyles';
+import styled from 'styled-components';
 
 import {
   ProjectTitle,
@@ -23,10 +23,10 @@ import {
   DescriptionItem,
   DescriptionList,
   Button,
-} from "../Styles/SharedStyles";
-import ImageSlider from "../components/ImageSlider";
-import TabsComponent from "../components/TabsComponent";
-import ModalButton from "../components/ModalButton";
+} from '../Styles/SharedStyles';
+import ImageSlider from '../components/ImageSlider';
+import TabsComponent from '../components/TabsComponent';
+import ModalButton from '../components/ModalButton';
 
 const ModalBtnBox = styled.div`
   display: flex;
@@ -59,14 +59,10 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
   const toggleModal = () => {
     const newShowModal = !showModal;
     setShowModal(newShowModal);
-    onModalStateChange(newShowModal); 
+    onModalStateChange(newShowModal);
   };
 
-  const images = [
-    "./celebee.jpg",
-    "./celebee2.jpg",
-    "./celebee3.jpg",
-  ];
+  const images = ['./celebee.jpg', './celebee2.jpg', './celebee3.jpg'];
 
   const modalContent = (
     <>
@@ -118,10 +114,10 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
             하였습니다.
             <br></br>- 비동기 처리 방식으로 <b>async/await을 활용,</b> 예외
             처리로 <b>try-catch 블록을 사용</b>하였습니다.
-            <br></br>이로 인해{" "}
+            <br></br>이로 인해{' '}
             <b>
               요청이 완료될 때까지 다음 작업이 실행되지 않도록 할 수 있었습니다.
-            </b>{" "}
+            </b>{' '}
             또한 비동기 <b>요청 중 발생할 수 있는 에러를 잡아낼수있었습니다.</b>
           </Description>
         </SubSection>
@@ -140,9 +136,9 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
     </>
   );
 
-  const tabs = ["소개", "기여한 점"];
+  const tabs = ['소개', '기여한 점'];
   const contents = [
-    <SectionText>
+    <SectionText key="section1">
       <h3>카드 형태로 모임을 만들고 참여하는 인터렉티브한 플랫폼입니다.</h3>
       <br />
 
@@ -167,13 +163,14 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
     </SectionText>,
 
     <Item
+      key="item1"
       descriptions={[
-        "모임 작성 페이지, 모임 상세 페이지 개발",
-        "카드참여, 찜기능 등 구현",
-        "카카오맵 키워드검색,마크표시 등 다양한 지도 서비스 기능 구현",
-        "서비스 기획 및 전반적인 UI/UX 디자인 구현",
-        "React-hook-form을 이용한 폼 유효성 검사",
-        "Keyframes를 이용한 반응형웹 구현",
+        '모임 작성 페이지, 모임 상세 페이지 개발',
+        '카드참여, 찜기능 등 구현',
+        '카카오맵 키워드검색,마크표시 등 다양한 지도 서비스 기능 구현',
+        '서비스 기획 및 전반적인 UI/UX 디자인 구현',
+        'React-hook-form을 이용한 폼 유효성 검사',
+        'Keyframes를 이용한 반응형웹 구현',
       ]}
     />,
   ];

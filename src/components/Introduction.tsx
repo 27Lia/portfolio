@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
-import React, { forwardRef } from "react";
-import { Default, ScrollButton, Title } from "../Styles/SharedStyles";
-import Skills from "./Skills";
+import styled, { css } from 'styled-components';
+import React, { forwardRef } from 'react';
+import { Default, ScrollButton } from '../Styles/SharedStyles';
+import Skills from './Skills';
 
 // 미디어 쿼리를 위한 헬퍼 함수
 const media = {
@@ -50,7 +50,7 @@ const ListItem = styled.li`
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  color:#757474;
+  color: #757474;
 `;
 
 const IconContainer = styled.div`
@@ -61,7 +61,7 @@ const IconContainer = styled.div`
 const Link = styled.a`
   text-decoration: none;
   transition: color 0.2s;
-  color:#757474;
+  color: #757474;
 `;
 
 const Text = styled.p`
@@ -86,7 +86,7 @@ const IconImg = styled.img`
 const Imgbox = styled.div`
   display: flex;
   justify-content: space-evenly;
-  align-items:center;
+  align-items: center;
   width: 100%;
 `;
 
@@ -97,7 +97,7 @@ const LeftBox = styled.div`
   align-items: center;
   padding: 20px;
   width: 50%;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   ${media.mobile`
 width:100%;
 padding:40px;
@@ -114,8 +114,8 @@ const RightBox = styled.ul`
   flex-direction: column;
   padding: 20px;
   width: 50%;
-  height:100%;
-  justify-content:space-evenly;
+  height: 100%;
+  justify-content: space-evenly;
   ${media.mobile`
 width:100%;
 height:30%;
@@ -125,14 +125,12 @@ padding:0px;
 `;
 
 const BoxContainer = styled.div`
-
-
   display: flex;
   height: 100vh;
   width: 100%;
   overflow: auto;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   ${media.mobile`
 display: block;
 
@@ -146,7 +144,6 @@ const ListBox = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  
 `;
 
 interface IntroductionProps {
@@ -167,49 +164,49 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
                 <Imgbox>
                   <Img src="./profile.jpg" alt="Profile Image" />
 
-                    <ListBox>
-                      <h2>김선미 / Lia </h2>
-                      <ListItem>1996.09.19</ListItem>
+                  <ListBox>
+                    <h2>김선미 / Lia </h2>
+                    <ListItem>1996.09.19</ListItem>
 
-                      <ListItem>Tel: 010-3331-3743</ListItem>
-                      <ListItem>
-                        Email:
-                        <Link href="mailto:tjs4114@gmail.com">
-                          tjs4114@gmail.com
-                        </Link>
-                      </ListItem>
-                      <IconContainer>
-                        <IconLink
-                          href="https://github.com/27Lia"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <IconImg
-                            src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-                            alt="GitHub"
-                          />
-                        </IconLink>
-                        <IconLink
-                          href="https://velog.io/@rlatjsal010"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <IconImg src="./velog.jpeg" alt="Velog" />
-                        </IconLink>
-                      </IconContainer>
-                    </ListBox>
+                    <ListItem>Tel: 010-3331-3743</ListItem>
+                    <ListItem>
+                      Email:
+                      <Link href="mailto:tjs4114@gmail.com">
+                        tjs4114@gmail.com
+                      </Link>
+                    </ListItem>
+                    <IconContainer>
+                      <IconLink
+                        href="https://github.com/27Lia"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <IconImg
+                          src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                          alt="GitHub"
+                        />
+                      </IconLink>
+                      <IconLink
+                        href="https://velog.io/@rlatjsal010"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <IconImg src="./velog.jpeg" alt="Velog" />
+                      </IconLink>
+                    </IconContainer>
+                  </ListBox>
                 </Imgbox>
 
                 <TextBox>
                   <Text>
-                    <strong>아이디어</strong>를 내고{" "}
+                    <strong>아이디어</strong>를 내고{' '}
                     <strong>적극적으로 소통</strong>하는 것을 좋아합니다.
                     반복적인 작업을 지속하는 것을 지양하며 효율적인 작업을
                     지향합니다.
                   </Text>
                   <Text>
-                    이전 직장에서 업무를 수행하면서{" "}
-                    <strong>반복적인 작업에 직면</strong>하게 되었고,{" "}
+                    이전 직장에서 업무를 수행하면서{' '}
+                    <strong>반복적인 작업에 직면</strong>하게 되었고,{' '}
                     <strong>더 효율적인 방법이 없을까?</strong> 하는 호기심으로
                     인해 개발을 시작하게 되었습니다.
                   </Text>
@@ -230,7 +227,8 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
         </Default>
       </div>
     );
-  }
+  },
 );
+Introduction.displayName = 'Introduction';
 
 export default Introduction;

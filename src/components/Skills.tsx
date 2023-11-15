@@ -1,9 +1,9 @@
 // Skills.tsx
 
-import React, { forwardRef, useState } from "react";
-import styled, { css } from "styled-components";
-import { skills } from "../components/SkillsArray";
-import { Button } from "../Styles/SharedStyles";
+import React, { forwardRef, useState } from 'react';
+import styled, { css } from 'styled-components';
+import { skills } from '../components/SkillsArray';
+import { Button } from '../Styles/SharedStyles';
 
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
@@ -41,7 +41,7 @@ const Wallet = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
 `;
 
 const CardBox = styled.div`
@@ -87,7 +87,7 @@ const SkillCardExpandedStyle = css<SkillCardProps>`
   color: #222;
   display: flex;
   justify-content: flex-start;
-  align-items:center;
+  align-items: center;
   height: auto;
   width: 250px;
 
@@ -132,14 +132,14 @@ const SkillCard = styled.div<
     expanded
       ? SkillCardExpandedStyle
       : clicked
-      ? "transform: none;"
-      : "transform: rotateX(45deg) rotateY(-15deg) rotate(45deg);"}
+        ? 'transform: none;'
+        : 'transform: rotateX(45deg) rotateY(-15deg) rotate(45deg);'}
 
   &:hover {
     transform: ${({ clicked }) =>
       clicked
-        ? "none"
-        : "rotateX(30deg) rotateY(-15deg) rotate(30deg) translateY(-40px)"};
+        ? 'none'
+        : 'rotateX(30deg) rotateY(-15deg) rotate(30deg) translateY(-40px)'};
   }
 
   @media (max-width: 1000px) {
@@ -186,7 +186,7 @@ const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
       <Wallet>
         <Btn>
           <Button onClick={toggleExpandAll}>
-            {expandAll ? "닫기" : "스킬 펼쳐보기"}
+            {expandAll ? '닫기' : '스킬 펼쳐보기'}
           </Button>
         </Btn>
         <CardBox>
@@ -225,5 +225,6 @@ const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
     </DivBox>
   );
 });
+Skills.displayName = 'Skills';
 
 export default Skills;

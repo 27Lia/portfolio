@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import React from "react";
+import React from 'react';
 
 import {
   ProjectTitle,
@@ -14,9 +14,9 @@ import {
   DescriptionItem,
   DescriptionList,
   Button,
-} from "../Styles/SharedStyles";
-import TabsComponent from "../components/TabsComponent";
-import ImageSlider from "../components/ImageSlider";
+} from '../Styles/SharedStyles';
+import TabsComponent from '../components/TabsComponent';
+import ImageSlider from '../components/ImageSlider';
 
 type ItemProps = {
   descriptions: string[];
@@ -36,17 +36,17 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
 
 const WeatherWeb: React.FC = () => {
   const images = [
-    "./weather.jpg",
-    "./weather2.jpg",
-    "./weather3.jpg",
-    "./weather4.jpg",
+    './weather.jpg',
+    './weather2.jpg',
+    './weather3.jpg',
+    './weather4.jpg',
   ];
 
-  const tabs = ["소개", "기여한 점"];
+  const tabs = ['소개', '기여한 점'];
   const contents = [
-    <SectionText>
+    <SectionText key="section1">
       <h3>
-        {" "}
+        {' '}
         사용자의 현재위치 날씨에 따라 배경이 동적으로 변경 되며, To-Do List
         기능이 포함됐습니다.
       </h3>
@@ -66,10 +66,11 @@ const WeatherWeb: React.FC = () => {
     </SectionText>,
 
     <Item
+      key="item1"
       descriptions={[
-        "동적 배경 이미지 변화:사용자의 현재 위치의 날씨를 동적으로 배경 이미지를 변화하는 기능 개발",
-        "openAPI 활용:사용자의 현재 위치를 기반으로 한 날씨 정보 제공",
-        "할 일 목록 관리 기능:CRUD기능 구현",
+        '동적 배경 이미지 변화:사용자의 현재 위치의 날씨를 동적으로 배경 이미지를 변화하는 기능 개발',
+        'openAPI 활용:사용자의 현재 위치를 기반으로 한 날씨 정보 제공',
+        '할 일 목록 관리 기능:CRUD기능 구현',
       ]}
     />,
   ];

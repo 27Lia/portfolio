@@ -115,5 +115,6 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
     </DivBox>
   );
 });
+Projects.displayName = 'Projects';
 
 export default Projects;

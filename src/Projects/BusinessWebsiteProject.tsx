@@ -1,6 +1,3 @@
-import React from "react";
-import styled from "styled-components";
-
 import {
   ProjectTitle,
   Link,
@@ -13,10 +10,9 @@ import {
   DescriptionItem,
   DescriptionList,
   Button,
-} from "../Styles/SharedStyles";
-import TabsComponent from "../components/TabsComponent";
-import ImageSlider from "../components/ImageSlider";
-
+} from '../Styles/SharedStyles';
+import TabsComponent from '../components/TabsComponent';
+import ImageSlider from '../components/ImageSlider';
 
 type ItemProps = {
   descriptions: string[];
@@ -35,14 +31,13 @@ const Item: React.FC<ItemProps> = ({ descriptions }) => {
 };
 
 const BusinessWebsiteProject: React.FC = () => {
-  const images = ["./BusinessWebsite.jpg", "./BusinessWebsite2.jpg"];
+  const images = ['./BusinessWebsite.jpg', './BusinessWebsite2.jpg'];
 
-  const tabs = ["소개", "기여한 점"];
+  const tabs = ['소개', '기여한 점'];
   const contents = [
-    <SectionText>
+    <SectionText key="section1">
       <h3> SEO최적화를 적용한 지역 내 소규모 업체 홈페이지입니다.</h3>
       <br />
-
       <Text>기간: 2023.09.30 ~ 2023.10.18</Text>
       <Text>인원: 솔로 프로젝트</Text>
       <Text>기술스택: React, Styled-components, Naver Map API, SEO</Text>
@@ -57,11 +52,12 @@ const BusinessWebsiteProject: React.FC = () => {
     </SectionText>,
 
     <Item
+      key="item1"
       descriptions={[
-        "SEO 최적화",
-        "디자인 기획",
-        "라이브러리없이 슬라이드 구현",
-        "반응형웹 구현",
+        'SEO 최적화',
+        '디자인 기획',
+        '라이브러리없이 슬라이드 구현',
+        '반응형웹 구현',
       ]}
     />,
   ];
