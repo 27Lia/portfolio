@@ -11,7 +11,7 @@ import Skills from './Skills';
 // 미디어 쿼리를 위한 헬퍼 함수
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
-    @media (max-width: 1000px) {
+    @media (max-width: 1400px) {
       ${css(strings, ...args)}
     }
   `,
@@ -50,7 +50,7 @@ const Img = styled.img`
 `;
 
 const ListItem = styled.li`
-  font-size: 18px;
+  font-size: 21px;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -69,12 +69,12 @@ const Link = styled.a`
 `;
 
 const Text = styled.p`
-  font-size: 1.125rem;
+  font-size: 18px;
   line-height: 2;
 `;
 
 const IconLink = styled.a`
-  display: inline-block;
+  // display: inline-block;
   margin-right: 10px;
   transition: transform 0.2s;
 

@@ -1,13 +1,14 @@
 import styled, { css } from 'styled-components';
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
-    @media (max-width: 1300px) {
+    @media (max-width: 1400px) {
       ${css(strings, ...args)}
     }
   `,
 };
 
 export const LinkBox = styled.div`
+  margin-top: 10px;
   display: flex;
   gap: 20px;
   align-items: start;
@@ -24,6 +25,7 @@ export const SectionText = styled.ul`
   flex-direction: column;
   height: 300px;
   overflow: auto;
+  font-size: 18px;
 
   ${media.mobile`
 margin-top: 0px;
@@ -86,7 +88,6 @@ export const TabButton = styled.button`
 
   ${media.mobile`
   padding: 0px;
-  font-size:1em;
   `}
 `;
 
@@ -159,7 +160,6 @@ export const ProjectBox = styled.div`
 
 export const ProjectTitle = styled.h2`
   font-size: 28px;
-  color: #333;
   display: inline-block;
 
   ${media.mobile`
@@ -211,16 +211,12 @@ export const ScrollButton = styled.button`
   transform: translateX(-50%);
   background-color: transparent;
   padding: 0.8rem 1.6rem;
-  border: 2px solid #ddd;
-  color: #333;
+  border: 2px solid #444;
   border-radius: 30px;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   transition: background-color 0.2s;
   z-index: 10;
   width: 250px;
-  &:hover {
-    background-color: #faf7f7e6;
-  }
 `;

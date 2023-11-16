@@ -10,7 +10,7 @@ import {
 
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
-    @media (max-width: 1300px) {
+    @media (max-width: 1400px) {
       ${css(strings, ...args)}
     }
   `,
@@ -26,12 +26,11 @@ const IntroductionBox = styled.div`
 `;
 const JobTitle = styled.h2`
   font-size: 24px;
-  color: #444;
   margin: 20px 0;
 `;
 
 const JobDetails = styled.div`
-  font-size: 16px;
+  font-size: 18px;
   margin-left: 20px;
   line-height: 1.6;
 `;
@@ -44,8 +43,7 @@ const JobRole = styled.div`
 const JobDescription = styled.p`
   margin: 10px 20px 10px 20px;
   line-height: 1.5;
-  text-align: justify;
-  white-space: pre-line;
+  font-size: 18px;
 `;
 
 interface CareerProps {

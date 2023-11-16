@@ -11,8 +11,10 @@ const DiceText = styled.div`
   transform: translate(-50%, -50%);
   color: black;
   font-size: 30px;
+  font-weight: 800;
   text-align: center;
   width: 450px;
+  font-family: 'Black Han Sans', sans-serif;
 `;
 
 const Dice: React.FC = () => {

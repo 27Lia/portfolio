@@ -7,14 +7,14 @@ import { Button } from '../Styles/SharedStyles';
 
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
-    @media (max-width: 1300px) {
+    @media (max-width: 1400px) {
       ${css(strings, ...args)}
     }
   `,
 };
 
 const SkillHeader = styled.h2`
-  font-weight: 400;
+  font-weight: 500;
   font-size: 18px;
   text-align: center;
   padding: 10px;
@@ -48,7 +48,7 @@ const CardBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10px;
+  height: 60%;
   flex-wrap: wrap;
 
   &::-webkit-scrollbar {
@@ -56,7 +56,6 @@ const CardBox = styled.div`
   }
   ${media.mobile`
   height: 150px;
-  gap:100px;
   flex-wrap: wrap;
 
   `}
@@ -103,7 +102,6 @@ const Btn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
 `;
 
 const DivBox = styled.div`
@@ -120,7 +118,7 @@ const SkillCard = styled.div<
   SkillCardProps & { index: number; gradient: string; expandAll: boolean }
 >`
   ${SkillCardBaseStyle}
-  z-index: ${({ expanded, index }) => (expanded ? 9999 : 1000 - index)};
+  z-index: ${({ expanded, index }) => (expanded ? 9999 : 1400 - index)};
   background: ${({ gradient }) => gradient};
 
   ${({ expandAll }) =>
@@ -144,7 +142,7 @@ const SkillCard = styled.div<
         : 'rotateX(30deg) rotateY(-15deg) rotate(30deg) translateY(-40px)'};
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1400px) {
     width: 100%;
     margin: 10px 0;
     transform: none;

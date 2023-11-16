@@ -5,7 +5,7 @@ import { Default, DefaultBox, Title } from '../Styles/SharedStyles';
 
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
-    @media (max-width: 1300px) {
+    @media (max-width: 1400px) {
       ${css(strings, ...args)}
     }
   `,
