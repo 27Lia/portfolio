@@ -40,8 +40,6 @@ const Portfolio: React.FC = () => {
   const contents = [
     <SectionText key="section1">
       <h3>개인 프로젝트를 담은 홈페이지입니다.</h3>
-      <br />
-
       <Text>기간: 2023.10.31 ~ 2023.11.15</Text>
       <Text>인원: 솔로 프로젝트</Text>
       <Text>

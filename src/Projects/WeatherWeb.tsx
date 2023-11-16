@@ -50,8 +50,6 @@ const WeatherWeb: React.FC = () => {
         사용자의 현재위치 날씨에 따라 배경이 동적으로 변경 되며, To-Do List
         기능이 포함됐습니다.
       </h3>
-      <br />
-
       <Text>기간: 2023.07</Text>
       <Text>인원: 솔로 프로젝트</Text>
       <Text>기술스택: HTML, CSS, JS, openAPI</Text>

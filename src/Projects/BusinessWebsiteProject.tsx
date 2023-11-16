@@ -37,7 +37,6 @@ const BusinessWebsiteProject: React.FC = () => {
   const contents = [
     <SectionText key="section1">
       <h3> SEO최적화를 적용한 지역 내 소규모 업체 홈페이지입니다.</h3>
-      <br />
       <Text>기간: 2023.09.30 ~ 2023.10.18</Text>
       <Text>인원: 솔로 프로젝트</Text>
       <Text>기술스택: React, Styled-components, Naver Map API, SEO</Text>

@@ -29,6 +29,7 @@ const Box = styled.div`
   /* scroll-behavior: smooth;  */
   height: 80vh;
   scrollbar-width: thin;
+
   &::-webkit-scrollbar {
     height: 12px;
   }

@@ -10,12 +10,11 @@ const media = {
 export const LinkBox = styled.div`
   margin-top: 10px;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: start;
+
   ${media.mobile`
 flex-direction:column;
-gap: 10px;
-
   `}
 `;
 
@@ -27,6 +26,9 @@ export const SectionText = styled.ul`
   overflow: auto;
   font-size: 18px;
 
+  h3 {
+    margin-bottom: 15px;
+  }
   ${media.mobile`
 margin-top: 0px;
 font-size: 0.9em
@@ -39,9 +41,10 @@ export const DescriptionList = styled.ul`
 
 export const Text = styled.li`
   margin-bottom: 5px;
-  line-height: 1.6;
+  line-height: 1.5;
   display: flex;
   justify-content: space-between;
+  color: #444;
 `;
 
 export const ListItem = styled.li`
@@ -216,7 +219,11 @@ export const ScrollButton = styled.button`
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
-  transition: background-color 0.2s;
   z-index: 10;
   width: 250px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  }
 `;

@@ -140,8 +140,6 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
   const contents = [
     <SectionText key="section1">
       <h3>카드 형태로 모임을 만들고 참여하는 인터렉티브한 플랫폼입니다.</h3>
-      <br />
-
       <Text>기간: 2023.08.24 ~ 2023.09.22</Text>
       <Text>인원: Front 3명, Back 3명</Text>
       <Text>기술스택: React, Router, Styled-components, RESTful API</Text>
