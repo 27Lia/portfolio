@@ -169,17 +169,17 @@ export const Button = styled.button`
   padding: 10px 20px;
   font-weight: bold;
   color: #333;
-  background-color: transparent;
+  background-color: white;
   width: 150px;
   height: 40px;
-  border: 1px solid #ddd;
+  border: 1px solid #ffffff;
   border-radius: 5px;
   cursor: pointer;
   transition:
     background-color 0.2s,
     transform 0.2s;
   &:hover {
-    background-color: #faf7f7;
+    background-color: transparent;
     transform: translateY(2px);
   }
 

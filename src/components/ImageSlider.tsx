@@ -12,7 +12,6 @@ const media = {
     }
   `,
 };
-
 const StyledSlider = styled(Slider)`
   max-height: 500px;
   width: 500px;
