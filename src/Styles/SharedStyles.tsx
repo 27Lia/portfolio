@@ -121,14 +121,25 @@ export const ProjectDefault = styled.div`
   margin: 0px;
   `}
 `;
-
-export const Default = styled.div`
+export const DefaultBox = styled.div`
   min-height: 100vh;
+  max-width: 1500px;
   width: 100%;
+  margin: 0 auto;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+`;
+export const Default = styled.div`
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  padding: 100px;
+  //  max-height: 700px;
+  ${media.mobile`
+  padding: 0px;
+
+  `}
 `;
 
 export const Title = styled.h1`

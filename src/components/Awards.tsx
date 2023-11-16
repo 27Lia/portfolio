@@ -16,7 +16,7 @@ const Description = styled.div`
 `;
 
 const Box = styled.div`
-  padding: 100px;
+  // padding: 100px;
 
   ${media.mobile`
   padding:40px;

@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import Awards from './Awards';
-import { Default, Title } from '../Styles/SharedStyles';
+import { Default, DefaultBox, Title } from '../Styles/SharedStyles';
 
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
@@ -12,7 +12,7 @@ const media = {
 };
 
 const EdicationBox = styled.div`
-  padding: 100px;
+  // padding: 100px;
 
   ${media.mobile`
   padding:40px;
@@ -53,7 +53,7 @@ const EducationItem: React.FC<EducationItemProps> = ({ date, description }) => {
 
 const Education = forwardRef<HTMLDivElement, EdicationProps>((props, ref) => {
   return (
-    <div ref={ref}>
+    <DefaultBox ref={ref}>
       <Default>
         <Title>Education</Title>
         <EdicationBox>
@@ -72,7 +72,7 @@ const Education = forwardRef<HTMLDivElement, EdicationProps>((props, ref) => {
         </EdicationBox>
         <Awards />
       </Default>
-    </div>
+    </DefaultBox>
   );
 });
 Education.displayName = 'Education';

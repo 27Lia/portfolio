@@ -21,7 +21,10 @@ const Box = styled.div`
   align-items: center;
   /* flex-wrap: nowrap;  */
   overflow: auto;
-  padding: 0px 100px;
+  padding: 0px 10px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
   /* -webkit-overflow-scrolling: touch;  */
   /* scroll-behavior: smooth;  */
   height: 80vh;
@@ -37,6 +40,7 @@ const Box = styled.div`
 
     ${media.mobile`
 flex-direction:column;
+margin-right: 0px;
   `}
   }
 

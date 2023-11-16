@@ -1,6 +1,11 @@
 import React, { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import { Default, ScrollButton, Title } from '../Styles/SharedStyles';
+import {
+  Default,
+  DefaultBox,
+  ScrollButton,
+  Title,
+} from '../Styles/SharedStyles';
 ///
 
 const media = {
@@ -12,11 +17,7 @@ const media = {
 };
 
 const IntroductionBox = styled.div`
-  /* box-shadow:2px 4px 6px rgba(0,0,0,0.3);
-border-radius:20px; */
-  padding: 100px;
-  /* width:80%; */
-  /* margin-top:10px; */
+  // padding: 100px;
 
   ${media.mobile`
   padding:40px;
@@ -53,7 +54,7 @@ interface CareerProps {
 }
 const Career = forwardRef<HTMLDivElement, CareerProps>((props, ref) => {
   return (
-    <div ref={ref}>
+    <DefaultBox ref={ref}>
       <Default>
         <Title>Career</Title>
         <IntroductionBox>
@@ -72,8 +73,6 @@ const Career = forwardRef<HTMLDivElement, CareerProps>((props, ref) => {
             자사 CMS내 이슈 발생 또는 새로운 기능 추가 시 데이터를 검토하고
             실서비스를 모니터링하며 QA와 흡사한 업무를 진행하였습니다.
           </JobDescription>
-          {/* </IntroductionBox>
-      <IntroductionBox> */}
           <JobTitle>한국음악실연자연합회</JobTitle>
           <JobDetails>회원관리팀 / 인턴 / 2021.03 - 2021.12</JobDetails>
           <JobRole>담당 업무</JobRole>
@@ -88,7 +87,7 @@ const Career = forwardRef<HTMLDivElement, CareerProps>((props, ref) => {
           Go to Projects
         </ScrollButton>
       </Default>
-    </div>
+    </DefaultBox>
   );
 });
 Career.displayName = 'Career';

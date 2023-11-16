@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 import React, { forwardRef } from 'react';
-import { Default, ScrollButton } from '../Styles/SharedStyles';
+import {
+  Default,
+  DefaultBox,
+  ScrollButton,
+  Title,
+} from '../Styles/SharedStyles';
 import Skills from './Skills';
 
 // 미디어 쿼리를 위한 헬퍼 함수
@@ -20,12 +25,11 @@ const DataContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
   overflow: auto;
-  height: 100vh;
+  max-height: 700px;
+  border-radius: 30px;
   scrollbar-width: thin;
-  padding: 100px;
-
+  margin: 0 auto;
   &::-webkit-scrollbar {
     height: 12px;
   }
@@ -93,14 +97,12 @@ const Imgbox = styled.div`
 const LeftBox = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
   align-items: center;
   width: 50%;
   justify-content: space-evenly;
   ${media.mobile`
 width:100%;
 padding:40px;
-height:60%;
 
 `}
 `;
@@ -116,7 +118,7 @@ const RightBox = styled.ul`
   justify-content: space-evenly;
   ${media.mobile`
 width:100%;
-height:30%;
+height:50%;
 padding:0px;
 
 `}
@@ -124,11 +126,11 @@ padding:0px;
 
 const BoxContainer = styled.div`
   display: flex;
-  height: 100vh;
-  width: 100%;
+  height: 50vh;
   overflow: auto;
   justify-content: center;
   align-items: center;
+
   ${media.mobile`
 display: block;
 
@@ -152,8 +154,9 @@ interface IntroductionProps {
 const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
   (props, ref) => {
     return (
-      <div ref={ref}>
+      <DefaultBox ref={ref}>
         <Default>
+          <Title>Introduction</Title>
           <DataContainer>
             {/* <Title>Introduction</Title> */}
 
@@ -217,13 +220,12 @@ const Introduction = forwardRef<HTMLDivElement, IntroductionProps>(
                 </SkillsBox>
               </RightBox>
             </BoxContainer>
-
-            <ScrollButton onClick={() => props.scrollToRef(props.careerRef)}>
-              Go to Career
-            </ScrollButton>
           </DataContainer>
+          <ScrollButton onClick={() => props.scrollToRef(props.careerRef)}>
+            Go to Career
+          </ScrollButton>
         </Default>
-      </div>
+      </DefaultBox>
     );
   },
 );
