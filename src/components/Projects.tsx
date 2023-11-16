@@ -21,7 +21,7 @@ const Box = styled.div`
   align-items: center;
   /* flex-wrap: nowrap;  */
   overflow: auto;
-  padding: 0px 80px;
+  padding: 0px 100px;
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
@@ -112,7 +112,6 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>((props, ref) => {
         <BusinessWebsiteProject />
         <Celebee onModalStateChange={handleModalStateChange} />
         <ShoppingMall onModalStateChange={handleModalStateChange} />
-        <WeatherWeb />
       </Box>
 
       <ScrollButton onClick={() => props.scrollToRef(props.educationRef)}>
