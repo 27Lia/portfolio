@@ -7,7 +7,7 @@ import { Button } from '../Styles/SharedStyles';
 
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
-    @media (max-width: 1000px) {
+    @media (max-width: 1300px) {
       ${css(strings, ...args)}
     }
   `,
@@ -48,14 +48,17 @@ const CardBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   height: 10px;
+  flex-wrap: wrap;
+
   &::-webkit-scrollbar {
     height: 12px;
   }
   ${media.mobile`
   height: 150px;
-  gap:10px;
+  gap:100px;
+  flex-wrap: wrap;
+
   `}
 `;
 
@@ -63,7 +66,7 @@ const SkillCardBaseStyle = css`
   display: flex;
   flex-direction: column;
   margin: -70px;
-  width: 220px;
+  width: 200px;
   height: 110px;
   border-radius: 12px;
   color: #fff;

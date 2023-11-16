@@ -32,6 +32,9 @@ const Img = styled.div`
     max-height: 100%;
     overflow: hidden;
   }
+  ${media.mobile`
+        max-height: 200px;
+    `}
 `;
 
 const ImageSlider: React.FC<{ images: string[] }> = ({ images }) => {

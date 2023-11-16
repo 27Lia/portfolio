@@ -9,8 +9,13 @@ const media = {
 
 export const LinkBox = styled.div`
   display: flex;
-  justify-content: start;
   gap: 20px;
+  align-items: start;
+  ${media.mobile`
+flex-direction:column;
+gap: 10px;
+
+  `}
 `;
 
 export const SectionText = styled.ul`
@@ -170,9 +175,9 @@ export const Button = styled.button`
   font-weight: bold;
   color: #333;
   background-color: white;
-  width: 150px;
   height: 40px;
-  border: 1px solid #ffffff;
+  min-width: 150px;
+  border: 1px solid #000;
   border-radius: 5px;
   cursor: pointer;
   transition:

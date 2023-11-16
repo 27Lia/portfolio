@@ -153,9 +153,7 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
         <Link href="https://github.com/27Lia/celebee">
           <Button>Github Repo</Button>
         </Link>
-        <ModalBtnBox>
-          <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
-        </ModalBtnBox>
+        <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
         {showModal && (
           <Modal content={modalContent} toggleModal={toggleModal} />
         )}

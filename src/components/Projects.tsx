@@ -26,13 +26,6 @@ const Box = styled.div`
   /* scroll-behavior: smooth;  */
   height: 80vh;
 
-  ${media.mobile`
-  flex-wrap:wrap;
-  padding: 0px ;
-  display:flex;
-justify-content: space-evenly;
-  `}
-
   scrollbar-width: thin;
   &::-webkit-scrollbar {
     height: 12px;
@@ -41,7 +34,18 @@ justify-content: space-evenly;
   & > div {
     flex: 0 0 auto;
     margin-right: 10px;
+
+    ${media.mobile`
+flex-direction:column;
+  `}
   }
+
+  ${media.mobile`
+  flex-wrap:wrap;
+  padding: 0px ;
+  display:flex;
+justify-content: space-evenly;
+  `}
 `;
 const DivBox = styled.div`
   min-height: 100vh;
