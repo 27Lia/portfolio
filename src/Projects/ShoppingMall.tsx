@@ -148,10 +148,16 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
       <Text>기술스택: React, Styled-components, Firebase, Redux, AWS S3</Text>
       <Text>테스트 정보: ID: test@gmail.com / PW: test1234!</Text>
       <LinkBox>
-        <Link href="https://fe-sprint-coz-shopping-eta.vercel.app/">
+        <Link
+          target="_blank"
+          href="https://fe-sprint-coz-shopping-eta.vercel.app/"
+        >
           <Button>배포링크</Button>
         </Link>
-        <Link href="https://github.com/27Lia/fe-sprint-coz-shopping">
+        <Link
+          target="_blank"
+          href="https://github.com/27Lia/fe-sprint-coz-shopping"
+        >
           <Button>Github Repo</Button>
         </Link>
         <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />

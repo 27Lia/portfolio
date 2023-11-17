@@ -54,10 +54,13 @@ const WeatherWeb: React.FC = () => {
       <Text>인원: 솔로 프로젝트</Text>
       <Text>기술스택: HTML, CSS, JS, openAPI</Text>
       <LinkBox>
-        <Link href="https://momentum-rivpiekhd-27lia.vercel.app/">
+        <Link
+          target="_blank"
+          href="https://momentum-rivpiekhd-27lia.vercel.app/"
+        >
           <Button>배포링크</Button>
         </Link>
-        <Link href="https://github.com/27Lia/Momentum">
+        <Link target="_blank" href="https://github.com/27Lia/Momentum">
           <Button>Github Repo</Button>
         </Link>
       </LinkBox>

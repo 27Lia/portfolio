@@ -46,10 +46,10 @@ const Portfolio: React.FC = () => {
         기술스택: Three.js (sR3F),TypeScript, React, Styled-components
       </Text>
       <LinkBox>
-        <Link href="https://portfolio-27lia.vercel.app/">
+        <Link target="_blank" href="https://portfolio-27lia.vercel.app/">
           <Button>배포링크</Button>
         </Link>
-        <Link href="https://github.com/27Lia/portfolio">
+        <Link target="_blank" href="https://github.com/27Lia/portfolio">
           <Button>Github Repo</Button>
         </Link>
       </LinkBox>

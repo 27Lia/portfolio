@@ -41,10 +41,10 @@ const BusinessWebsiteProject: React.FC = () => {
       <Text>인원: 솔로 프로젝트</Text>
       <Text>기술스택: React, Styled-components, Naver Map API, SEO</Text>
       <LinkBox>
-        <Link href="https://junkshop.vercel.app/">
+        <Link target="_blank" href="https://junkshop.vercel.app/">
           <Button>배포링크</Button>
         </Link>
-        <Link href="https://github.com/27Lia/junkshop">
+        <Link target="_blank" href="https://github.com/27Lia/junkshop">
           <Button>Github Repo</Button>
         </Link>
       </LinkBox>

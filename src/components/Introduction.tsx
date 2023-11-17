@@ -99,7 +99,7 @@ const LeftBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 40%;
   justify-content: space-evenly;
   ${media.mobile`
 width:100%;
@@ -114,7 +114,7 @@ const RightBox = styled.ul`
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   height: 100%;
   justify-content: space-evenly;
   ${media.mobile`
