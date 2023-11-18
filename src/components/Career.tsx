@@ -17,11 +17,10 @@ const media = {
 };
 
 const IntroductionBox = styled.div`
-  // padding: 100px;
-
+  max-height: 50vh;
+  overflow: auto;
   ${media.mobile`
   padding:40px;
-
   `}
 `;
 const JobTitle = styled.h2`

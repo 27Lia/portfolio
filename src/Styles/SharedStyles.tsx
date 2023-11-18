@@ -147,7 +147,7 @@ export const Default = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #6d6c6c;
+  color: #333;
   font-size: 2.7rem;
   font-weight: 600;
   text-align: center;
@@ -226,4 +226,7 @@ export const ScrollButton = styled.button`
   &:hover {
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
   }
+  ${media.mobile`
+display: none;
+`}
 `;
