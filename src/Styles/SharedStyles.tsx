@@ -23,7 +23,7 @@ export const SectionText = styled.ul`
   display: flex;
   flex-direction: column;
   overflow: auto;
-  font-size: 18px;
+  font-size: 16px;
 
   h3 {
     margin-bottom: 15px;
@@ -58,12 +58,15 @@ export const Icon = styled.span`
 
 export const TabsContainer = styled.div`
   width: 100%;
+  height: 100%;
   overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   ${media.mobile`
-  width: 100%
+  width: 100%;
+  justify-content: start;
+
   `}
 `;
 export const TapBox = styled.button`
@@ -96,7 +99,7 @@ export const TabButton = styled.button`
 export const TabContent = styled.div`
   padding: 20px 0;
   display: none;
-
+  height: auto;
   &.active {
     display: block;
   }
@@ -196,7 +199,6 @@ export const Button = styled.button`
     transform 0.2s;
   &:hover {
     background-color: transparent;
-    transform: translateY(2px);
   }
 
   &:active {

@@ -145,16 +145,16 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
       <Text>기술스택: React, Router, Styled-components, RESTful API</Text>
       <Text>테스트 정보: ID: test123@gmail.com / PW: 123123123</Text>
       <LinkBox>
+        <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
+        {showModal && (
+          <Modal content={modalContent} toggleModal={toggleModal} />
+        )}
         <Link target="_blank" href="https://celebee-three.vercel.app/">
           <Button>배포링크</Button>
         </Link>
         <Link target="_blank" href="https://github.com/27Lia/celebee">
           <Button>Github Repo</Button>
         </Link>
-        <ModalButton label="성과 및 학습 보기" onClick={toggleModal} />
-        {showModal && (
-          <Modal content={modalContent} toggleModal={toggleModal} />
-        )}
       </LinkBox>
     </SectionText>,
 

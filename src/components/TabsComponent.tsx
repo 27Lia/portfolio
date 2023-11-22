@@ -16,7 +16,7 @@ const TabsComponent: React.FC<TabsComponentProps> = ({ tabs, contents }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <TabsContainer>
+    <>
       <TapBox>
         {tabs.map((tab: string, index: number) => (
           <TabButton
@@ -34,7 +34,7 @@ const TabsComponent: React.FC<TabsComponentProps> = ({ tabs, contents }) => {
           {content}
         </TabContent>
       ))}
-    </TabsContainer>
+    </>
   );
 };
 
