@@ -22,7 +22,6 @@ export const SectionText = styled.ul`
   line-height: 1.6;
   display: flex;
   flex-direction: column;
-  height: 300px;
   overflow: auto;
   font-size: 18px;
 
@@ -97,8 +96,6 @@ export const TabButton = styled.button`
 export const TabContent = styled.div`
   padding: 20px 0;
   display: none;
-  height: 300px;
-  overflow: auto;
 
   &.active {
     display: block;

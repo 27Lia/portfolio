@@ -41,7 +41,6 @@ const Box = styled.div`
     ${media.mobile`
 flex-direction:column;
 margin-right: 0px;
-margin-bottom: 10px;
 
   `}
   }

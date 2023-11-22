@@ -99,8 +99,8 @@ const LeftBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
-  justify-content: space-evenly;
+  width: 50%;
+
   ${media.mobile`
 width:100%;
 padding:40px;
@@ -128,13 +128,11 @@ padding:0px;
 const BoxContainer = styled.div`
   display: flex;
   height: 50vh;
-  overflow: auto;
   justify-content: center;
   align-items: center;
 
   ${media.mobile`
 display: block;
-
 `}
 `;
 const SkillsBox = styled.div`
