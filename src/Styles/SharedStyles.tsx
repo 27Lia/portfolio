@@ -99,7 +99,7 @@ export const TabButton = styled.button`
 export const TabContent = styled.div`
   padding: 20px 0;
   display: none;
-  height: auto;
+  height: 200px;
   &.active {
     display: block;
   }

@@ -11,7 +11,7 @@ import Skills from './Skills';
 // 미디어 쿼리를 위한 헬퍼 함수
 const media = {
   mobile: (strings: TemplateStringsArray, ...args: any[]) => css`
-    @media (max-width: 1400px) {
+    @media (max-width: 1100px) {
       ${css(strings, ...args)}
     }
   `,
