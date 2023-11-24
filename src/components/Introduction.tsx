@@ -93,6 +93,10 @@ const Imgbox = styled.div`
   align-items: center;
   width: 100%;
   margin-bottom: 30px;
+
+  ${media.mobile`
+  flex-direction: column;
+`}
 `;
 
 const LeftBox = styled.div`
@@ -104,7 +108,6 @@ const LeftBox = styled.div`
   ${media.mobile`
 width:100%;
 padding:40px;
-
 `}
 `;
 
