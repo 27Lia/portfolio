@@ -143,7 +143,7 @@ const ShoppingMall: React.FC<ShoppingMallProps> = ({ onModalStateChange }) => {
   const contents = [
     <SectionText key="section1">
       <h3>FireBase를 사용한 쇼핑몰 프로젝트입니다.</h3>
-      <Text>기간: 2023.07 ~ 2023.10 (firebase 리팩토링)</Text>
+      <Text>기간: 2023.07 (firebase 리팩토링)</Text>
       <Text>인원: 솔로 프로젝트</Text>
       <Text>기술스택: React, Styled-components, Firebase, Redux, AWS S3</Text>
       <Text>테스트 정보: ID: test@gmail.com / PW: test1234!</Text>

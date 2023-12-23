@@ -70,7 +70,7 @@ const Celebee: React.FC<CelebeeProps> = ({ onModalStateChange }) => {
         <CloseButton onClick={toggleModal}>닫기</CloseButton>
       </ButtonBox>
 
-      <ModalHeader>2. 하루모임</ModalHeader>
+      <ModalHeader>하루모임</ModalHeader>
 
       <Section>
         <SubSection>

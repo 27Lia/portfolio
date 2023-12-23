@@ -202,7 +202,7 @@ export const Button = styled.button`
   }
 
   &:active {
-    transform: translateY(1px);
+    transform: translateY(-1px);
   }
 `;
 

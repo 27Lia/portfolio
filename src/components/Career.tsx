@@ -23,20 +23,20 @@ const IntroductionBox = styled.div`
   padding:40px;
   `}
 `;
-const JobTitle = styled.h2`
+const JobTitle = styled.span`
   font-size: 24px;
-  margin: 20px 0;
+  font-weight: 600;
 `;
 
-const JobDetails = styled.div`
+const JobDetails = styled.span`
   font-size: 18px;
   margin-left: 20px;
-  line-height: 1.6;
 `;
 
 const JobRole = styled.div`
-  font-weight: bold;
+  font-weight: 300;
   margin: 10px 0;
+  font-size: 21px;
 `;
 
 const JobDescription = styled.p`
@@ -70,6 +70,7 @@ const Career = forwardRef<HTMLDivElement, CareerProps>((props, ref) => {
             자사 CMS내 이슈 발생 또는 새로운 기능 추가 시 데이터를 검토하고
             실서비스를 모니터링하며 QA와 흡사한 업무를 진행하였습니다.
           </JobDescription>
+          <br />
           <JobTitle>한국음악실연자연합회</JobTitle>
           <JobDetails>회원관리팀 / 인턴 / 2021.03 - 2021.12</JobDetails>
           <JobRole>담당 업무</JobRole>
